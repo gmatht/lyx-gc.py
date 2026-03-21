@@ -1,0 +1,170 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\SpecialChar LyX
+-GC.py Sample Document
+\end_layout
+
+\begin_layout Standard
+Try 
+\begin_inset Quotes eld
+\end_inset
+
+Tools→Check Text
+\begin_inset Quotes erd
+\end_inset
+
+ in the top menu to see grammar and LaTeX checks!
+ You will have to run it twice to see Language Tool errors (starting Language Tool is slow)
+\end_layout
+
+\begin_layout Section
+Sample errors for lyx-gc
+\end_layout
+
+\begin_layout Standard
+This document contains deliberate errors to demonstrate lyx-gc's internal rules,
+ system Chk\SpecialChar TeX
+,
+ lacheck,
+ and LanguageTool integration.
+\end_layout
+
+\begin_layout Subsection
+Internal rule errors
+\end_layout
+
+\begin_layout Standard
+We that wrong:
+ the phrase ``we that'' should be ``we see that''.
+ Spelt correctly is wrong:
+ use ``spelled'' not ``spelt'' in American English.
+ We need into to fix this:
+ ``into to'' should be ``into''.
+ Our selves think the both are errors:
+ ``ourselves'' and ``the both'' are wrong.
+\end_layout
+
+\begin_layout Subsection
+Chk\SpecialChar TeX
+ (empty display math)
+\end_layout
+
+\begin_layout Standard
+Below is an empty display formula,
+ which Chk\SpecialChar TeX
+ flags:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lacheck and LanguageTool
+\end_layout
+
+\begin_layout Standard
+Lacheck may flag three dots:
+ use
+\begin_inset space ~
+\end_inset
+
+ Their going to the store:
+ ``Their'' should be ``They're'' (LanguageTool).
+\end_layout
+
+\end_body
+\end_document
