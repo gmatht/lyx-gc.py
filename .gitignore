@@ -38,3 +38,6 @@ htmlcov/
 .vscode/
 *.swp
 *.swo
+
+# Debug / local output
+test_out*.txt

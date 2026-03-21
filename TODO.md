@@ -1,6 +1,9 @@
 # TODO
 
-## Grammar and spelling fixes in `lyxgc/lang/en.py`
+**Note:** We are currently maintaining bug-for-bug compatibility with the Perl version (`lyx-gc`).
+Do not implement the items below until compatibility is no longer required.
+
+## Grammar and spelling fixes in `lyxgc/lang/data/en.json`
 
 ### Spelling errors
 

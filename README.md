@@ -10,9 +10,10 @@ pip install -e .
 pip install pytest  # for tests
 ```
 
-### Checking dependencies
+### Checking soft dependencies
 
-Run the dependency checker to scan for LyX, lacheck, chktex, and LanguageTool:
+LyX, lacheck, chktex, and LanguageTool are optional; they allow finding more errors.
+Run the checker to scan for them:
 
 ```bash
 python check_deps.py              # Report status, offer to install missing
@@ -67,8 +68,7 @@ pytest tests/ -v
   - `rules.py` - setDiff, GenerateVowelRegex, SimpleRule
   - `engine.py` - FindErrors, rule application
   - `report.py` - LyX-compatible error output
-  - `lang/en.py`, `lang/fr.py` - language rules
-  - `lang/registry.py` - LyX language names and locale → rule module mapping
+  - `lang/` - language rules (JSON data in `lang/data/*.json`) and registry
   - `languagetool.py` - LanguageTool integration
   - `chktex_parse.py`, `lacheck_parse.py` - external tool parsers
 - `chktex.py` - CLI entry point (implementation)

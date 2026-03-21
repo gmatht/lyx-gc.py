@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Check and optionally install lyx-gc dependencies: LyX, lacheck, chktex, and LanguageTool.
+Check and optionally install lyx-gc soft dependencies: LyX, lacheck, chktex, and LanguageTool.
+These are optional; the checker works without them but they allow more errors to be found.
 Scans common installation locations and offers to install missing items.
 Use --all to install all missing dependencies without prompting.
 """
@@ -223,6 +224,7 @@ def main() -> int:
     is_win = os_family == "windows"
 
     print("lyx-gc dependency check")
+    print("(Soft dependencies – optional, allow finding more errors)")
     print(f"OS: {platform.system()} ({os_family})" + (" [WSL]" if os_family == "wsl" else ""))
     print()
 
@@ -234,42 +236,50 @@ def main() -> int:
         "Java": find_java(),
     }
 
-    missing: list[str] = []
-    for name, (found, msg) in results.items():
-        status = "OK" if found else "MISSING"
-        sym = "✓" if found else "✗"
-        print(f"  {sym} {name}: {status}")
-        if found:
-            print(f"      {msg}")
+    found_list: list[tuple[str, str]] = []
+    missing: list[tuple[str, str]] = []
+    for name, (ok, msg) in results.items():
+        key = name.lower()
+        if ok:
+            found_list.append((name, msg))
         else:
-            print(f"      {msg}")
-            missing.append(name.lower())
+            missing.append((name, msg))
 
-    if not missing:
-        print("\nAll dependencies found.")
+    if found_list:
+        print("Found:")
+        for name, loc in found_list:
+            print(f"  ✓ {name}: {loc}")
+        print()
+
+    if missing:
+        print("Missing:")
+        for name, msg in missing:
+            print(f"  ✗ {name}: {msg}")
+        missing_keys = [m[0].lower() for m in missing]
+        print(f"\nMissing: {', '.join(missing_keys)}")
+    else:
+        print("\nAll soft dependencies found.")
         return 0
-
-    print(f"\nMissing: {', '.join(missing)}")
     if args.no_install:
         return 1
 
     to_install: list[str] = []
     if args.all:
-        to_install = missing.copy()
+        to_install = missing_keys.copy()
     else:
         # Numbered menu: select multiple in one go (e.g. "1 2 4" or "a")
         print("\nSelect to install (numbers, comma/spaced, or 'a' for all):")
-        for i, name in enumerate(missing, 1):
+        for i, (name, _) in enumerate(missing, 1):
             print(f"  {i}. {name}")
         choice = input(f"  [1-{len(missing)} or a]: ").strip().lower()
         if choice == "a" or choice == "all":
-            to_install = missing.copy()
+            to_install = missing_keys.copy()
         else:
             for part in choice.replace(",", " ").split():
                 try:
                     idx = int(part)
-                    if 1 <= idx <= len(missing):
-                        to_install.append(missing[idx - 1])
+                    if 1 <= idx <= len(missing_keys):
+                        to_install.append(missing_keys[idx - 1])
                 except ValueError:
                     pass
             to_install = list(dict.fromkeys(to_install))  # dedupe, preserve order

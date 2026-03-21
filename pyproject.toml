@@ -7,10 +7,23 @@ lyxgc = ["lang/data/*.json"]
 
 [project]
 name = "lyxgc"
-version = "0.1.0"
+version = "0.1.0dev1"
 description = "Grammar checker for LyX and LaTeX"
+readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.9"
 dependencies = []
+authors = [{name = "lyx-gc contributors"}]
+keywords = ["lyx", "latex", "grammar-checker", "languagetool", "chktex", "lacheck"]
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/gmatht/lyx-gc.py"
+Repository = "https://github.com/gmatht/lyx-gc.py"
+Documentation = "https://wiki.lyx.org/Tools/LyX-GrammarChecker"
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
