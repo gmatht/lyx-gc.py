@@ -1,0 +1,185 @@
+{
+  "msgs": {
+    "empty_mathblock": [
+      "Bloc matemàtic buit",
+      ""
+    ],
+    "macro_no_brace": [
+      "Macro sense {}",
+      "Potser cal un {} després del macro."
+    ],
+    "no_fullstop_after_cite": [
+      "Sense punt després de la cita a final de paràgraf",
+      "Sembla que falta un punt."
+    ],
+    "no_space_after_cite": [
+      "Sense espai després de la cita",
+      ""
+    ],
+    "no_space_before_cite": [
+      "Sense espai abans de la cita",
+      ""
+    ],
+    "uline_starts_early": [
+      "El subratllat comença massa aviat",
+      ""
+    ],
+    "uline_ends_late": [
+      "El subratllat acaba massa tard",
+      ""
+    ],
+    "space_before_footnote": [
+      "Espai abans de la nota a peu",
+      ""
+    ],
+    "footnote_period_comma": [
+      "Punt/vírgula després de la nota",
+      "Si la nota es refereix a tota la frase, posa-la després del punt."
+    ],
+    "double_punct": [
+      "Signes de puntuació dobles",
+      ""
+    ],
+    "implies_in_proof": [
+      "Ús de \\implies en la demostració",
+      "Utilitza \\Longrightarrow per la direcció de la demostració."
+    ],
+    "no_space_after_ref": [
+      "Sense espai després de la referència",
+      ""
+    ],
+    "single_char": [
+      "Un sol caràcter",
+      "Un sol caràcter normalment no té sentit."
+    ],
+    "empty_begin_end": [
+      "Bloc begin/end buit",
+      ""
+    ],
+    "proof_not_newline": [
+      "La demostració no comença en nova línia",
+      "Introdueix un separador de paràgraf entre el teorema i la demostració (Enter a LyX)."
+    ],
+    "no_space_ref_left": [
+      "Sense espai a l'esquerra de la referència",
+      "Potser un espai irrompible (~) abans de la referència?"
+    ],
+    "no_space_ref_right": [
+      "Sense espai a la dreta de la referència",
+      "Potser un espai irrompible (~) després de la referència?"
+    ],
+    "too_many_dots": [
+      "Massa punts",
+      "Per què més d'un '.'?"
+    ],
+    "space_cite_punct": [
+      "Espai entre la cita i els signes de puntuació",
+      ""
+    ],
+    "space_after_period_cap": [
+      "Falta espai entre el punt i la majúscula",
+      ""
+    ],
+    "space_after_period_word": [
+      "Falta espai entre el punt i la paraula",
+      ""
+    ],
+    "textquotedbl": [
+      "Ús incorrecte de \\textquotedbl",
+      "Utilitza `` o ''."
+    ],
+    "math_punct": [
+      "Espai entre el bloc matemàtic i els signes de puntuació",
+      ""
+    ],
+    "cap_after_math": [
+      "Majúscula després del bloc matemàtic",
+      "Per què majúscula després del bloc matemàtic?"
+    ],
+    "equals_outside_math": [
+      "Signe d'igual fora del bloc matemàtic",
+      "El '=' ha d'estar dins del bloc matemàtic."
+    ],
+    "no_space_before_math": [
+      "Sense espai abans del bloc matemàtic",
+      ""
+    ],
+    "footnote_no_stop": [
+      "Nota sense punt",
+      ""
+    ],
+    "no_space_after_math": [
+      "Sense espai després del bloc matemàtic",
+      ""
+    ],
+    "no_space_before_macro": [
+      "Sense espai abans del macro",
+      ""
+    ],
+    "no_space_after_macro": [
+      "Sense espai després del macro",
+      ""
+    ],
+    "colon_in_math": [
+      ": en mode matemàtic",
+      "Utilitza \\colon per definir funcions."
+    ],
+    "ugly_fraction": [
+      "Fracció poc estètica",
+      "Utilitza \\\\nicefrac{ARG1}{ARG2}."
+    ],
+    "too_many_zeros": [
+      "Massa zeros sense separador",
+      ""
+    ],
+    "duplicated_word": [
+      "Paraula duplicada",
+      ""
+    ],
+    "para_no_stop": [
+      "El paràgraf acaba sense punt",
+      ""
+    ],
+    "para_no_cap": [
+      "El paràgraf comença sense majúscula",
+      ""
+    ],
+    "para_starts_dot": [
+      "El paràgraf comença amb punt?",
+      ""
+    ],
+    "punct_in_math": [
+      "Signe de puntuació dins del mode matemàtic",
+      "Mou ARG1 fora del mode matemàtic."
+    ],
+    "double_dot": [
+      "Dos punts",
+      "N'hi ha prou amb un punt."
+    ],
+    "space_before_punct_math": [
+      "Espai abans del final del bloc matemàtic",
+      ""
+    ],
+    "space_before_rparen": [
+      "Espai abans de )",
+      ""
+    ],
+    "proof_no_begin": [
+      "\\end{proof} sense \\begin",
+      "Elimina el separador de paràgraf abans de \\end{proof}?"
+    ],
+    "section_has_dot": [
+      "Secció amb punt",
+      "Les seccions normalment no acaben amb punt."
+    ],
+    "no_stop_def": [
+      "Sense punt abans de \\end{definition}",
+      ""
+    ],
+    "no_stop_end": [
+      "Sense punt abans de \\end{...}",
+      ""
+    ]
+  },
+  "common_rules": true
+}

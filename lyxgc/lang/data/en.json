@@ -1,0 +1,1600 @@
+{
+  "custom_rules": [
+    [
+      "we that",
+      "\\b[wW]e\\s+that\\b",
+      "",
+      "Perhaps you mean 'we see that'?"
+    ],
+    [
+      "spelt correctly",
+      "\\b[sS]pelt\\s+correctly\\b",
+      "",
+      "Perhaps you mean 'spelled correctly'?"
+    ],
+    [
+      "into to",
+      "\\b[iI]nto\\s+to\\b",
+      "",
+      "Perhaps you mean 'into'?"
+    ],
+    [
+      "never-the-less",
+      "\\b[nN]ever-the-less\\b",
+      "",
+      "Perhaps you mean 'nevertheless'?"
+    ],
+    [
+      "the automata",
+      "\\b[tT]he\\s+automata\\b",
+      "",
+      "Perhaps you mean 'the automaton'?"
+    ],
+    [
+      "but and",
+      "\\b[bB]ut\\s+and\\b",
+      "",
+      "Perhaps you mean 'but'?"
+    ],
+    [
+      "in terms on the",
+      "\\b[iI]n\\s+terms\\s+on\\s+the\\b",
+      "",
+      "Perhaps you mean 'in terms of the'?"
+    ],
+    [
+      "in terms if the",
+      "\\b[iI]n\\s+terms\\s+if\\s+the\\b",
+      "",
+      "Perhaps you mean 'in terms of the'?"
+    ],
+    [
+      "psuedo",
+      "\\b[pP]suedo\\b",
+      "",
+      "Perhaps you mean 'pseudo'?"
+    ],
+    [
+      "visa-versa",
+      "\\b[vV]isa-versa\\b",
+      "",
+      "Perhaps you mean 'vice versa'?"
+    ],
+    [
+      "visa versa",
+      "\\b[vV]isa\\s+versa\\b",
+      "",
+      "Perhaps you mean 'vice versa'?"
+    ],
+    [
+      "that the exists",
+      "\\b[tT]hat\\s+the\\s+exists\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "our selves",
+      "\\b[oO]ur\\s+selves\\b",
+      "",
+      "Perhaps you mean 'ourselves'?"
+    ],
+    [
+      "number of reason",
+      "\\b[nN]umber\\s+of\\s+reason\\b",
+      "",
+      "Perhaps you mean 'number of reasons'?"
+    ],
+    [
+      "the both",
+      "\\b[tT]he\\s+both\\b",
+      "",
+      "Perhaps you mean 'both'?"
+    ],
+    [
+      "we will shown",
+      "\\b[wW]e\\s+will\\s+shown\\b",
+      "",
+      "Perhaps you mean 'we show'?"
+    ],
+    [
+      "this important because",
+      "\\b[tT]his\\s+important\\s+because\\b",
+      "",
+      "Perhaps you mean 'this is important because'?"
+    ],
+    [
+      "not contains",
+      "\\b[nN]ot\\s+contains\\b",
+      "",
+      "Perhaps you mean 'not contain'?"
+    ],
+    [
+      "we interested",
+      "\\b[wW]e\\s+interested\\b",
+      "",
+      "Perhaps you mean 'we are interested'?"
+    ],
+    [
+      "of he",
+      "\\b[oO]f\\s+he\\b",
+      "",
+      "Perhaps you mean 'of the'?"
+    ],
+    [
+      "is are",
+      "\\b[iI]s\\s+are\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "the in",
+      "\\b[tT]he\\s+in\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "This demonstrations",
+      "\\b[TT]his\\s+demonstrations\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "will defined",
+      "\\b[wW]ill\\s+defined\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "some a",
+      "\\b[sS]ome\\s+a\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "a some",
+      "\\b[aA]\\s+some\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "satisfiable in B?CTL-structure",
+      "\\b[sS]atisfiable\\s+in\\s+B?CTL-structure\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "Hintakka",
+      "\\b[HH]intakka\\b",
+      "",
+      "Perhaps you mean 'Hintikka'?"
+    ],
+    [
+      "as assume",
+      "\\b[aA]s\\s+assume\\b",
+      "",
+      "Perhaps you mean 'assume'?"
+    ],
+    [
+      "eDecendants",
+      "\\b[eE]Decendants\\b",
+      "",
+      "Perhaps you mean 'eDescendants'?"
+    ],
+    [
+      "way point",
+      "\\b[wW]ay\\s+point\\b",
+      "",
+      "Perhaps you mean 'waypoint'?"
+    ],
+    [
+      "of there",
+      "\\b[oO]f\\s+there\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "is grows",
+      "\\b[iI]s\\s+grows\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "non trivial",
+      "\\b[nN]on\\s+trivial\\b",
+      "",
+      "Perhaps you mean 'nontrivial'?"
+    ],
+    [
+      "million of lines",
+      "\\b[mM]illion\\s+of\\s+lines\\b",
+      "",
+      "Perhaps you mean 'millions of lines'?"
+    ],
+    [
+      "that this provides use with a",
+      "\\b[tT]hat\\s+this\\s+provides\\s+use\\s+with\\s+a\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "Now that we now that each",
+      "\\b[NN]ow\\s+that\\s+we\\s+now\\s+that\\s+each\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "over view",
+      "\\b[oO]ver\\s+view\\b",
+      "",
+      "Perhaps you mean 'overview'?"
+    ],
+    [
+      "an of",
+      "\\b[aA]n\\s+of\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "the following a",
+      "\\b[tT]he\\s+following\\s+a\\b",
+      "",
+      "Perhaps you mean 'the following'?"
+    ],
+    [
+      "a conservative extensions",
+      "\\b[aA]\\s+conservative\\s+extensions\\b",
+      "",
+      "Perhaps you mean 'a conservative extension'?"
+    ],
+    [
+      "be use to",
+      "\\b[bB]e\\s+use\\s+to\\b",
+      "",
+      "Perhaps you mean 'be used to'?"
+    ],
+    [
+      "enquire as how",
+      "\\b[eE]nquire\\s+as\\s+how\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "model checker CTL",
+      "\\b[mM]odel\\s+checker\\s+CTL\\b",
+      "",
+      "Perhaps you mean 'model checker for'?"
+    ],
+    [
+      "can efficient",
+      "\\b[cC]an\\s+efficient\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "polynomial model checking",
+      "\\b[pP]olynomial\\s+model\\s+checking\\b",
+      "",
+      "Perhaps you mean 'polynomial-time model checking'?"
+    ],
+    [
+      "greater motivation",
+      "\\b[gG]reater\\s+motivation\\b",
+      "",
+      "Perhaps you mean 'stronger motiviation'?"
+    ],
+    [
+      "may first appear",
+      "\\b[mM]ay\\s+first\\s+appear\\b",
+      "",
+      "Perhaps you mean 'may at first appear'?"
+    ],
+    [
+      "comparision to",
+      "\\b[cC]omparision\\s+to\\b",
+      "",
+      "Perhaps you mean 'comparision with'?"
+    ],
+    [
+      "comparisions to",
+      "\\b[cC]omparisions\\s+to\\b",
+      "",
+      "Perhaps you mean 'comparisions with'?"
+    ],
+    [
+      "polices",
+      "\\b[pP]olices\\b",
+      "",
+      "Perhaps you mean 'policies'?"
+    ],
+    [
+      "alteration",
+      "\\b[aA]lteration\\b",
+      "",
+      "Perhaps you mean 'alternation'?"
+    ],
+    [
+      "a considerable research",
+      "\\b[aA]\\s+considerable\\s+research\\b",
+      "",
+      "Perhaps you mean 'considerable research'?"
+    ],
+    [
+      "avoid stay",
+      "\\b[aA]void\\s+stay\\b",
+      "",
+      "Perhaps you mean 'stay'?"
+    ],
+    [
+      "reasonably to ask",
+      "\\b[rR]easonably\\s+to\\s+ask\\b",
+      "",
+      "Perhaps you mean 'reasonable to ask'?"
+    ],
+    [
+      "would beneficial",
+      "\\b[wW]ould\\s+beneficial\\b",
+      "",
+      "Perhaps you mean 'would be beneficial'?"
+    ],
+    [
+      "with be",
+      "\\b[wW]ith\\s+be\\b",
+      "",
+      "Perhaps you mean 'will be'?"
+    ],
+    [
+      "a valid in",
+      "\\b[aA]\\s+valid\\s+in\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "that occur which",
+      "\\b[tT]hat\\s+occur\\s+which\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "more tractable",
+      "\\b[mM]ore\\s+tractable\\b",
+      "",
+      "Perhaps you mean 'more often tractable'?"
+    ],
+    [
+      "the deviation event",
+      "\\b[tT]he\\s+deviation\\s+event\\b",
+      "",
+      "Perhaps you mean 'the deviating event'?"
+    ],
+    [
+      "is no sufficent",
+      "\\b[iI]s\\s+no\\s+sufficent\\b",
+      "",
+      "Perhaps you mean 'is not sufficent'?"
+    ],
+    [
+      "verify that is satisfies",
+      "\\b[vV]erify\\s+that\\s+is\\s+satisfies\\b",
+      "",
+      "Perhaps you mean 'verify that it satisfies'?"
+    ],
+    [
+      "provides us with we have",
+      "\\b[pP]rovides\\s+us\\s+with\\s+we\\s+have\\b",
+      "",
+      "Perhaps you mean 'provides us with'?"
+    ],
+    [
+      "sch that",
+      "\\b[sS]ch\\s+that\\b",
+      "",
+      "Perhaps you mean 'such that'?"
+    ],
+    [
+      "presented at",
+      "\\b[pP]resented\\s+at\\b",
+      "",
+      "Perhaps you mean 'presented in'?"
+    ],
+    [
+      " (?<!in.the.)tableau are",
+      "(?<!in\\.the\\.)\\s+tableau\\s+are\\b",
+      "",
+      "Perhaps you mean 'tableaux are'?"
+    ],
+    [
+      "formally reason these",
+      "\\b[fF]ormally\\s+reason\\s+these\\b",
+      "",
+      "Perhaps you mean 'formally reason about these'?"
+    ],
+    [
+      "to presented",
+      "\\b[tT]o\\s+presented\\b",
+      "",
+      "Perhaps you mean 'presented'?"
+    ],
+    [
+      "path-quantifies",
+      "\\b[pP]ath-quantifies\\b",
+      "",
+      "Perhaps you mean 'path-quantifiers'?"
+    ],
+    [
+      "path quantifies",
+      "\\b[pP]ath\\s+quantifies\\b",
+      "",
+      "Perhaps you mean 'path-quantifiers'?"
+    ],
+    [
+      "on of",
+      "\\b[oO]n\\s+of\\b",
+      "",
+      "Perhaps you mean 'one of'?"
+    ],
+    [
+      "must exists",
+      "\\b[mM]ust\\s+exists\\b",
+      "",
+      "Perhaps you mean 'must exist'?"
+    ],
+    [
+      "see e.g.",
+      "\\b[sS]ee\\s+e.g..",
+      "",
+      "Perhaps you mean 'see for example'?"
+    ],
+    [
+      "world formula(?:[es])?",
+      "\\b[wW]orld\\s+formula(?:[es])?\\b",
+      "",
+      "Perhaps you mean 'State formula'?"
+    ],
+    [
+      "For example(?![,:])",
+      "\\b[FF]or\\s+example(?![,:])\\b",
+      "",
+      "Perhaps you mean 'For example,'?"
+    ],
+    [
+      "there no",
+      "\\b[tT]here\\s+no\\b",
+      "",
+      "Perhaps you mean 'there is no'?"
+    ],
+    [
+      "show that is [^\\s]+ satisfiable",
+      "\\b[sS]how\\s+that\\s+is\\s+[^\\s]+\\s+satisfiable\\b",
+      "",
+      "Perhaps you mean 'show that ___ is satisfiable'?"
+    ],
+    [
+      "a special atoms",
+      "\\b[aA]\\s+special\\s+atoms\\b",
+      "",
+      "Perhaps you mean ''?"
+    ],
+    [
+      "Two Pretty",
+      "(section|Section|theorem|Theorem|Lemma|lemma|Chapter|chapter|Proposition|proposition|corollary|Corollary|fact|Fact) {{LBS}}prettyref",
+      "If you use prettyref you probably don't also need ARG1. ",
+      ""
+    ],
+    [
+      "Either ... and",
+      "[Ee]ither\\s+\\w+\\s+and",
+      "",
+      ""
+    ],
+    [
+      "Plural Mismatch (as)",
+      "s(?<!is)\\s+as\\s+a\\b",
+      "",
+      ""
+    ],
+    [
+      "pspace-compLete",
+      "(NP|PSPACE)[- ][Cc]ompete",
+      "",
+      ""
+    ],
+    [
+      "Bad plural",
+      "A B?CTL[- ][Ss]tructures",
+      "",
+      ""
+    ],
+    [
+      "A plural",
+      "\\b([Aa]n?)\\s+(?!(?:athletics|basis|bias|dais|diabetes|dialysis|emphasis|gas|iris|lens|mantis|mathematics|news|physics|series|yes))[a-zA-Z0-9]*((?!ics)[a-z](?![ius])[a-z]s)\\b",
+      "",
+      "You used ARG1, but words that end in ARG2 are usually plurals"
+    ],
+    [
+      "Empty mathblock",
+      "{{START_MATH_CHAR}}  *{{END_MATH_CHAR}}",
+      "",
+      ""
+    ],
+    [
+      "Formula in place of fullpath.",
+      "{{LBS}}(phi|Phi|Psi|psi|theta|alpha|beta)\\s*{{LBS}}forces",
+      "",
+      "I usually use Phi as a formula, not a full path"
+    ],
+    [
+      "Mixing a and beta.",
+      "aU{{LBS}}beta",
+      "",
+      "I probably mean alpha U beta"
+    ],
+    [
+      "Thus twice",
+      "Thus[^.]*[.]?[^.]*Thus",
+      "",
+      "Try not to use Thus twice in a row"
+    ],
+    [
+      "Macro without {}.",
+      "[^{{LBS}}]{{LBS}}[a-zA-Z0-9]+?CTL[a-zA-Z0-9]+\\s",
+      "",
+      "You should probably put a {} after the macro so as not to swallow the space"
+    ],
+    [
+      "Second word in sentence is captalised.",
+      "[.]\\s+[a-zA-Z0-9]+\\s+(?!\\b(SSPM|Case|Ubuntu|Fair B?CTL|Figure|Algorithm|Boolean|Booleans|CTAB|English|Apollo|Caen|Utilitarianism|University|(?<=the\\s)School|Ro(?:B|\\(B\\)|)CTL|(?:Society of )?Social Choice and Welfare|(?:University of )?Western Australia|Boolean|Noetherian|Pentium|Backus-Naur\\s+Form|Euclidean|Deontic\\s+S5|Robustly|Prone|Obligatory|AllPaths|Permissible|Viol|Counter-Free|Deontic S5|State-|Definitions?|Prolog|Bayesian|Voice\\s+over\\s+Internet\\s+Protocol|Internet|Denial[- ]of[- ]Service|Contrary-to-Duty|Modus|Necessitation|Wolter|Hilbert|Gentzen|Xu|Priorean|Schwendimann|Achilles|Dam|Mally|Kant|Kamp|Burgess|Rabin|Broersen|Johnsson|Saari|Nanson|Condorcet|Borda|Fishburn|Laslier|Dodgson|Tideman|Pratt|Lei|Clarke|Emerson|Sistla|Wolper|Vardi|Schnoebelen|Turing|Broesen|Intel|Until|Since|Hodkinson|Dedekind|Borel|Achilles|Zeno|Zenoness|Leonard|Stavi|Dedekind|Planck|Hintikka|Lange|Waldmeister|Moore|Reynolds|Fisher|Wright|Muller|Belnap|Perloff|(?:Example|Chapter|Lemma|Corollary|Theorem|Section)s?|Drinkers'? [Pp]aradox|Distribution|Substitution|Obligatory|McCabe|Streett|Dansted|AllPath|Allpath|Next|Until|Computation|Pair-RoCTL|State-RoCTL|Saul|Hughes|Cresswell|Kripke|[A-Z]|(?:[A-Z][a-z]+(?:\\s|-)+)+.\\b(?:[A-Z][a-zA-Z]*[A-Z][a-zA-Z]*|[A-Z][a-zA-Z0-9]*[A-Z0-9][a-zA-Z0-9]*)\\b|\\b(?:[A-Z][a-zA-Z]*[A-Z][a-zA-Z]*|[A-Z][a-zA-Z0-9]*[A-Z0-9][a-zA-Z0-9]*)\\b|[A-Z][a-z]*,?\\s+[A-Z][a-z]*|(?:Monday|Tuesday|Wednesday|Thursday|Friday)|(?:(?:[A-Z][a-zA-Z0-9]*|in|of|the|a|an|to|for|and)\\s+)+(?:{{LBS}}cite\\{[^}]*\\}\\s*)?\\(|Australia|Dr|Prof|Pawsey|Canberra|Greek|First-order Monadic|Until operator|Untils|Table|Conjecture|EXPTIME)\\b)[A-Z]",
+      "",
+      "When I capitalise the second word of a sentance it is usually a mistake."
+    ],
+    [
+      "no full stop after cite that ends paragraph",
+      "[a-zA-Z0-9]\\s+{{LBS}}cite\\{[^}]*\\}\\s*{{PAR}}",
+      "",
+      "I think a fullstop is missing here."
+    ],
+    [
+      "No space after cite",
+      "{{LBS}}cite\\{[^}]*\\}[a-zA-Z0-9]",
+      "",
+      ""
+    ],
+    [
+      "No space before cite",
+      "[a-zA-Z0-9]{{LBS}}cite\\{[^}]*\\}",
+      "",
+      ""
+    ],
+    [
+      "While while",
+      "\\b[Ww]hile\\b[^.]*\\bwhile\\b",
+      "",
+      "`While' is not the sort of word that is often found twice in the same sentancee."
+    ],
+    [
+      "Plural of acronym ending is S requires apostrophy between the `S'",
+      "Ss\\b",
+      "",
+      ""
+    ],
+    [
+      "Underline starts too early",
+      "{{LBS}}uline\\{\\s",
+      "",
+      ""
+    ],
+    [
+      "Underline ends too late",
+      "{{LBS}}uline\\{[^}]\\s\\}",
+      "",
+      ""
+    ],
+    [
+      "Space before foot-note",
+      "(?: %\\s+| ){{LBS}}footnote\\{",
+      "",
+      ""
+    ],
+    [
+      "Period/Comma after foot-note",
+      "{{LBS}}footnote{{RECURSIVE_BRACE}}[.,]",
+      "",
+      "If the foot note refers to the sentance as a whole it is normal to put the foot-note after the fullstop"
+    ],
+    [
+      "Singular both",
+      "[Bb]oth\\s+(?:[^.](?!s(?:\\s|[.])|\\band\\b))*[.]",
+      "",
+      "You use both, which implies two items but I don't see 'and' or a plural"
+    ],
+    [
+      "Double [",
+      "\\[\\[",
+      "",
+      ""
+    ],
+    [
+      "Double Punctuation",
+      "(?<!{{LBS}})[,.:;]\\s+[,.:;]",
+      "",
+      ""
+    ],
+    [
+      "The [logic]",
+      "[Tt]he (?:Ro)?(B)?CTL[*]?\\s+(?!.?formula)[:^\\s]",
+      "",
+      "CTL is the name of a logic, so 'the' is redundant."
+    ],
+    [
+      "Use of implies for forward direction in proof",
+      "(?:(?:{{LBS}}left)?\\({{LBS}}implies(?:{{LBS}}right)?\\)|\\(.{{LBS}}implies.\\))",
+      "",
+      "Using (\\implies) leaves an ugly space between the arrow and the brackets. When indicating the forward direction of a proof it is probably better to use '(\\Longrightarrow)' instead"
+    ],
+    [
+      "Personal Rule; RoCTL{*}",
+      "Ro(?:B|\\(B\\)|)CTL\\s*\\.\\s*\\{\\{\\*\\}\\}\\s*\\.",
+      "",
+      "?"
+    ],
+    [
+      "Personal Rule; RoCTL missing *",
+      "\\sRo(?:B|\\(B\\)|)CTL\\s",
+      "",
+      "?"
+    ],
+    [
+      "No space after reference",
+      "ref\\{[^}]*\\}[a-zA-Z0-9]",
+      "",
+      ""
+    ],
+    [
+      "Single char",
+      "\\s[b-km-z]\\s(?![&{{LBS}}])(?![^{{START_MATH_CHAR}}]*[_{{END_MATH_CHAR}}])",
+      "",
+      "?"
+    ],
+    [
+      "A likely as",
+      "\\b[Aa]\\s+likely\\s+as",
+      "",
+      "Perhaps you mean 'as likely as'?"
+    ],
+    [
+      "To modelled",
+      "\\b[Tt]o\\s+modelled\\b",
+      "",
+      "Perhaps you mean 'to model'?"
+    ],
+    [
+      "A formulae",
+      "\\ba\\s+{{LBS}}?formulae",
+      "",
+      "Formula is plural, why are we using 'a'?"
+    ],
+    [
+      "Personal Rule, Robustly operated",
+      "Robustly\\s+operated",
+      "",
+      "presumably I mean operator"
+    ],
+    [
+      "it every",
+      "\\b[Ii]t\\s+every\\b",
+      "",
+      "Maybe you just want 'it' or 'every', not both"
+    ],
+    [
+      "A we",
+      "\\b[Aa]\\s+we\\b",
+      "",
+      "A is singular, We is plural, so this doesn't make much sense."
+    ],
+    [
+      "Personal Rule: valdities",
+      "[Vv]aliditi(?:y|ies)",
+      "",
+      "I mean something like 'valid in'"
+    ],
+    [
+      "blow up",
+      "[Bb]low\\s+up",
+      "",
+      "You may want to join these into a single word 'blowup'"
+    ],
+    [
+      "it self",
+      "[Ii]t\\s+self",
+      "",
+      "You may want to join these into a single word 'itself'"
+    ],
+    [
+      "Personal Rule: ROCTL",
+      "ROCTL",
+      "",
+      "I should write RoCTL instead"
+    ],
+    [
+      "is was",
+      "\\b[Ii]s\\s+was\\b",
+      "",
+      "It is unusual to see 'is' and 'was' together. Maybe you only need one of these two words here?"
+    ],
+    [
+      "Capital without preceeding fullstop",
+      "(?!(?:on|of|to|with)\\b)(?:\\b(?<!{{LBS}})[a-z]+\\b|ref\\{[^{}]*\\}),?:?(?:(%.*\\n)|\\s)+(?!\\b(SSPM|Case|Ubuntu|Fair B?CTL|Figure|Algorithm|Boolean|Booleans|CTAB|English|Apollo|Caen|Utilitarianism|University|(?<=the\\s)School|Ro(?:B|\\(B\\)|)CTL|(?:Society of )?Social Choice and Welfare|(?:University of )?Western Australia|Boolean|Noetherian|Pentium|Backus-Naur\\s+Form|Euclidean|Deontic\\s+S5|Robustly|Prone|Obligatory|AllPaths|Permissible|Viol|Counter-Free|Deontic S5|State-|Definitions?|Prolog|Bayesian|Voice\\s+over\\s+Internet\\s+Protocol|Internet|Denial[- ]of[- ]Service|Contrary-to-Duty|Modus|Necessitation|Wolter|Hilbert|Gentzen|Xu|Priorean|Schwendimann|Achilles|Dam|Mally|Kant|Kamp|Burgess|Rabin|Broersen|Johnsson|Saari|Nanson|Condorcet|Borda|Fishburn|Laslier|Dodgson|Tideman|Pratt|Lei|Clarke|Emerson|Sistla|Wolper|Vardi|Schnoebelen|Turing|Broesen|Intel|Until|Since|Hodkinson|Dedekind|Borel|Achilles|Zeno|Zenoness|Leonard|Stavi|Dedekind|Planck|Hintikka|Lange|Waldmeister|Moore|Reynolds|Fisher|Wright|Muller|Belnap|Perloff|(?:Example|Chapter|Lemma|Corollary|Theorem|Section)s?|Drinkers'? [Pp]aradox|Distribution|Substitution|Obligatory|McCabe|Streett|Dansted|AllPath|Allpath|Next|Until|Computation|Pair-RoCTL|State-RoCTL|Saul|Hughes|Cresswell|Kripke|[A-Z]|(?:[A-Z][a-z]+(?:\\s|-)+)+.\\b(?:[A-Z][a-zA-Z]*[A-Z][a-zA-Z]*|[A-Z][a-zA-Z0-9]*[A-Z0-9][a-zA-Z0-9]*)\\b|\\b(?:[A-Z][a-zA-Z]*[A-Z][a-zA-Z]*|[A-Z][a-zA-Z0-9]*[A-Z0-9][a-zA-Z0-9]*)\\b|[A-Z][a-z]*,?\\s+[A-Z][a-z]*|(?:Monday|Tuesday|Wednesday|Thursday|Friday)|(?:(?:[A-Z][a-zA-Z0-9]*|in|of|the|a|an|to|for|and)\\s+)+(?:{{LBS}}cite\\{[^}]*\\}\\s*)?\\(|Australia|Dr|Prof|Pawsey|Canberra|Greek|First-order Monadic|Until operator|Untils|Table|Conjecture|EXPTIME)\\b)([A-Z][a-zA-Z0-9]*)",
+      "erase:(?:{{LBS}}(?:chapter|(?:sub)*section[*]?{{RECURSIVE_BRACE}})|{{MATHBLOCK}})",
+      "ARG2~CAP, 1;ARG1, 2;ARG2"
+    ],
+    [
+      "Capital 'In' without preceeding fullstop",
+      "[a-z](?<!{{LBS}}item)(?<!iffalse),?\\s+In\\b",
+      "erase:(?:{{LBS}}(?:chapter|(?:sub)*section[*]?{(?:[^}]|{[^}]*})*})|{{MATHBLOCK}})",
+      "\"In\" can be the code for the element \"Indium\", in which case it should be captalised but usually it is \"in\" as an \"inside\" and should not be captalised unless it is the beginning of a sentance."
+    ],
+    [
+      "In Practise",
+      "[Ii]n practise",
+      "",
+      "In UK english `practise' is verb and `practice' is a noun. In US English `practice' is used for both forms. Either way, I think you mean `in practice'."
+    ],
+    [
+      "Empty Begin/End Block",
+      "{{LBS}}begin\\{[^}]+\\}\\s*(?:{{LBS}}par)?{{LBS}}end\\{[^}]*\\}",
+      "Perhaps you mean *is* thus a?",
+      ""
+    ],
+    [
+      "it thus a",
+      "it\\s+thus\\s+a",
+      "Perhaps you mean *is* thus a?",
+      ""
+    ],
+    [
+      "Personal rule: in A",
+      "in {{START_MATH_CHAR}}?A\\b",
+      "Use \\allworlds instead",
+      ""
+    ],
+    [
+      "Proof starting not on newline",
+      ".+{{LBS}}begin\\{proof\\}",
+      "It seems that you don't have a paragraph break between the Lemma/Theorem and the proof \n (you can use the \"Enter\" key in LyX GUI to add one)",
+      ""
+    ],
+    [
+      "No space between text and reference",
+      "[a-zA-Z0-9]{{LBS}}(pretty)?ref\\{",
+      "Perhaps you should add a non-breaking space \n('~' or Ctrl-Space in the LyX GUI)\n between the text and the reference?",
+      ""
+    ],
+    [
+      "No space between text and reference",
+      "^.(?:pretty)?ref\\{",
+      "Perhaps you should add a non-breaking space \n('~' or Ctrl-Space in the LyX GUI)\n between the text and the reference?",
+      ""
+    ],
+    [
+      ". .",
+      "[.]\\s+[.]",
+      "Why do you have more than one '.'?",
+      ""
+    ],
+    [
+      ". .",
+      "[.][ ][.]",
+      "Why do you have more than one '.'(2)?",
+      ""
+    ],
+    [
+      "^.\\s+[A-Z]",
+      "^.\\s+[A-Z]",
+      "Why do you have more than one '.'(3)?",
+      ""
+    ],
+    [
+      "^.\\\\s+[A-Z]",
+      "[.][ ][.]",
+      "Why do you have more than one '.'(3)?",
+      ""
+    ],
+    [
+      "in term of",
+      "[Ii]n\\s+term\\s+of",
+      "Perhaps you meant 'in terms of'",
+      ""
+    ],
+    [
+      "From of",
+      "[Ff]rom\\s+of",
+      "Perhaps you meant 'form of'",
+      ""
+    ],
+    [
+      "Will is",
+      "\\b[Ww]ill\\s+[a-zA-Z0-9]*\\s*\\bis\\b",
+      "Use `Will' or `is', not both",
+      ""
+    ],
+    [
+      "The a",
+      "\\b[Tt]he\\s+a\\b",
+      "Use `The' or `A', not both",
+      ""
+    ],
+    [
+      "Personal rule: forall_",
+      "forall_",
+      "Use \\Forall instead",
+      ""
+    ],
+    [
+      "Personal rule: missing -",
+      "([Pp]air|[Ss]tate)\\s+RoCTL",
+      "add -",
+      ""
+    ],
+    [
+      "Were [math]",
+      "[Ww]ere\\s+{{START_MATH_CHAR}}",
+      "Perhaps you meant Where ...",
+      ""
+    ],
+    [
+      "Also and",
+      "[Aa]lso\\s+and",
+      "Perhaps you meant 'Also an'",
+      ""
+    ],
+    [
+      "Personal rule: found failure free in place of 'failure-free'",
+      "failure free",
+      "use failure-free instead",
+      ""
+    ],
+    [
+      "Personal rule: CTL structures",
+      "CTL struct",
+      "use CTL-structures instead",
+      ""
+    ],
+    [
+      "Personal rule: operator name without capital",
+      "obligatory\\s+operator",
+      "use capital letter",
+      ""
+    ],
+    [
+      "Personal rule: operator name without capital",
+      "robustly\\s+operator",
+      "use capital letter",
+      ""
+    ],
+    [
+      "with by",
+      "[Ww]ith\\s+by",
+      "???",
+      ""
+    ],
+    [
+      "with in",
+      "\\b[Ww]ith\\s+in\\b",
+      "Perhaps you meant 'within'?",
+      ""
+    ],
+    [
+      "Where as",
+      "[Ww]here\\s+as",
+      "Perhaps you meant whereas?",
+      ""
+    ],
+    [
+      "space between cite and punctuation",
+      "{{LBS}}cite\\{[^{}]*\\}\\s+[,.]",
+      "",
+      ""
+    ],
+    [
+      "there exist phi",
+      "[Tt]here exist {{START_MATH_CHAR}}(?:{{LBS}}phi|{{LBS}}varphi)[^{{END_MATH_CHAR}}]*:[^{{END_MATH_CHAR}}]*{{LBS}}psi",
+      "",
+      "Perhaps you mean \"there exists *a* ...\""
+    ],
+    [
+      "formula it",
+      "[Ff]ormula it\\b",
+      "",
+      "There appears to be something missing between \"formula\" and \"it\""
+    ],
+    [
+      ".Capital",
+      "[.][A-Z][^.]",
+      "",
+      "Perhaps you should put a space between the . and the capital"
+    ],
+    [
+      ".word",
+      "[.][a-z]+[ \\t]",
+      "",
+      "Perhaps you should put a space between the . and the word"
+    ],
+    [
+      "Exists as s..",
+      "[Ee]xists\\s+as\\s+s",
+      "",
+      "Perhaps you meant Exists *a* s..."
+    ],
+    [
+      "\\\\textquotedbl\\{[}]",
+      "{{LBS}}textquotedbl\\{[}]",
+      "",
+      "You should probably use `` or '' instead of \\textquotedbl{} or '\""
+    ],
+    [
+      "Space between mathblock and punctuation",
+      "{{MATHBLOCK}}\\s+[,.]",
+      "",
+      "Why is there a capital after the mathblock?"
+    ],
+    [
+      "Inapproriate capital after mathblock",
+      "[a-zA-Z0-9] {{MATHBLOCK}} (?!\\b(SSPM|Case|Ubuntu|Fair B?CTL|Figure|Algorithm|Boolean|Booleans|CTAB|English|Apollo|Caen|Utilitarianism|University|(?<=the\\s)School|Ro(?:B|\\(B\\)|)CTL|(?:Society of )?Social Choice and Welfare|(?:University of )?Western Australia|Boolean|Noetherian|Pentium|Backus-Naur\\s+Form|Euclidean|Deontic\\s+S5|Robustly|Prone|Obligatory|AllPaths|Permissible|Viol|Counter-Free|Deontic S5|State-|Definitions?|Prolog|Bayesian|Voice\\s+over\\s+Internet\\s+Protocol|Internet|Denial[- ]of[- ]Service|Contrary-to-Duty|Modus|Necessitation|Wolter|Hilbert|Gentzen|Xu|Priorean|Schwendimann|Achilles|Dam|Mally|Kant|Kamp|Burgess|Rabin|Broersen|Johnsson|Saari|Nanson|Condorcet|Borda|Fishburn|Laslier|Dodgson|Tideman|Pratt|Lei|Clarke|Emerson|Sistla|Wolper|Vardi|Schnoebelen|Turing|Broesen|Intel|Until|Since|Hodkinson|Dedekind|Borel|Achilles|Zeno|Zenoness|Leonard|Stavi|Dedekind|Planck|Hintikka|Lange|Waldmeister|Moore|Reynolds|Fisher|Wright|Muller|Belnap|Perloff|(?:Example|Chapter|Lemma|Corollary|Theorem|Section)s?|Drinkers'? [Pp]aradox|Distribution|Substitution|Obligatory|McCabe|Streett|Dansted|AllPath|Allpath|Next|Until|Computation|Pair-RoCTL|State-RoCTL|Saul|Hughes|Cresswell|Kripke|[A-Z]|(?:[A-Z][a-z]+(?:\\s|-)+)+.\\b(?:[A-Z][a-zA-Z]*[A-Z][a-zA-Z]*|[A-Z][a-zA-Z0-9]*[A-Z0-9][a-zA-Z0-9]*)\\b|\\b(?:[A-Z][a-zA-Z]*[A-Z][a-zA-Z]*|[A-Z][a-zA-Z0-9]*[A-Z0-9][a-zA-Z0-9]*)\\b|[A-Z][a-z]*,?\\s+[A-Z][a-z]*|(?:Monday|Tuesday|Wednesday|Thursday|Friday)|(?:(?:[A-Z][a-zA-Z0-9]*|in|of|the|a|an|to|for|and)\\s+)+(?:{{LBS}}cite\\{[^}]*\\}\\s*)?\\(|Australia|Dr|Prof|Pawsey|Canberra|Greek|First-order Monadic|Until operator|Untils|Table|Conjecture|EXPTIME)\\b)(?!Robustly)[A-Z]",
+      "",
+      "Why is there a capital after the mathblock?"
+    ],
+    [
+      "Equals outside mathblock",
+      "{{MATHBLOCK}}\\s*=\\s*{{MATHBLOCK}}",
+      "",
+      "Perhaps you should put the equals inside the mathblocks"
+    ],
+    [
+      "a that",
+      "\\b[Aa]\\s+[Tt]hat",
+      "",
+      "Perhaps you mean \"that\""
+    ],
+    [
+      "the there",
+      "[Tt]he\\s+[Tt]here",
+      "",
+      "Perhaps you mean \"there\""
+    ],
+    [
+      "there where",
+      "[Tt]here\\s+where",
+      "",
+      "Perhaps you mean \"there were\""
+    ],
+    [
+      "with where",
+      "[Ww]ith\\s+where",
+      "",
+      "Perhaps you mean \"there were\""
+    ],
+    [
+      "[Tt]he proofs that converge",
+      "[Tt]he\\s+proofs\\s+that\\s+converge",
+      "",
+      "Perhaps you mean \"The proofs of convergence\""
+    ],
+    [
+      "[Aa]nd a presented",
+      "[Aa]nd\\s+a\\s+presented",
+      "",
+      "Perhaps you mean \"And presented\""
+    ],
+    [
+      "Cause change the",
+      "[Cc]ause\\s+change\\s+the",
+      "",
+      "Perhaps you mean \"Cause the\""
+    ],
+    [
+      "In place voter",
+      "[Ii]n\\s+place\\s+voter",
+      "",
+      "Perhaps you mean \"In place of voter\""
+    ],
+    [
+      "We allow only {to}? require",
+      "[Ww]e\\s+allow\\s+only\\s+require",
+      "",
+      "Perhaps you mean \"We only require\""
+    ],
+    [
+      "Programs can be computed",
+      "[Pp]rograms\\s+can\\s+be\\s+computed",
+      "",
+      "Perhaps you mean \"???\""
+    ],
+    [
+      "To be converge",
+      "[Tt]o\\s+be\\s+converge",
+      "",
+      "Perhaps you mean \"???\""
+    ],
+    [
+      "Factions?",
+      "[Ff]actions",
+      "",
+      "In a mathematical text it is likely this was meant to be \"fractions\""
+    ],
+    [
+      "hEIrarchy",
+      "[hH]eirar?chy",
+      "",
+      "Perhaps you mean \"hIErarchy\""
+    ],
+    [
+      "exponential blow up",
+      "[Ee]xponential\\s+blow\\s+up",
+      "",
+      "Perhaps you mean \"exponential blowup\""
+    ],
+    [
+      "be behave",
+      "[Bb]e\\s+behave",
+      "",
+      "Perhaps you mean \"behave\""
+    ],
+    [
+      "Anyway of",
+      "anyway\\s+of",
+      "",
+      "Perhaps you mean \"any way of\""
+    ],
+    [
+      "been replace[d]",
+      "\\bbeen\\s+replaces?\\b",
+      "",
+      "Been suggests past tense, but replace suggests present tense. Perhaps you mean \"been replaced\""
+    ],
+    [
+      "The [noun] may",
+      "\\b[Tt]he\\s+may\\b",
+      "",
+      "There appears to be a noun missing between \"The\" and \"may\""
+    ],
+    [
+      "It involve[s]",
+      "\\b[Ii]t\\s+involve\\b",
+      "",
+      "Perhaps you mean \"it involves\""
+    ],
+    [
+      "At leas[e] as",
+      "\\b[Aa]t\\s+lease\\s+as\\b",
+      "",
+      "Perhaps you mean \"At leasT as\""
+    ],
+    [
+      "Use of An where A is expected",
+      "\\b[Aa]n\\s+({{CONSONANT_SOUND_EN}})",
+      "",
+      "An should only be used before words that start with a vowel sound (usually A,E,I,O or U), but ARG1 begins with a consonant sound"
+    ],
+    [
+      "Use of A where An is expected",
+      "\\b[Aa]\\s+({{VOWEL_SOUND_EN}})",
+      "",
+      "A should only be used before words that do not start with a vowel sound (usually A,E,I,O or U), but ARG1 begins with vowel sound."
+    ],
+    [
+      "Use of the and 's",
+      "\\b[Tt]he\\s+[A-Z][a-z]*'s",
+      "",
+      "You should use the or 's, not both"
+    ],
+    [
+      "Sentance must begin with capital letter",
+      "(?<!\\.)\\.\\s+[a-z]",
+      "",
+      ""
+    ],
+    [
+      "No space before math block",
+      "[a-zA-Z0-9]{{START_MATH_CHAR}}(?![_^]|{{LBS}}dots)",
+      "",
+      ""
+    ],
+    [
+      "No space before citation",
+      "[^ \\t\\n(~]{{LBS}}cite",
+      "",
+      ""
+    ],
+    [
+      "Capital following comma",
+      ",\\s*(?!b|Hilbert|Gentzen|Xu|Priorean|Schwendimann|Achilles|Dam|Mally|Kant|Kamp|Burgess|Rabin|Broersen|Johnsson|Saari|Nanson|Condorcet|Borda|Fishburn|Laslier|Dodgson|Tideman|Pratt|Lei|Clarke|Emerson|Sistla|Wolper|Vardi|Schnoebelen|Turing|Broesen|Intel|Until|Since|Hodkinson|Dedekind|Borel|Achilles|Zeno|Zenoness|Leonard|Stavi|Dedekind|Planck|Hintikka|Lange|Waldmeister|Moore|Reynolds|Fisher|Wright|Muller|Belnap|Perloff|Coomb|Hare\\b|Marquis\\b|Khachian\\b|Dominating\\s+Set\\b|Impartial\\s+Culture\\b)[A-Z][a-z]",
+      "Remove capitals from beginning of ARG1",
+      ""
+    ],
+    [
+      "Inappropriate capital",
+      "[^ \\n.?:}](?<![.]\\'\\')(?<![.]\\')(?<![.]\")\\s+It",
+      "Remove capital",
+      ""
+    ],
+    [
+      "Footnote is not fullstop",
+      "[a-zA-Z0-9,]\\s*{{LBS}}footnote{{RECURSIVE_BRACE}}\\s*[A-Z]",
+      "",
+      ""
+    ],
+    [
+      "Footnote is not fullstop",
+      "[a-zA-Z0-9,](\\s|%)*{{LBS}}footnote{{RECURSIVE_BRACE}}\\s*[A-Z]",
+      "",
+      ""
+    ],
+    [
+      "No space after math block",
+      "(?!..sim){{MATHBLOCK}}(?<!dots.)(?!s\\s)[a-zA-Z0-9]",
+      "..sim",
+      ""
+    ],
+    [
+      "No space before macro",
+      "[a-zA-Z0-9]{{MACROBLOCK}}",
+      "",
+      ""
+    ],
+    [
+      "No space after macro",
+      "{{MACROBLOCK}}[a-zA-Z0-9]",
+      "",
+      ""
+    ],
+    [
+      "A used for plural",
+      "\\b[Aa]\\s+sequences\\b",
+      "",
+      ""
+    ],
+    [
+      "Use of : in math-mode",
+      "{{START_MATH_CHAR}}[^{{END_MATH_CHAR}}]*(?<!{{LBS}})[a-zA-Z]:",
+      "",
+      "LaTeX assumes a : in mathmode means division, if you are trying to define a function, you should use \\colon instead."
+    ],
+    [
+      "less that",
+      "\\bless\\s+that\\b",
+      "",
+      ""
+    ],
+    [
+      "Ugly fraction",
+      "([0-9])/([0-9])(?!n[}])(?!_home)",
+      "erase:{{LBS}}url{{RECURSIVE_BRACE}}",
+      "Use \\nicefrac{ARG1}{ARG2} instead"
+    ],
+    [
+      "Too many zeros without a comma",
+      "(?<![0-9.])0000(?![^\\s]*[.]tex[}])",
+      "",
+      "You should put a comma in there somewhere"
+    ],
+    [
+      "Split word",
+      "(?:[Ww]ith out|[Ll]ike wise)",
+      "ARG1 is a single word",
+      ""
+    ],
+    [
+      "Duplicated Words",
+      "(?i)\\b(a|I|[a-zA-Z][a-zA-Z+*]+)\\b[,.;]?\\s+\\b\\2\\b{{NOTINMATH}}",
+      "ARG1 occurs twice.",
+      ""
+    ],
+    [
+      "Duplicated Words (broken)",
+      "(?i)\\b(?![a-zA-Z]+\\s+by|l |CTL and CTL[+*]|CTL, CTL[+*]|more\\s+and|sets\\s+of|that\\s+|is\\s+|may\\s+or|does\\s+or\\s+does\\s+not|neck\\s+and\\s+neck|as\\s+well\\s+as|(?:as|of|to)\\s)([a-zA-Z]+)\\s+(?!to)[a-zA-Z]+\\s+\\2\\b(?![{-])",
+      "ARG1 occurs twice.",
+      ""
+    ],
+    [
+      "Use of I.e.",
+      "I\\.e\\.",
+      "At the beginning of a sentance you should use \"That is\" rather than \"I.e.\"",
+      ""
+    ],
+    [
+      "Use of \"we could\".",
+      "\\b([Ww]e\\s+c(?:an|ould))(?!\\s+say)\\b",
+      "",
+      "In formal text, we should not use ARG1 as it implies you cannot"
+    ],
+    [
+      "No space between sentances",
+      "[a-z]\\.[A-Z](?![^\\s]*[.]tex[}])",
+      "",
+      ""
+    ],
+    [
+      "Missing hyphen after math block",
+      "{{END_MATH_CHAR}}\\s+(multinomial|Bernoulli|dimensional|binomial|probability)",
+      "",
+      "Add a hyphen before ARG1"
+    ],
+    [
+      "Paragraph should end in fullstop",
+      "[a-zA-Z0-9](?<!iffalse)(?<!maketitle)(?<!medskip)(?<!hline)(?<![A-Z]{3})(?<!{{LBS}}else)(?<!{{LBS}}fi)[ \\t]*\\n\\n",
+      "",
+      ""
+    ],
+    [
+      "Paragraph should start with capital",
+      "{{PAR}}[a-z]",
+      "",
+      ""
+    ],
+    [
+      "Paragraph starts with fullstop?",
+      "{{PAR}}\\.",
+      "",
+      ""
+    ],
+    [
+      "Place punctuation outside mathmode",
+      ".([,.:?]){{END_MATH_CHAR}}",
+      "",
+      "Move ARG1 out of math mode"
+    ],
+    [
+      "Place . after *",
+      "CTL\\.\\*",
+      "",
+      "I think you meant CTL*. rather than CTL.*"
+    ],
+    [
+      "Double dot",
+      "\\. \\.",
+      "",
+      "You probably only need one dot."
+    ],
+    [
+      "Remove space before punctuation",
+      "(?<!{{LBS}})\\b[a-zA-Z0-9]+\\s+(?:{{LBS}}@)?([,.:;?])(?!=)",
+      "",
+      "Remove Space before ARG1 "
+    ],
+    [
+      "Remove space before punctuation[2]",
+      "(?<!{{LBS}})\\b[a-zA-Z0-9]+\\s+(['])",
+      "",
+      "Remove Space before ARG1... or perhaps you meant to use ` instead of '?"
+    ],
+    [
+      "Index entries should start with capital letters",
+      "{{LBS}}index\\{[a-z]",
+      "",
+      ""
+    ],
+    [
+      "Perhaps you mean `is that'",
+      "\\bit\\s+that\\b",
+      "",
+      ""
+    ],
+    [
+      "You should use Var()",
+      "{{LBS}}[Vv]ari\\[|{{LBS}}sigma\\(|{{LBS}}sigma\\^{2}[}]\\(|{{LBS}}cov\\[",
+      "\\bit\\s+that\\b",
+      ""
+    ],
+    [
+      "Amiguous Terminology",
+      "\\b(and\\s+but|a\\s+the\\b|the\\s+of|[Bb]inomial\\s+varia|are\\s+is\\b|will\\s+equal|that\\s+the\\s+all|an\\s+impartial\\s+culture|\\ba\\s+one\\s+of\\b)",
+      "",
+      "ARG1 is a little odd."
+    ],
+    [
+      "Use of pretty ref with out prefix",
+      "{{LBS}}prettyref\\{[^}]*\\}",
+      "",
+      "If you are using prettyref to cross reference a chapter the label should start with \"cha:\", if the label is fore a section the label should start with \"sec:\" etc."
+    ],
+    [
+      "NOT IS is odd.",
+      "\\bnot\\s+is\\b",
+      "",
+      "Maybe you meant \"is not\"?"
+    ],
+    [
+      "Lemma label without 'lem:'",
+      "{{LBS}}begin\\{lem\\}\\s+{{LBS}}label\\{(?!lem:)",
+      "",
+      "If you start a Lemma label without lem, prettyref can get confused."
+    ],
+    [
+      "Corollary label without 'cor:'",
+      "{{LBS}}begin\\{cor\\}\\s+{{LBS}}label\\{(?!cor:)",
+      "",
+      "If you start a Lemma label without lem, prettyref can get confused."
+    ],
+    [
+      "Theorem label without 'thm:'",
+      "{{LBS}}begin\\{thm\\}\\s+{{LBS}}label\\{(?!thm:)",
+      "",
+      "If you start a Lemma label without lem, prettyref can get confused."
+    ],
+    [
+      "Lack of Lemma prefix",
+      "\\b(?!Lemma|and)[^\\s~]+[~\\s]+{{LBS}}ref\\{lem:",
+      "",
+      ""
+    ],
+    [
+      "Lack of Corollary prefix",
+      "\\b(?!Corollary)[^~\\s]+[~\\s]+{{LBS}}ref\\{cor:",
+      "",
+      ""
+    ],
+    [
+      "Lack of Theorem prefix",
+      "\\b(?!Theorem|and)[^~\\s]+[~\\s]+{{LBS}}ref\\{thm:",
+      "",
+      ""
+    ],
+    [
+      "Lack of Definition prefix",
+      "\\b(?!Definition|and)[^~\\s]+[~\\s]+{{LBS}}ref\\{def:",
+      "",
+      ""
+    ],
+    [
+      "Use of lowercase reference",
+      "(lemma|theorem|table|figure|corollary)[~ ]{{LBS}}ref\\b",
+      "",
+      "The first letter of ARG1 should be capitalised to adhere to the LaTeX \\prettyref standard."
+    ],
+    [
+      "lemma/theorem occurs before prettyref",
+      "(emma|heorem|xamples|Example|orollary|efinition)\\s+{{LBS}}prettyref\\b",
+      "",
+      "It is safer to use a Formatted Reference (i.e. \\prettyref), rather than manually format references, as Formatted References will automatically change the reference if you change the object being referenced (e.g. from a lemma to a theorem)."
+    ],
+    [
+      "Empty Footnote",
+      "{{LBS}}footnote\\{(\\s|\\n)*\\}",
+      "",
+      "There is a footnote with nothing in it. Perhaps you should remove it"
+    ],
+    [
+      "Attempt to Pluralize a name",
+      "(\\bHilbert|Gentzen|Xu|Priorean|Schwendimann|Achilles|Dam|Mally|Kant|Kamp|Burgess|Rabin|Broersen|Johnsson|Saari|Nanson|Condorcet|Borda|Fishburn|Laslier|Dodgson|Tideman|Pratt|Lei|Clarke|Emerson|Sistla|Wolper|Vardi|Schnoebelen|Turing|Broesen|Intel|Until|Since|Hodkinson|Dedekind|Borel|Achilles|Zeno|Zenoness|Leonard|Stavi|Dedekind|Planck|Hintikka|Lange|Waldmeister|Moore|Reynolds|Fisher|Wright|Muller|Belnap|Perloff)s\\b",
+      "",
+      "ARG1 is someone's name, so the plural (s) doesn't really make sense. Maybe you meant the possessive ('s) instead?"
+    ],
+    [
+      "Unraised 'c' in 'Mc'",
+      "\\b(?<![/,])(?<!cite{})Mc[A-Z]",
+      "",
+      "The 'c' in 'Mc' should be a raised character."
+    ],
+    [
+      "Section ending with '.'",
+      "{{LBS}}(?:sub)*section\\{[^}]*[.]\\}\\s*(?:\\n|$|{{LBS}})",
+      "",
+      "It is unusual to have a section that ends with '.'"
+    ],
+    [
+      "Forge(t) to",
+      "\\bforge\\s+to\\b",
+      "",
+      "Perhaps you meant \"Forget to\"."
+    ],
+    [
+      "May the",
+      "\\b[Ww]e\\s+may\\s+the\\b",
+      "",
+      "This is odd."
+    ],
+    [
+      "$ discuss",
+      "{{END_MATH_CHAR}} [Dd]iscuss",
+      "",
+      "This is odd."
+    ],
+    [
+      "He vs the",
+      "\\b[Hh]e (?:full)?path\\b",
+      "Perhaps you meant \"the\".",
+      ""
+    ],
+    [
+      "The we",
+      "\\b[Tt]he\\s+we\\b",
+      "",
+      "Perhaps you meant \"the\"."
+    ],
+    [
+      "Use of however without comma",
+      "[;.]\\s+[Hh]owever(?!,)",
+      "",
+      "Some suggest only using however to start a sentance, or afer a semi-colon, and that it should be followed with a comma."
+    ],
+    [
+      "Use of Joining word",
+      "[;.]\\s+(?:Hence|Also|Additionally|Likewise)(?!,)",
+      "",
+      "Does this continue on from previous sentance? If so probably add a comma"
+    ],
+    [
+      "Is be",
+      "\\b[Ii]s\\s+be\\b",
+      "",
+      "use of Is and be together usually indicates trouble."
+    ],
+    [
+      "It represent",
+      "\\b[Ii]t\\s+represent\\b",
+      "",
+      "Perhaps you meant \"It representS\"?"
+    ],
+    [
+      "Space before punctuation",
+      "{{END_MATH_CHAR}}\\s+(?:{{LBS}}[@])?([;.,])",
+      "",
+      "There is a space before the end of the mathblock and 'ARG1'"
+    ],
+    [
+      "Forces what?",
+      "{{END_MATH_CHAR}}[({]{{LBS}}forces",
+      "",
+      "In modal logic there should be something other than a bracket before \\forces"
+    ],
+    [
+      "Be is",
+      "\\b[Bb]e\\s+is\\b",
+      "",
+      "use of Is and be together usually indicates trouble."
+    ],
+    [
+      "Inappropriate Title Capital",
+      "[a-zA-Z0-9](?<!{{LBS}}item)(?<![A-Z]{3})(?<!{{LBS}}em)(?<!{{LBS}}fi)\\s+(A|An|The|For|And|Nor|But|Or|Yet|For|From|Of|On|To|With)\\b\\s+[a-zA-Z0-9]{{NOTINMATH}}",
+      "",
+      "Used a capital for ARG1, but not first or last word in a title."
+    ],
+    [
+      "Personal rule - I probably mean Spatial",
+      "pacial",
+      "",
+      ""
+    ],
+    [
+      "Personal rule - I probably through",
+      "(path|paths|sigma.|pi.)(?:\\n|\\s)though",
+      "",
+      ""
+    ],
+    [
+      "Personal rule - structure OR CTL-model",
+      "tructure CTL-model",
+      "",
+      ""
+    ],
+    [
+      "Personal rule - I probably mean abbreviation",
+      "\\bshort[- ]?hand\\b",
+      "",
+      ""
+    ],
+    [
+      "Personal rule - Replace log with ln",
+      "{{LBS}}log\\b",
+      "",
+      "I use ln rather than log where possible."
+    ],
+    [
+      "We call ... is a",
+      "\\bwe call .*\\n?.* is a\\b",
+      "",
+      "Use 'we call' or 'is a', not both"
+    ],
+    [
+      "A One",
+      "\\ba\\s+one\\b",
+      "",
+      "Sentances like 'if a one or fewer ...' are odd"
+    ],
+    [
+      "Can be express",
+      "\\b[cC]an\\s+be\\s+express\\b",
+      "",
+      "Maybe you mean 'can be expressed'?"
+    ],
+    [
+      "This paper(')s",
+      "\\b[Tt]his\\s+papers\\b",
+      "",
+      "Maybe you mean \"This paper's\""
+    ],
+    [
+      "The never",
+      "\\b[Tt]he\\s+never\\b",
+      "",
+      "Maybe you mean \"The [noun] never\""
+    ],
+    [
+      "The at",
+      "\\b[Tt]he\\s+at\\b",
+      "",
+      "Maybe you mean \"The [noun] at\""
+    ],
+    [
+      "Personal rule - moral",
+      "\\b[Mm]oral(?!\\s+agent)",
+      "",
+      "Use failure free instead"
+    ],
+    [
+      "We expect",
+      "[Ww]e\\s+(?:also\\s+)?expect",
+      "",
+      "'We expect' is too weak for a scientific paper. Frame this as a conjecture or use 'It is easy to show that'"
+    ],
+    [
+      "Axiom[i->a]tisation",
+      "\\b[Aa]xiomiti[zs]ation\\b",
+      "",
+      "Replace the first i with an a."
+    ],
+    [
+      "Classic[al] Logic",
+      "\\b[Cc]lassic\\s+[Ll]ogic\\b",
+      "",
+      "Did you mean Classical Logic (also called Propositional Calculus)?"
+    ],
+    [
+      "Space before )",
+      "{{END_MATH_CHAR}}[^{{START_MATH_CHAR}}]*\\s\\)",
+      "",
+      ""
+    ],
+    [
+      "Converge [to] the",
+      "onverge\\s+the.",
+      "",
+      ""
+    ],
+    [
+      "use or used",
+      "\\b[Uu]se\\s+[^.;]*is used\\b",
+      "",
+      "You used both 'use' and 'is used' in the same sentance. This may indicate that you tried to do something silly like 'We use X is used to Y'."
+    ],
+    [
+      "Lonely End Proof",
+      "{{PAR}}{{LBS}}end\\{proof\\}",
+      "",
+      "You should probably delete the paragraph break before the \\end{proof}"
+    ],
+    [
+      "Paragraph following COLON",
+      ":\\s*{{PAR}}\\s*{{LBS}}begin\\{(?:eqnarray|align)",
+      "",
+      "You should probably delete the paragraph break after the COLON"
+    ],
+    [
+      "Personal rule - remove the i",
+      "[Aa]utomation",
+      "",
+      ""
+    ],
+    [
+      "no full stop at end of definition",
+      "[a-zA-Z0-9{{END_MATH_CHAR}}]\\s*{{LBS}}end\\{definition\\}",
+      "",
+      ""
+    ],
+    [
+      "no full stop at end of .*",
+      "[a-zA-Z0-9{{END_MATH_CHAR}}](?:\\s|%[^\\n]*)*{{LBS}}end\\{(?!algorithmic|enum|item|array|eqnarray|align|document|proof)",
+      "",
+      ""
+    ]
+  ]
+}

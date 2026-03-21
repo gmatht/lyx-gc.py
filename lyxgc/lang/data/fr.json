@@ -1,0 +1,418 @@
+{
+  "custom_rules": [
+    [
+      "Empty mathblock",
+      "{{START_MATH_CHAR}}  *{{END_MATH_CHAR}}",
+      "",
+      ""
+    ],
+    [
+      "Macro sans {}.",
+      "[^{{LBS}}]{{LBS}}[a-zA-Z0-9]+?CTL[a-zA-Z0-9]+\\s",
+      "",
+      "Une {} est probablement nécessaire après la macro pour ne pas supprimer l'espace"
+    ],
+    [
+      "Le second mot de la phrase commence par une majuscule.",
+      "[.]\\s+[a-zA-Z0-9]+\\s+(?!\\b(Monsieur|Madame|M\\.|Mme\\.|(Lun|Mar|Mecre|Jeu|Vendre)di|Dimanche|Isabelle|CTL|PSPACE|Emerson|Katoen|Clarke|Baier|Kripke)\\b)[A-Z]",
+      "",
+      "Quand le second mot possède une majuscule, c'est généralement une erreur."
+    ],
+    [
+      "pas de point d'arrêt après une citation en fin de paragraphe",
+      "[a-zA-Z0-9]\\s+{{LBS}}cite\\{[^}]*\\}\\s*{{PAR}}",
+      "",
+      "Je pense qu'un arrêt total manque ici."
+    ],
+    [
+      "Espace après citation",
+      "{{LBS}}cite\\{[^}]*\\}[a-zA-Z0-9]",
+      "",
+      ""
+    ],
+    [
+      "Espace avant citation",
+      "[a-zA-Z0-9]{{LBS}}cite\\{[^}]*\\}",
+      "",
+      ""
+    ],
+    [
+      "Le soulignement commence trop tôt",
+      "{{LBS}}uline\\{\\s",
+      "",
+      ""
+    ],
+    [
+      "Le soulignement fini trop loin",
+      "{{LBS}}uline\\{[^}]\\s\\}",
+      "",
+      ""
+    ],
+    [
+      "Espace avant note de bas de page",
+      "(?: %\\s+| ){{LBS}}footnote\\{",
+      "",
+      ""
+    ],
+    [
+      "Point/Virgule après note de bas de page",
+      "{{LBS}}footnote{{RECURSIVE_BRACE}}[.,]",
+      "",
+      "Si la note de bas de page fait référence à la phrase complète, elle doit se situer après la phrase en question."
+    ],
+    [
+      "Ponctuation double",
+      "(?<!{{LBS}})[,.:;]\\s+[,.:;]",
+      "",
+      ""
+    ],
+    [
+      "Utilisation d'une implication dans une preuve",
+      "(?:(?:{{LBS}}left)?\\({{LBS}}implies(?:{{LBS}}right)?\\)|\\(.{{LBS}}implies.\\))",
+      "",
+      "L'utilisation de (\\implies) engendre une espace indésirable entre la fléche et les crochets. Pour indiquer la direction d'une preuve, il est préférable d'utiliser '(\\Longrightarrow)'"
+    ],
+    [
+      "Pas d'espace après un référencement",
+      "ref\\{[^}]*\\}[a-zA-Z0-9]",
+      "",
+      ""
+    ],
+    [
+      "Un seul caractère",
+      "\\s[b-z]\\s(?![&{{LBS}}])(?![^{{START_MATH_CHAR}}]*[_{{END_MATH_CHAR}}])",
+      "",
+      "Un caractère unique n'a, a priori, pas de sens ?"
+    ],
+    [
+      "Majuscule au milieu d'une phrase",
+      "(?!(?:en|du|de|avec)\\b)(?:\\b(?<!{{LBS}})[a-z]+\\b|ref\\{[^{}]*\\}),?:?(?:(%.*\\n)|\\s)+(?!\\b(Monsieur|Madame|M\\.|Mme\\.|(Lun|Mar|Mecre|Jeu|Vendre)di|Dimanche|Isabelle|CTL|PSPACE|Emerson|Katoen|Clarke|Baier|Kripke)\\b)([A-Z][a-zA-Z0-9]*)",
+      "erase:(?:{{LBS}}(?:chapter|(?:sub)*section[*]?{{RECURSIVE_BRACE}})|{{MATHBLOCK}})",
+      "ARG2~CAP, 1;ARG1, 2;ARG2"
+    ],
+    [
+      "Block Begin/End vide",
+      "{{LBS}}begin\\{[^}]+\\}\\s*(?:{{LBS}}par)?{{LBS}}end\\{[^}]*\\}",
+      "",
+      ""
+    ],
+    [
+      "La preuve ne démarre pas sur une nouvelle ligne",
+      ".+{{LBS}}begin\\{proof\\}",
+      "Il semble que le lemme/théorème et sa preuve soit sur la même ligne.\n(utilisez la touche \"Entrée\" dans LyX pour en ajouter une)",
+      ""
+    ],
+    [
+      "Pas d'espace entre une référence et le texte à sa gauche",
+      "[a-zA-Z0-9]{{LBS}}(pretty)?ref\\{",
+      "Peut-être souhaitez-vous une espace insécable\n('~' ou Ctrl-Espace dans LyX)\n entre une référence et le texte ?",
+      ""
+    ],
+    [
+      "Pas d'espace entre une référence et le texte à sa droite",
+      "^.{{LBS}}(?:pretty)?ref\\{",
+      "Perhaps you should add a non-breaking space \n('~' or Ctrl-Space in the LyX GUI)\n between the text and the reference?",
+      ""
+    ],
+    [
+      "Trop de points",
+      "[.]\\s+[.]",
+      "Pourquoi avoir plusieurs points '.' ?",
+      ""
+    ],
+    [
+      "Trop de points",
+      "[.][ ][.]",
+      "Pourquoi avoir plusieurs points '.' ?",
+      ""
+    ],
+    [
+      "Trop de points",
+      "^.\\s+[A-Z]",
+      "Pourquoi avoir plusieurs points '.' ?",
+      ""
+    ],
+    [
+      "Trop de points",
+      "[.][ ][.]",
+      "Pourquoi avoir plusieurs points '.' ?",
+      ""
+    ],
+    [
+      "espace entre la citation et la ponctuation",
+      "{{LBS}}cite\\{[^{}]*\\}\\s+[,.]",
+      "",
+      ""
+    ],
+    [
+      "Espace manquant entre point et majuscule",
+      "[.][A-Z][^.]",
+      "",
+      "Un espace est probablement manquant entre le . et la majuscule ?"
+    ],
+    [
+      "Espace manquant entre point et mot",
+      "[.][a-z]+[ \\t]",
+      "",
+      "Un espace est probablement manquant entre le . et le mot ?"
+    ],
+    [
+      "Mauvaise usage des guillements",
+      "{{LBS}}textquotedbl\\{[}]",
+      "",
+      "Il faut plutôt utiliser `` ou '' à la place de \\textquotedbl{} ou '\""
+    ],
+    [
+      "Espace entre block de math et ponctuation",
+      "{{MATHBLOCK}}\\s+[,.]",
+      "",
+      "Pourquoi une majuscule est placé après un block de math ?"
+    ],
+    [
+      "Majuscule après block de math",
+      "[a-zA-Z0-9] {{MATHBLOCK}} (?!\\b(Monsieur|Madame|M\\.|Mme\\.|(Lun|Mar|Mecre|Jeu|Vendre)di|Dimanche|Isabelle|CTL|PSPACE|Emerson|Katoen|Clarke|Baier|Kripke)\\b)(?!Robustly)[A-Z]",
+      "",
+      "Pourquoi se trouve une majuscule après un block de math?"
+    ],
+    [
+      "Signe égal '=' en dehors d'un block de math",
+      "{{MATHBLOCK}}\\s*=\\s*{{MATHBLOCK}}",
+      "",
+      "Le signe égal '=' devrait peut-être se trouver à l'intérieur du block de math ?"
+    ],
+    [
+      "Pas d'espace avant un block de math",
+      "[a-zA-Z0-9]{{START_MATH_CHAR}}(?!_|\\^|{{LBS}}dots)",
+      "",
+      ""
+    ],
+    [
+      "Pas d'espace avant une citation",
+      "[^\\s(~]{{LBS}}cite",
+      "",
+      ""
+    ],
+    [
+      "Majuscule après virgule",
+      ",\\s*(?!b|Hilbert|Gentzen|Coomb|Hare|Marquis|Khachian|Coomb|Hare\\b|Marquis\\b|Khachian\\b|Dominating\\s+Set\\b|Impartial\\s+Culture\\b)[A-Z][a-z]",
+      "Supprimer la majuscule après la virgule ARG1",
+      ""
+    ],
+    [
+      "Majuscule inattendue",
+      "[^.\\n?:}](?<![.]\\'\\')(?<![.]\\')(?<![.]\")\\s+(?!(?:Isabelle|CTL|PSPACE|Emerson|Katoen|Clarke|Baier|Kripke)\\b)[A-Z]",
+      "Supprimez la majuscule",
+      ""
+    ],
+    [
+      "La note de bas de page manque un point",
+      "[a-zA-Z0-9,]\\s*{{LBS}}footnote{{RECURSIVE_BRACE}}\\s*[A-Z]",
+      "",
+      ""
+    ],
+    [
+      "La note de bas de page manque un point",
+      "[a-zA-Z0-9,](\\s|%)*{{LBS}}footnote{{RECURSIVE_BRACE}}\\s*[A-Z]",
+      "",
+      ""
+    ],
+    [
+      "Pas d'espace après block de math",
+      "(?!..sim){{MATHBLOCK}}(?<!dots.)(?!s\\s)[a-zA-Z0-9]",
+      "..sim",
+      ""
+    ],
+    [
+      "Pas d'espace avant une macro",
+      "[a-zA-Z0-9]{{MACROBLOCK}}",
+      "",
+      ""
+    ],
+    [
+      "Pas d'espace après une macro",
+      "{{MACROBLOCK}}[a-zA-Z0-9]",
+      "",
+      ""
+    ],
+    [
+      "Un(e) utilisé avec un pluriel",
+      "\\b(Un|Une)\\s+sequences\\b",
+      "",
+      ""
+    ],
+    [
+      "Utilisation de : dans le mode math",
+      "{{START_MATH_CHAR}}[^{{END_MATH_CHAR}}]*(?<!{{LBS}})[a-zA-Z]:",
+      "",
+      "LaTeX pense qu'un ':' dans le mode math signifie une division, utilisez plutôt \\colon si vous souhaitez définir une fonction."
+    ],
+    [
+      "Fraction disgracieuse",
+      "([0-9])/([0-9])(?!n[}])(?!_home)",
+      "erase:{{LBS}}url{{RECURSIVE_BRACE}}",
+      "Utilisez \\nicefrac{ARG1}{ARG2} à la place."
+    ],
+    [
+      "Trop de zéros sans séparateur",
+      "(?<![0-9.])0000(?![^\\s]*[.]tex[}])",
+      "",
+      "Une virgule ou une espace fine est manquante"
+    ],
+    [
+      "Mot dupliqué",
+      "(?i)\\b([a-zA-Z]+)\\b[,.;]?\\s+\\b\\2\\b{{NOTINMATH}}",
+      "ARG1 apparaît deux fois.",
+      ""
+    ],
+    [
+      "Un paragraphe doit se terminer par un point",
+      "[a-zA-Z0-9](?<!iffalse)(?<!maketitle)(?<!medskip)(?<!hline)(?<![A-Z]{3})(?<!{{LBS}}else)(?<!{{LBS}}fi)[ \\t]*\\n\\n",
+      "",
+      ""
+    ],
+    [
+      "Un paragraphe doit commencer par une majuscule",
+      "{{PAR}}[a-z]",
+      "",
+      ""
+    ],
+    [
+      "Paragraphe démarrant par un point ?",
+      "{{PAR}}\\.",
+      "",
+      ""
+    ],
+    [
+      "Ponctuation à l'intérieur du mode math",
+      ".([,.:?]){{END_MATH_CHAR}}",
+      "",
+      "Déplacez ARG1 en dehors du mode math"
+    ],
+    [
+      "Deux points",
+      "\\. \\.",
+      "",
+      "Un seul point suffit probablement."
+    ],
+    [
+      "Ajouter une espace avant ponctuation",
+      "(?<!{{LBS}})\\b[a-zA-Z0-9]+(?:{{LBS}}@)?([;?!]|:(?![a-zA-Z]))(?!=)",
+      "",
+      "Ajouter une espace avant ARG1"
+    ],
+    [
+      "Supprimer une espace avant punctuation",
+      "(?<!{{LBS}})\\b[a-zA-Z0-9]+\\s+(['])",
+      "",
+      "Supprimez l'espace avant ARG1... ou peut-être souhaitez-vous «`» au lieu de «'» ?"
+    ],
+    [
+      "Les entrées de l'index commencent par une majuscule",
+      "{{LBS}}index\\{[a-z]",
+      "",
+      ""
+    ],
+    [
+      "Vous devriez utiliser Var()",
+      "{{LBS}}[Vv]ari\\[|{{LBS}}sigma\\(|{{LBS}}sigma\\^{2}[}]\\(|{{LBS}}cov\\[",
+      "\\bit\\s+that\\b",
+      ""
+    ],
+    [
+      "Utilisation de prettyref sans préfixe",
+      "{{LBS}}prettyref\\{[^}]*\\}",
+      "",
+      "Si vous utilisez prettyref pour référencer un chapitre, le label doit commencer par \"cha:\", \"sec:\" pour une section, etc."
+    ],
+    [
+      "Label «Lemme» sans «lem:»",
+      "{{LBS}}begin\\{lem\\}\\s+{{LBS}}label\\{(?!lem:)",
+      "",
+      "Si vous démarrez un label «Lemme» sans lem, prettyref peut-être confus."
+    ],
+    [
+      "Label «Corollaire» sans «cor:»",
+      "{{LBS}}begin\\{cor\\}\\s+{{LBS}}label\\{(?!cor:)",
+      "",
+      "Si vous démarrez un label «Corollaire» sans cor, prettyref peut-être confus."
+    ],
+    [
+      "Label «Théorème» sans «thm:»",
+      "{{LBS}}begin\\{thm\\}\\s+{{LBS}}label\\{(?!thm:)",
+      "",
+      "Si vous démarrez un label «Théorème sans thm, prettyref peut-être confus."
+    ],
+    [
+      "Préfixe Lemme manquant",
+      "\\b(?!Lemme|and)[^\\s~]+[~\\s]+{{LBS}}ref\\{lem:",
+      "",
+      ""
+    ],
+    [
+      "Préfixe Corollaire maquant",
+      "\\b(?!Corollaire)[^~\\s]+[~\\s]+{{LBS}}ref\\{cor:",
+      "",
+      ""
+    ],
+    [
+      "Préfixe Théorème maquant",
+      "\\b(?!Théorème|et)[^\\s~]+[~\\s]+{{LBS}}ref\\{thm:",
+      "",
+      ""
+    ],
+    [
+      "Référence en minuscule",
+      "(lemme|théorème|table|figure|corollaire)[~ ]{{LBS}}ref\\b",
+      "",
+      "La premiére lettre de ARG1 devrait être en majuscule en accord avec le standard \\prettyref LaTeX."
+    ],
+    [
+      "lemme/théorème apparaît avant prettyref",
+      "(emma|héorèm|xemples|Exemple|orollaire|éfinition)\\s+{{LBS}}prettyref\\b",
+      "",
+      "Il vaut mieux utiliser une référence formatté (i.e. \\prettyref), plutôt qu'un formattage manuel des références, parce qu'une référence formattée va automatiquement changer la référence si l'objet référencé est modifié (passage d'un lemme à un théorème par exemple)."
+    ],
+    [
+      "Note de bas de page vide",
+      "{{LBS}}footnote\\{(\\s|\\n)*\\}",
+      "",
+      "Peut-être devriez-vous la supprimer"
+    ],
+    [
+      "Section se terminant par un '.'",
+      "{{LBS}}(?:sub)*section\\{[^}]*[.]\\}\\s*(?:\\n|$|{{LBS}})",
+      "",
+      "Terminer une section avec un point n'est pas commun"
+    ],
+    [
+      "Pas d'espace avant ponctuation",
+      "{{END_MATH_CHAR}}+(?:{{LBS}}[@])?([;.,])",
+      "",
+      "Il manque un espace avant la fin du block math et 'ARG1'"
+    ],
+    [
+      "Espace avant «)»",
+      "{{END_MATH_CHAR}}[^{{START_MATH_CHAR}}]*\\s\\)",
+      "",
+      ""
+    ],
+    [
+      "Fin de preuve sans début",
+      "{{PAR}}{{LBS}}end\\{proof\\}",
+      "",
+      "Vous devriez probablement supprimer le saut de paragraphe avant \\end{proof}"
+    ],
+    [
+      "pas de point à la fin de la définition",
+      "[a-zA-Z0-9]\\s*{{LBS}}end\\{definition\\}",
+      "",
+      ""
+    ],
+    [
+      "pas de point à la fin de .*",
+      "[a-zA-Z0-9](?:\\s|%[^\\n]*)*{{LBS}}end\\{(?!algorithmic|enum|item|array|eqnarray|align|document|proof)",
+      "",
+      ""
+    ]
+  ]
+}

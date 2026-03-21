@@ -13,8 +13,9 @@ import pytest
 
 from lyxgc.engine import find_errors
 from lyxgc.lang import get_generate_error_types
-from lyxgc.lang.en import generate_error_types as generate_en
-from lyxgc.lang.fr import generate_error_types as generate_fr
+
+generate_en = get_generate_error_types("en")
+generate_fr = get_generate_error_types("fr")
 from tests.rule_triggers import TRIGGERS_EN, TRIGGERS_FR
 from tests.rule_triggers_structural import TRIGGERS_STRUCTURAL
 

@@ -1,0 +1,185 @@
+{
+  "msgs": {
+    "empty_mathblock": [
+      "Bloc matematic gol",
+      ""
+    ],
+    "macro_no_brace": [
+      "Macro fără {}",
+      "Probabil este nevoie de {} după macro."
+    ],
+    "no_fullstop_after_cite": [
+      "Fără punct după citat la sfârșitul paragrafului",
+      "Se pare că lipsește un punct."
+    ],
+    "no_space_after_cite": [
+      "Fără spațiu după citat",
+      ""
+    ],
+    "no_space_before_cite": [
+      "Fără spațiu înainte de citat",
+      ""
+    ],
+    "uline_starts_early": [
+      "Sublinierea începe prea devreme",
+      ""
+    ],
+    "uline_ends_late": [
+      "Sublinierea se termină prea târziu",
+      ""
+    ],
+    "space_before_footnote": [
+      "Spațiu înainte de notă de subsol",
+      ""
+    ],
+    "footnote_period_comma": [
+      "Punct/virgulă după notă",
+      "Dacă nota se referă la întreaga propoziție, pune-o după punct."
+    ],
+    "double_punct": [
+      "Două semne de punctuație",
+      ""
+    ],
+    "implies_in_proof": [
+      "Utilizarea \\implies în demonstrație",
+      "Folosește \\Longrightarrow pentru direcția demonstrației."
+    ],
+    "no_space_after_ref": [
+      "Fără spațiu după referință",
+      ""
+    ],
+    "single_char": [
+      "Un singur caracter",
+      "Un singur caracter nu are de obicei sens."
+    ],
+    "empty_begin_end": [
+      "Bloc begin/end gol",
+      ""
+    ],
+    "proof_not_newline": [
+      "Demonstrația nu începe pe linie nouă",
+      "Introdu separator de paragraf între teoremă și demonstrație (Enter în LyX)."
+    ],
+    "no_space_ref_left": [
+      "Fără spațiu la stânga referinței",
+      "Poate un spațiu nedespartit (~) înainte de referință?"
+    ],
+    "no_space_ref_right": [
+      "Fără spațiu la dreapta referinței",
+      "Poate un spațiu nedespartit (~) după referință?"
+    ],
+    "too_many_dots": [
+      "Prea multe puncte",
+      "De ce mai mult de un '.'?"
+    ],
+    "space_cite_punct": [
+      "Spațiu între citat și punctuație",
+      ""
+    ],
+    "space_after_period_cap": [
+      "Spațiu lipsă între punct și majusculă",
+      ""
+    ],
+    "space_after_period_word": [
+      "Spațiu lipsă între punct și cuvânt",
+      ""
+    ],
+    "textquotedbl": [
+      "Utilizare incorectă a \\textquotedbl",
+      "Folosește `` sau ''."
+    ],
+    "math_punct": [
+      "Spațiu între blocul matematic și punctuație",
+      ""
+    ],
+    "cap_after_math": [
+      "Majusculă după blocul matematic",
+      "De ce majusculă după blocul matematic?"
+    ],
+    "equals_outside_math": [
+      "Semn egal în afara blocului matematic",
+      "'=' ar trebui să fie în interiorul blocului matematic."
+    ],
+    "no_space_before_math": [
+      "Fără spațiu înainte de blocul matematic",
+      ""
+    ],
+    "footnote_no_stop": [
+      "Notă fără punct",
+      ""
+    ],
+    "no_space_after_math": [
+      "Fără spațiu după blocul matematic",
+      ""
+    ],
+    "no_space_before_macro": [
+      "Fără spațiu înainte de macro",
+      ""
+    ],
+    "no_space_after_macro": [
+      "Fără spațiu după macro",
+      ""
+    ],
+    "colon_in_math": [
+      ": în mod matematic",
+      "Folosește \\colon pentru definirea funcțiilor."
+    ],
+    "ugly_fraction": [
+      "Fracție urâtă",
+      "Folosește \\\\nicefrac{ARG1}{ARG2}."
+    ],
+    "too_many_zeros": [
+      "Prea multe zerouri fără separator",
+      ""
+    ],
+    "duplicated_word": [
+      "Cuvânt duplicat",
+      ""
+    ],
+    "para_no_stop": [
+      "Paragraful se termină fără punct",
+      ""
+    ],
+    "para_no_cap": [
+      "Paragraful începe fără majusculă",
+      ""
+    ],
+    "para_starts_dot": [
+      "Paragraful începe cu punct?",
+      ""
+    ],
+    "punct_in_math": [
+      "Punctuație în interiorul modului matematic",
+      "Mută ARG1 în afara modului matematic."
+    ],
+    "double_dot": [
+      "Două puncte",
+      "Un punct este suficient."
+    ],
+    "space_before_punct_math": [
+      "Spațiu înainte de sfârșitul blocului matematic",
+      ""
+    ],
+    "space_before_rparen": [
+      "Spațiu înainte de )",
+      ""
+    ],
+    "proof_no_begin": [
+      "\\end{proof} fără \\begin",
+      "Elimină separatorul de paragraf înainte de \\end{proof}?"
+    ],
+    "section_has_dot": [
+      "Secțiune cu punct",
+      "Secțiunile nu se termină de obicei cu punct."
+    ],
+    "no_stop_def": [
+      "Fără punct înainte de \\end{definition}",
+      ""
+    ],
+    "no_stop_end": [
+      "Fără punct înainte de \\end{...}",
+      ""
+    ]
+  },
+  "common_rules": true
+}

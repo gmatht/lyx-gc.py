@@ -7,8 +7,10 @@ import io
 import pytest
 
 from lyxgc.engine import find_errors
-from lyxgc.lang.en import generate_error_types as generate_en
-from lyxgc.lang.fr import generate_error_types as generate_fr
+from lyxgc.lang import get_generate_error_types
+
+generate_en = get_generate_error_types("en")
+generate_fr = get_generate_error_types("fr")
 
 
 # ~1 page of grammatically correct English LaTeX (academic style)

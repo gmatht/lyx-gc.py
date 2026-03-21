@@ -161,88 +161,16 @@ def resolve_language(lang: str) -> str | None:
 
 
 def get_generate_error_types(rule_module: str | None):
-    """Return generate_error_types callable for the given rule module."""
+    """Return generate_error_types callable for the given rule module.
+
+    Loads rules from JSON data files via the loader (no executable code).
+    """
     if rule_module is None:
         return _empty_error_types
 
-    # Lazy imports for all language modules
-    _MODULE_IMPORTS = {
-        "af": ("lyxgc.lang.af", "generate_error_types"),
-        "sq": ("lyxgc.lang.sq", "generate_error_types"),
-        "ar": ("lyxgc.lang.ar", "generate_error_types"),
-        "hy": ("lyxgc.lang.hy", "generate_error_types"),
-        "eu": ("lyxgc.lang.eu", "generate_error_types"),
-        "be": ("lyxgc.lang.be", "generate_error_types"),
-        "br": ("lyxgc.lang.br", "generate_error_types"),
-        "bg": ("lyxgc.lang.bg", "generate_error_types"),
-        "ca": ("lyxgc.lang.ca", "generate_error_types"),
-        "zh": ("lyxgc.lang.zh", "generate_error_types"),
-        "hr": ("lyxgc.lang.hr", "generate_error_types"),
-        "cs": ("lyxgc.lang.cs", "generate_error_types"),
-        "da": ("lyxgc.lang.da", "generate_error_types"),
-        "dv": ("lyxgc.lang.dv", "generate_error_types"),
-        "eo": ("lyxgc.lang.eo", "generate_error_types"),
-        "et": ("lyxgc.lang.et", "generate_error_types"),
-        "fa": ("lyxgc.lang.fa", "generate_error_types"),
-        "fi": ("lyxgc.lang.fi", "generate_error_types"),
-        "gl": ("lyxgc.lang.gl", "generate_error_types"),
-        "el": ("lyxgc.lang.el", "generate_error_types"),
-        "he": ("lyxgc.lang.he", "generate_error_types"),
-        "hi": ("lyxgc.lang.hi", "generate_error_types"),
-        "hu": ("lyxgc.lang.hu", "generate_error_types"),
-        "is": ("lyxgc.lang.is", "generate_error_types"),
-        "id": ("lyxgc.lang.id", "generate_error_types"),
-        "ia": ("lyxgc.lang.ia", "generate_error_types"),
-        "ga": ("lyxgc.lang.ga", "generate_error_types"),
-        "ja": ("lyxgc.lang.ja", "generate_error_types"),
-        "kk": ("lyxgc.lang.kk", "generate_error_types"),
-        "ko": ("lyxgc.lang.ko", "generate_error_types"),
-        "ku": ("lyxgc.lang.ku", "generate_error_types"),
-        "lo": ("lyxgc.lang.lo", "generate_error_types"),
-        "la": ("lyxgc.lang.la", "generate_error_types"),
-        "lv": ("lyxgc.lang.lv", "generate_error_types"),
-        "lt": ("lyxgc.lang.lt", "generate_error_types"),
-        "dsb": ("lyxgc.lang.dsb", "generate_error_types"),
-        "ms": ("lyxgc.lang.ms", "generate_error_types"),
-        "mr": ("lyxgc.lang.mr", "generate_error_types"),
-        "mn": ("lyxgc.lang.mn", "generate_error_types"),
-        "nb": ("lyxgc.lang.nb", "generate_error_types"),
-        "nn": ("lyxgc.lang.nn", "generate_error_types"),
-        "oc": ("lyxgc.lang.oc", "generate_error_types"),
-        "pl": ("lyxgc.lang.pl", "generate_error_types"),
-        "ro": ("lyxgc.lang.ro", "generate_error_types"),
-        "ru": ("lyxgc.lang.ru", "generate_error_types"),
-        "se": ("lyxgc.lang.se", "generate_error_types"),
-        "sa": ("lyxgc.lang.sa", "generate_error_types"),
-        "gd": ("lyxgc.lang.gd", "generate_error_types"),
-        "sr": ("lyxgc.lang.sr", "generate_error_types"),
-        "sk": ("lyxgc.lang.sk", "generate_error_types"),
-        "sl": ("lyxgc.lang.sl", "generate_error_types"),
-        "sv": ("lyxgc.lang.sv", "generate_error_types"),
-        "ta": ("lyxgc.lang.ta", "generate_error_types"),
-        "te": ("lyxgc.lang.te", "generate_error_types"),
-        "th": ("lyxgc.lang.th", "generate_error_types"),
-        "tr": ("lyxgc.lang.tr", "generate_error_types"),
-        "tk": ("lyxgc.lang.tk", "generate_error_types"),
-        "uk": ("lyxgc.lang.uk", "generate_error_types"),
-        "hsb": ("lyxgc.lang.hsb", "generate_error_types"),
-        "ur": ("lyxgc.lang.ur", "generate_error_types"),
-        "vi": ("lyxgc.lang.vi", "generate_error_types"),
-        "cop": ("lyxgc.lang.cop", "generate_error_types"),
-        "syc": ("lyxgc.lang.syc", "generate_error_types"),
-        "en": ("lyxgc.lang.en", "generate_error_types"),
-        "fr": ("lyxgc.lang.fr", "generate_error_types"),
-        "de": ("lyxgc.lang.de", "generate_error_types"),
-        "es": ("lyxgc.lang.es", "generate_error_types"),
-        "it": ("lyxgc.lang.it", "generate_error_types"),
-        "pt": ("lyxgc.lang.pt", "generate_error_types"),
-        "nl": ("lyxgc.lang.nl", "generate_error_types"),
-        "generic": ("lyxgc.lang.generic", "generate_error_types"),
-    }
+    from .loader import load_language
 
-    if rule_module in _MODULE_IMPORTS:
-        mod_path, attr = _MODULE_IMPORTS[rule_module]
-        import importlib
-        mod = importlib.import_module(mod_path)
-        return getattr(mod, attr)
-    return _empty_error_types
+    def _generate_error_types() -> list:
+        return load_language(rule_module)
+
+    return _generate_error_types

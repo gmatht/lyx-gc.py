@@ -1,0 +1,234 @@
+{
+  "msgs": {
+    "empty_mathblock": [
+      "Bloque matemático vacío",
+      ""
+    ],
+    "macro_no_brace": [
+      "Macro sin {}",
+      "Probablemente hace falta {} después de la macro."
+    ],
+    "no_fullstop_after_cite": [
+      "Falta punto después de cita al final del párrafo",
+      "Parece que falta un punto."
+    ],
+    "no_space_after_cite": [
+      "Sin espacio después de cita",
+      ""
+    ],
+    "no_space_before_cite": [
+      "Sin espacio antes de cita",
+      ""
+    ],
+    "uline_starts_early": [
+      "El subrayado empieza demasiado pronto",
+      ""
+    ],
+    "uline_ends_late": [
+      "El subrayado termina demasiado tarde",
+      ""
+    ],
+    "space_before_footnote": [
+      "Espacio antes de nota al pie",
+      ""
+    ],
+    "footnote_period_comma": [
+      "Punto/coma después de nota al pie",
+      "Si la nota se refiere a la frase completa, debe ir después del punto."
+    ],
+    "double_punct": [
+      "Puntuación doble",
+      ""
+    ],
+    "implies_in_proof": [
+      "Uso de \\implies en prueba",
+      "Use \\Longrightarrow para la dirección de la prueba."
+    ],
+    "no_space_after_ref": [
+      "Sin espacio después de referencia",
+      ""
+    ],
+    "single_char": [
+      "Un solo carácter",
+      "Un carácter único no tiene sentido."
+    ],
+    "empty_begin_end": [
+      "Bloque begin/end vacío",
+      ""
+    ],
+    "proof_not_newline": [
+      "La prueba no empieza en nueva línea",
+      "Inserte salto de párrafo entre el teorema y la prueba (Enter en LyX)."
+    ],
+    "no_space_ref_left": [
+      "Sin espacio antes de referencia",
+      "¿Quizás un espacio de no separación (~) antes de la referencia?"
+    ],
+    "no_space_ref_right": [
+      "Sin espacio después de referencia",
+      "¿Quizás un espacio de no separación (~) después de la referencia?"
+    ],
+    "too_many_dots": [
+      "Demasiados puntos",
+      "¿Por qué varios '.'?"
+    ],
+    "space_cite_punct": [
+      "Espacio entre cita y puntuación",
+      ""
+    ],
+    "space_after_period_cap": [
+      "Falta espacio entre punto y mayúscula",
+      ""
+    ],
+    "space_after_period_word": [
+      "Falta espacio entre punto y palabra",
+      ""
+    ],
+    "textquotedbl": [
+      "Uso incorrecto de \\textquotedbl",
+      "Use `` o ''."
+    ],
+    "math_punct": [
+      "Espacio entre bloque matemático y puntuación",
+      ""
+    ],
+    "cap_after_math": [
+      "Mayúscula después de bloque matemático",
+      "¿Por qué hay mayúscula después del bloque matemático?"
+    ],
+    "equals_outside_math": [
+      "Signo igual fuera de bloque matemático",
+      "El '=' debería estar dentro del bloque matemático."
+    ],
+    "no_space_before_math": [
+      "Sin espacio antes de bloque matemático",
+      ""
+    ],
+    "footnote_no_stop": [
+      "Nota al pie sin punto",
+      ""
+    ],
+    "no_space_after_math": [
+      "Sin espacio después de bloque matemático",
+      ""
+    ],
+    "no_space_before_macro": [
+      "Sin espacio antes de macro",
+      ""
+    ],
+    "no_space_after_macro": [
+      "Sin espacio después de macro",
+      ""
+    ],
+    "colon_in_math": [
+      ": en modo matemático",
+      "Use \\colon para definir funciones."
+    ],
+    "ugly_fraction": [
+      "Fracción poco elegante",
+      "Use \\\\nicefrac{ARG1}{ARG2}."
+    ],
+    "too_many_zeros": [
+      "Demasiados ceros sin separador",
+      ""
+    ],
+    "duplicated_word": [
+      "Palabra duplicada",
+      ""
+    ],
+    "para_no_stop": [
+      "El párrafo termina sin punto",
+      ""
+    ],
+    "para_no_cap": [
+      "El párrafo empieza sin mayúscula",
+      ""
+    ],
+    "para_starts_dot": [
+      "¿El párrafo empieza con punto?",
+      ""
+    ],
+    "punct_in_math": [
+      "Puntuación dentro de modo matemático",
+      "Mueva ARG1 fuera del modo matemático."
+    ],
+    "double_dot": [
+      "Dos puntos",
+      "Un solo punto suele bastar."
+    ],
+    "space_before_punct_math": [
+      "Espacio antes del final del bloque matemático",
+      ""
+    ],
+    "space_before_rparen": [
+      "Espacio antes de )",
+      ""
+    ],
+    "proof_no_begin": [
+      "\\end{proof} sin \\begin",
+      "¿Eliminar salto de párrafo antes de \\end{proof}?"
+    ],
+    "section_has_dot": [
+      "Section con punto",
+      "Las secciones no suelen terminar con punto."
+    ],
+    "no_stop_def": [
+      "Sin punto antes de \\end{definition}",
+      ""
+    ],
+    "no_stop_end": [
+      "Sin punto antes de \\end{...}",
+      ""
+    ]
+  },
+  "simple_rules": [
+    [
+      "haber si",
+      "a ver si"
+    ],
+    [
+      "haber que",
+      "a ver qué"
+    ],
+    [
+      "valla",
+      "vaya"
+    ],
+    [
+      "baya",
+      "vaya"
+    ],
+    [
+      "haiga",
+      "haya"
+    ],
+    [
+      "andé",
+      "anduve"
+    ],
+    [
+      "concerteza",
+      "con certeza"
+    ],
+    [
+      "a unque",
+      "aunque"
+    ],
+    [
+      "sin enbargo",
+      "sin embargo"
+    ],
+    [
+      "tambien",
+      "también"
+    ],
+    [
+      "a parte",
+      "aparte"
+    ],
+    [
+      "en base a",
+      "con base en"
+    ]
+  ]
+}

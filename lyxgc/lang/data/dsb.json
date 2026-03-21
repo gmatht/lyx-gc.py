@@ -1,0 +1,185 @@
+{
+  "msgs": {
+    "empty_mathblock": [
+      "Prozny matematiski blok",
+      ""
+    ],
+    "macro_no_brace": [
+      "Makro bźez {}",
+      "Za makrom jo snaź {} trěbny."
+    ],
+    "no_fullstop_after_cite": [
+      "Žedna dypka za citatom na kóńcu wótstavka",
+      "Dypka móžo felerowaś."
+    ],
+    "no_space_after_cite": [
+      "Žedne prozny městno za citatom",
+      ""
+    ],
+    "no_space_before_cite": [
+      "Žedne prozny městno pśed citatom",
+      ""
+    ],
+    "uline_starts_early": [
+      "Pódśěžanje zachopi se pśecej pśed casom",
+      ""
+    ],
+    "uline_ends_late": [
+      "Pódśěžanje kóńcy se pśecej pózdźej",
+      ""
+    ],
+    "space_before_footnote": [
+      "Prozny městno pśed pódrječkom",
+      ""
+    ],
+    "footnote_period_comma": [
+      "Dypka/smycka za pódrječkom",
+      "Jolic pódrječk referěrujo na cełu sadowu, staj jo za dypku."
+    ],
+    "double_punct": [
+      "Dwójne interpunkcija",
+      ""
+    ],
+    "implies_in_proof": [
+      "Wužywanje \\implies w pśedłogach",
+      "Za směr pśedłoga wužyj \\Longrightarrow."
+    ],
+    "no_space_after_ref": [
+      "Žedne prozny městno za referenciju",
+      ""
+    ],
+    "single_char": [
+      "Jaden symbol",
+      "Jaden symbol zwětšyna wóznam njama."
+    ],
+    "empty_begin_end": [
+      "Prozny begin/end blok",
+      ""
+    ],
+    "proof_not_newline": [
+      "Pśedłog njezachopi se na nowej smužce",
+      "Zapódaś pśetergnjenje wótstavka mjaz twarju a pśedłogom (Enter w LyX)."
+    ],
+    "no_space_ref_left": [
+      "Žedne prozny městno na lawej boku referencyje",
+      "Snaź njeropśěgnujobne prozny městno (~) pśed referenciju?"
+    ],
+    "no_space_ref_right": [
+      "Žedne prozny městno na prawej boku referencyje",
+      "Snaź njeropśěgnujobne prozny městno (~) za referenciju?"
+    ],
+    "too_many_dots": [
+      "Pśecej wjele dypkow",
+      "Cogodla wěcej ako jadna '.'?"
+    ],
+    "space_cite_punct": [
+      "Prozny městno mjaz citatom a interpunkciju",
+      ""
+    ],
+    "space_after_period_cap": [
+      "Falujuce prozny městno mjaz dypku a wjelike pismik",
+      ""
+    ],
+    "space_after_period_word": [
+      "Falujuce prozny městno mjaz dypku a słowo",
+      ""
+    ],
+    "textquotedbl": [
+      "Wopacne wužywanje \\textquotedbl",
+      "Wužyj `` abo ''."
+    ],
+    "math_punct": [
+      "Prozny městno mjaz matematiskim blokom a interpunkciju",
+      ""
+    ],
+    "cap_after_math": [
+      "Wjelike pismik za matematiskim blokom",
+      "Cogodla wjelike pismik za matematiskim blokom?"
+    ],
+    "equals_outside_math": [
+      "Znamuško rowne zwenka matematiskego bloka",
+      "'=' by měł we wnętrnosći matematiskego bloka byś."
+    ],
+    "no_space_before_math": [
+      "Žedne prozny městno pśed matematiskim blokom",
+      ""
+    ],
+    "footnote_no_stop": [
+      "Pódrječk bźez dypki",
+      ""
+    ],
+    "no_space_after_math": [
+      "Žedne prozny městno za matematiskim blokom",
+      ""
+    ],
+    "no_space_before_macro": [
+      "Žedne prozny městno pśed makrom",
+      ""
+    ],
+    "no_space_after_macro": [
+      "Žedne prozny městno za makrom",
+      ""
+    ],
+    "colon_in_math": [
+      ": w matematiskem moduse",
+      "Za definěrowanje funkcijow wužyj \\colon."
+    ],
+    "ugly_fraction": [
+      "Njepěkny wótcnik",
+      "Wužyj \\\\nicefrac{ARG1}{ARG2}."
+    ],
+    "too_many_zeros": [
+      "Pśecej wjele nulow bźez separatora",
+      ""
+    ],
+    "duplicated_word": [
+      "Dwójne słowo",
+      ""
+    ],
+    "para_no_stop": [
+      "Wótstavk kóńcy se bźez dypki",
+      ""
+    ],
+    "para_no_cap": [
+      "Wótstavk zachopi se bźez wjelkego pismika",
+      ""
+    ],
+    "para_starts_dot": [
+      "Wótstavk zachopi se z dypku?",
+      ""
+    ],
+    "punct_in_math": [
+      "Interpunkcija we wnętrnosći matematiskego modusa",
+      "Pśesuń ARG1 zwenka matematiskego modusa."
+    ],
+    "double_dot": [
+      "Dwě dypce",
+      "Jadna dypka wótstata."
+    ],
+    "space_before_punct_math": [
+      "Prozny městno pśed kóńcom matematiskego bloka",
+      ""
+    ],
+    "space_before_rparen": [
+      "Prozny městno pśed )",
+      ""
+    ],
+    "proof_no_begin": [
+      "\\end{proof} bźez \\begin",
+      "Pśetergnjenje wótstavka pśed \\end{proof} wótpóraś?"
+    ],
+    "section_has_dot": [
+      "Wótsek z dypku",
+      "Wótseki kóńce zwětšyna z dypku njekóńce."
+    ],
+    "no_stop_def": [
+      "Žedna dypka pśed \\end{definition}",
+      ""
+    ],
+    "no_stop_end": [
+      "Žedna dypka pśed \\end{...}",
+      ""
+    ]
+  },
+  "common_rules": true
+}

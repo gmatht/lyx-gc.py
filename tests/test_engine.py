@@ -2,7 +2,7 @@
 import io
 import pytest
 from lyxgc.engine import find_errors
-from lyxgc.lang.en import generate_error_types
+from lyxgc.lang import get_generate_error_types
 
 
 def test_find_errors_simple_rules():
@@ -16,7 +16,7 @@ We need into to fix this.
 Our selves think the both are errors.
 \end{document}
 """
-    error_types = generate_error_types()
+    error_types = get_generate_error_types("en")()
     out = io.StringIO()
     n = find_errors(
         error_types,

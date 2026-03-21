@@ -85,12 +85,12 @@ def test_chktex_vs_perl():
 def test_chktex_via_module():
     """Can run find_errors via Python API."""
     from lyxgc.engine import find_errors
-    from lyxgc.lang.en import generate_error_types
+    from lyxgc.lang import get_generate_error_types
 
     tex = r"\begin{document} we that is wrong. \end{document}"
     out = io.StringIO()
     n = find_errors(
-        generate_error_types(),
+        get_generate_error_types("en")(),
         [out],
         tex,
         "t.tex",

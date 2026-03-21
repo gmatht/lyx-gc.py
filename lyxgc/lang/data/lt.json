@@ -1,0 +1,185 @@
+{
+  "msgs": {
+    "empty_mathblock": [
+      "Tuščias matematinis blokas",
+      ""
+    ],
+    "macro_no_brace": [
+      "Makro be {}",
+      "Po makro tikriausiai reikia {}."
+    ],
+    "no_fullstop_after_cite": [
+      "Nėra taško po citatos pastraipos pabaigoje",
+      "Gali trūkti taško."
+    ],
+    "no_space_after_cite": [
+      "Nėra tarpo po citatos",
+      ""
+    ],
+    "no_space_before_cite": [
+      "Nėra tarpo prieš citatą",
+      ""
+    ],
+    "uline_starts_early": [
+      "Pabraukimas prasideda per anksti",
+      ""
+    ],
+    "uline_ends_late": [
+      "Pabraukimas baigiasi per vėlai",
+      ""
+    ],
+    "space_before_footnote": [
+      "Tarpas prieš išnašą",
+      ""
+    ],
+    "footnote_period_comma": [
+      "Taškas/kablelis po išnašos",
+      "Jei išnaša nurodo į visą sakinį, padėkite ją po taško."
+    ],
+    "double_punct": [
+      "Dvigubas skyrybos ženklas",
+      ""
+    ],
+    "implies_in_proof": [
+      "\\implies naudojimas įrodyme",
+      "Įrodymo krypčiai naudokite \\Longrightarrow."
+    ],
+    "no_space_after_ref": [
+      "Nėra tarpo po nuorodos",
+      ""
+    ],
+    "single_char": [
+      "Vienas simbolis",
+      "Vienas simbolis paprastai neturi prasmės."
+    ],
+    "empty_begin_end": [
+      "Tuščias begin/end blokas",
+      ""
+    ],
+    "proof_not_newline": [
+      "Įrodymas neprasideda naujoje eilutėje",
+      "Įterpkite pastraipos skirtuką tarp teoremos ir įrodymo (Enter LyX)."
+    ],
+    "no_space_ref_left": [
+      "Nėra tarpo kairėje nuorodos pusėje",
+      "Galbūt nepertraukiamas tarpas (~) prieš nuorodą?"
+    ],
+    "no_space_ref_right": [
+      "Nėra tarpo dešinėje nuorodos pusėje",
+      "Galbūt nepertraukiamas tarpas (~) po nuorodos?"
+    ],
+    "too_many_dots": [
+      "Per daug taškų",
+      "Kodėl daugiau nei vienas '.'?"
+    ],
+    "space_cite_punct": [
+      "Tarpas tarp citatos ir skyrybos ženklo",
+      ""
+    ],
+    "space_after_period_cap": [
+      "Trūksta tarpo tarp taško ir didžiosios raidės",
+      ""
+    ],
+    "space_after_period_word": [
+      "Trūksta tarpo tarp taško ir žodžio",
+      ""
+    ],
+    "textquotedbl": [
+      "Neteisingas \\textquotedbl naudojimas",
+      "Naudokite `` arba ''."
+    ],
+    "math_punct": [
+      "Tarpas tarp matematinio bloko ir skyrybos ženklo",
+      ""
+    ],
+    "cap_after_math": [
+      "Didžioji raidė po matematinio bloko",
+      "Kodėl didžioji raidė po matematinio bloko?"
+    ],
+    "equals_outside_math": [
+      "Lygybės ženklas už matematinio bloko ribų",
+      "'=' turėtų būti matematinio bloko viduje."
+    ],
+    "no_space_before_math": [
+      "Nėra tarpo prieš matematinį bloką",
+      ""
+    ],
+    "footnote_no_stop": [
+      "Išnaša be taško",
+      ""
+    ],
+    "no_space_after_math": [
+      "Nėra tarpo po matematinio bloko",
+      ""
+    ],
+    "no_space_before_macro": [
+      "Nėra tarpo prieš makro",
+      ""
+    ],
+    "no_space_after_macro": [
+      "Nėra tarpo po makro",
+      ""
+    ],
+    "colon_in_math": [
+      ": matematinėje veiksme",
+      "Funkcijų apibrėžimui naudokite \\colon."
+    ],
+    "ugly_fraction": [
+      "Nebloga trupmena",
+      "Naudokite \\\\nicefrac{ARG1}{ARG2}."
+    ],
+    "too_many_zeros": [
+      "Per daug nulių be skyriklio",
+      ""
+    ],
+    "duplicated_word": [
+      "Dublikatas žodis",
+      ""
+    ],
+    "para_no_stop": [
+      "Pastraipa baigiasi be taško",
+      ""
+    ],
+    "para_no_cap": [
+      "Pastraipa prasideda be didžiosios raidės",
+      ""
+    ],
+    "para_starts_dot": [
+      "Pastraipa prasideda tašku?",
+      ""
+    ],
+    "punct_in_math": [
+      "Skyrybos ženklas matematinės veiksme viduje",
+      "Perkelkite ARG1 už matematinės veiksmes ribų."
+    ],
+    "double_dot": [
+      "Du taškai",
+      "Vieno taško pakanka."
+    ],
+    "space_before_punct_math": [
+      "Tarpas prieš matematinio bloko pabaigą",
+      ""
+    ],
+    "space_before_rparen": [
+      "Tarpas prieš )",
+      ""
+    ],
+    "proof_no_begin": [
+      "\\end{proof} be \\begin",
+      "Pašalinti pastraipos skirtuką prieš \\end{proof}?"
+    ],
+    "section_has_dot": [
+      "Skyrius su tašku",
+      "Skyriai paprastai nebaigiasi tašku."
+    ],
+    "no_stop_def": [
+      "Nėra taško prieš \\end{definition}",
+      ""
+    ],
+    "no_stop_end": [
+      "Nėra taško prieš \\end{...}",
+      ""
+    ]
+  },
+  "common_rules": true
+}

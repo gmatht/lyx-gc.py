@@ -1,0 +1,185 @@
+{
+  "msgs": {
+    "empty_mathblock": [
+      "Bloc matamaitice folamh",
+      ""
+    ],
+    "macro_no_brace": [
+      "Macra gan {}",
+      "B'fhéidir go bhfuil {} ag teastáil tar éis an mhacra."
+    ],
+    "no_fullstop_after_cite": [
+      "Gan phointe i ndiaidh an lua ag deireadh an mhír",
+      "B'fhéidir go bhfuil pointe ar iarraidh."
+    ],
+    "no_space_after_cite": [
+      "Gan spás tar éis an lua",
+      ""
+    ],
+    "no_space_before_cite": [
+      "Gan spás roimh an lua",
+      ""
+    ],
+    "uline_starts_early": [
+      "Tosaíonn an fhorlíne ró-luath",
+      ""
+    ],
+    "uline_ends_late": [
+      "Críochnaíonn an fhorlíne ró-dhéanach",
+      ""
+    ],
+    "space_before_footnote": [
+      "Spás roimh an nóta coise",
+      ""
+    ],
+    "footnote_period_comma": [
+      "Pointe/camóg tar éis an nóta",
+      "Má thagraíonn an nóta don abairt iomlán, cuir é tar éis an phointe."
+    ],
+    "double_punct": [
+      "Puncaíocht dhúbailte",
+      ""
+    ],
+    "implies_in_proof": [
+      "Úsáid \\implies sa chruthú",
+      "Bain úsáid as \\Longrightarrow don treo cruthaithe."
+    ],
+    "no_space_after_ref": [
+      "Gan spás tar éis an tagartha",
+      ""
+    ],
+    "single_char": [
+      "Carachtar aonarach",
+      "Ní bhíonn ciall le carachtar aonarach de ghnáth."
+    ],
+    "empty_begin_end": [
+      "Bloc begin/end folamh",
+      ""
+    ],
+    "proof_not_newline": [
+      "Ní thosaíonn an cruthú ar líne nua",
+      "Cuir isteach briste mhír idir an teoirim agus an cruthú (Enter i LyX)."
+    ],
+    "no_space_ref_left": [
+      "Gan spás ar chlé den tagarth",
+      "B'fhéidir spás neamhbhriste (~) roimh an tagarth?"
+    ],
+    "no_space_ref_right": [
+      "Gan spás ar dheis den tagarth",
+      "B'fhéidir spás neamhbhriste (~) tar éis an tagartha?"
+    ],
+    "too_many_dots": [
+      "An iomarca pointí",
+      "Cén fáth níos mó ná ceann amháin '.'?"
+    ],
+    "space_cite_punct": [
+      "Spás idir an lua agus an phuncaíocht",
+      ""
+    ],
+    "space_after_period_cap": [
+      "Spás in easnamh idir an pointe agus an ceann litreach",
+      ""
+    ],
+    "space_after_period_word": [
+      "Spás in easnamh idir an pointe agus an focal",
+      ""
+    ],
+    "textquotedbl": [
+      "Úsáid mhícheart de \\textquotedbl",
+      "Bain úsáid as `` nó ''."
+    ],
+    "math_punct": [
+      "Spás idir an bloc matamaitice agus an phuncaíocht",
+      ""
+    ],
+    "cap_after_math": [
+      "Ceann litreach tar éis an bhloc matamaitice",
+      "Cén fáth ceann litreach tar éis an bhloc matamaitice?"
+    ],
+    "equals_outside_math": [
+      "Comhartha comhionannais lasmuigh den bhloc matamaitice",
+      "Ba chóir an '=' a bheith taobh istigh den bhloc matamaitice."
+    ],
+    "no_space_before_math": [
+      "Gan spás roimh an mbloc matamaitice",
+      ""
+    ],
+    "footnote_no_stop": [
+      "Nóta coise gan phointe",
+      ""
+    ],
+    "no_space_after_math": [
+      "Gan spás tar éis an bhloc matamaitice",
+      ""
+    ],
+    "no_space_before_macro": [
+      "Gan spás roimh an mhacra",
+      ""
+    ],
+    "no_space_after_macro": [
+      "Gan spás tar éis an mhacra",
+      ""
+    ],
+    "colon_in_math": [
+      ": i mód matamaitice",
+      "Bain úsáid as \\colon chun feidhmeanna a shainiú."
+    ],
+    "ugly_fraction": [
+      "Codán gránna",
+      "Bain úsáid as \\\\nicefrac{ARG1}{ARG2}."
+    ],
+    "too_many_zeros": [
+      "An iomarca nialais gan scaránach",
+      ""
+    ],
+    "duplicated_word": [
+      "Focal dúbalta",
+      ""
+    ],
+    "para_no_stop": [
+      "Críochnaíonn an mhír gan phointe",
+      ""
+    ],
+    "para_no_cap": [
+      "Tosaíonn an mhír gan cheann litreach",
+      ""
+    ],
+    "para_starts_dot": [
+      "Tosaíonn an mhír le pointe?",
+      ""
+    ],
+    "punct_in_math": [
+      "Puncaíocht taobh istigh den mhód matamaitice",
+      "Bog ARG1 amach as an mód matamaitice."
+    ],
+    "double_dot": [
+      "Dá phointe",
+      "Is leor pointe amháin."
+    ],
+    "space_before_punct_math": [
+      "Spás roimh dheireadh an bhloc matamaitice",
+      ""
+    ],
+    "space_before_rparen": [
+      "Spás roimh )",
+      ""
+    ],
+    "proof_no_begin": [
+      "\\end{proof} gan \\begin",
+      "Bain amach an briste mhír roimh \\end{proof}?"
+    ],
+    "section_has_dot": [
+      "Rannóg le pointe",
+      "De ghnáth ní chríochnaíonn rannóga le pointe."
+    ],
+    "no_stop_def": [
+      "Gan phointe roimh \\end{definition}",
+      ""
+    ],
+    "no_stop_end": [
+      "Gan phointe roimh \\end{...}",
+      ""
+    ]
+  },
+  "common_rules": true
+}
