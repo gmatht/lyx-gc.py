@@ -1,0 +1,57 @@
+"""Marathi grammar rules - LaTeX structural rules with Marathi messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("रिक्त गणित ब्लॉक", ""),
+    "macro_no_brace": ("मॅक्रो {} शिवाय", "मॅक्रो नंतर {} आवश्यक असू शकते."),
+    "no_fullstop_after_cite": ("परिच्छेद शेवटी उद्धरणानंतर पूर्णविराम नाही", "पूर्णविराम गहाळ असू शकतो."),
+    "no_space_after_cite": ("उद्धरणानंतर अंतर नाही", ""),
+    "no_space_before_cite": ("उद्धरणापूर्वी अंतर नाही", ""),
+    "uline_starts_early": ("अधोरेखन फार लवकर सुरू होते", ""),
+    "uline_ends_late": ("अधोरेखन फार उशीरा संपते", ""),
+    "space_before_footnote": ("तळटिपेआधी अंतर", ""),
+    "footnote_period_comma": ("तळटिपेनंतर पूर्णविराम/स्वल्पविराम", "तळटीप संपूर्ण वाक्याला संदर्भित करत असल्यास, पूर्णविरामानंतर ठेवा."),
+    "double_punct": ("दुहेरी विरामचिन्ह", ""),
+    "implies_in_proof": ("पुराव्यात \\implies वापर", "पुराव्याच्या दिशेसाठी \\Longrightarrow वापरा."),
+    "no_space_after_ref": ("संदर्भानंतर अंतर नाही", ""),
+    "single_char": ("एकल वर्ण", "एकल वर्णाला सहसा अर्थ नसतो."),
+    "empty_begin_end": ("रिक्त begin/end ब्लॉक", ""),
+    "proof_not_newline": ("पुरावा नवीन ओळीवर सुरू होत नाही", "प्रमेय आणि पुराव्याच्या दरम्यान परिच्छेद विभाजक घाला (LyX मध्ये Enter)."),
+    "no_space_ref_left": ("संदर्भाच्या डावीकडे अंतर नाही", "संदर्भापूर्वी नॉन-ब्रेकिंग स्पेस (~) असू शकते का?"),
+    "no_space_ref_right": ("संदर्भाच्या उजवीकडे अंतर नाही", "संदर्भानंतर नॉन-ब्रेकिंग स्पेस (~) असू शकते का?"),
+    "too_many_dots": ("फार जास्त बिंदू", "एकापेक्षा अधिक '.' का?"),
+    "space_cite_punct": ("उद्धरण आणि विरामचिन्हांमधील अंतर", ""),
+    "space_after_period_cap": ("पूर्णविराम आणि मोठ्या अक्षरामधील अंतर नाही", ""),
+    "space_after_period_word": ("पूर्णविराम आणि शब्दामधील अंतर नाही", ""),
+    "textquotedbl": ("\\textquotedbl चुकीचा वापर", "`` किंवा '' वापरा."),
+    "math_punct": ("गणित ब्लॉक आणि विरामचिन्हांमधील अंतर", ""),
+    "cap_after_math": ("गणित ब्लॉकानंतर मोठे अक्षर", "गणित ब्लॉकानंतर मोठे अक्षर का?"),
+    "equals_outside_math": ("गणित ब्लॉकाबाहेर समान चिन्ह", "'=' गणित ब्लॉकाच्या आत असावे."),
+    "no_space_before_math": ("गणित ब्लॉकापूर्वी अंतर नाही", ""),
+    "no_space_before_cite": ("उद्धरणापूर्वी अंतर नाही", ""),
+    "footnote_no_stop": ("पूर्णविरामाशिवाय तळटीप", ""),
+    "no_space_after_math": ("गणित ब्लॉकानंतर अंतर नाही", ""),
+    "no_space_before_macro": ("मॅक्रोअगोदर अंतर नाही", ""),
+    "no_space_after_macro": ("मॅक्रोनंतर अंतर नाही", ""),
+    "colon_in_math": (": गणित मोडमध्ये", "फलने व्याख्या करण्यासाठी \\colon वापरा."),
+    "ugly_fraction": ("अनाकारी अपूर्णांक", r"\\nicefrac{ARG1}{ARG2} वापरा."),
+    "too_many_zeros": ("विभाजकाशिवाय फार जास्त शून्ये", ""),
+    "duplicated_word": ("द्विगुण शब्द", ""),
+    "para_no_stop": ("परिच्छेद पूर्णविरामाशिवाय संपतो", ""),
+    "para_no_cap": ("परिच्छेद मोठ्या अक्षराशिवाय सुरू होतो", ""),
+    "para_starts_dot": ("परिच्छेद पूर्णविरामाने सुरू होतो?", ""),
+    "punct_in_math": ("गणित मोडमधील विरामचिन्ह", "ARG1 ला गणित मोडमधून बाहेर हलवा."),
+    "double_dot": ("दुहेरी पूर्णविराम", "एक पूर्णविराम पुरेसा आहे."),
+    "space_before_punct_math": ("गणित ब्लॉक शेवटापूर्वी अंतर", ""),
+    "space_before_rparen": (") पूर्वी अंतर", ""),
+    "proof_no_begin": ("\\end{proof} \\begin शिवाय", "\\end{proof} पूर्वी परिच्छेद विभाजक काढून टाकायचा?"),
+    "section_has_dot": ("पूर्णविराम असलेला विभाग", "विभाग सहसा पूर्णविरामाने संपत नाहीत."),
+    "no_stop_def": ("\\end{definition} पूर्वी पूर्णविराम नाही", ""),
+    "no_stop_end": ("\\end{...} पूर्वी पूर्णविराम नाही", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Marathi rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

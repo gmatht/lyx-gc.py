@@ -1,0 +1,57 @@
+"""Kurmanji grammar rules - LaTeX structural rules with Kurmanji messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("Bloka matematîkî ya vala", ""),
+    "macro_no_brace": ("Makro bê {}", "Dibe ku {} paşî makroyê hewce be."),
+    "no_fullstop_after_cite": ("Bê nîşana xilasê piştî çavkanî di dawiya paragrafê", "Dibe ku nîşana xilasê kêm be."),
+    "no_space_after_cite": ("Bê cih piştî çavkanî", ""),
+    "no_space_before_cite": ("Bê cih berî çavkanî", ""),
+    "uline_starts_early": ("Xêza binê zû dest pê dike", ""),
+    "uline_ends_late": ("Xêza binê dereng xilas dibe", ""),
+    "space_before_footnote": ("Cih berî noteyê binê", ""),
+    "footnote_period_comma": ("Nîşana xilasê/virgûl piştî noteyê", "Ger noteyê binê ji hevoka tevahî re tê, wê li paş nîşana xilasê bikin."),
+    "double_punct": ("Du nîşana niqtekirinê", ""),
+    "implies_in_proof": ("Bikaranîna \\implies di delîldanê de", "Ji bo rêça delîldanê \\Longrightarrow bikar bînin."),
+    "no_space_after_ref": ("Bê cih piştî referansê", ""),
+    "single_char": ("Yek karakter", "Yek karakter bi gelemperî maneya wê tune."),
+    "empty_begin_end": ("Bloka begin/end ya vala", ""),
+    "proof_not_newline": ("Delîldan di rîpela nû de dest pê nake", "Di navbera teoremê û delîldanê de veguherîna paragrafê têxe (Enter di LyX de)."),
+    "no_space_ref_left": ("Bê cih li çepê referansê", "Dibe ku cihê nenihêrbûyî (~) berî referansê?"),
+    "no_space_ref_right": ("Bê cih li rastê referansê", "Dibe ku cihê nenihêrbûyî (~) piştî referansê?"),
+    "too_many_dots": ("Zêde xal", "Çima zêdetir ji yek '.'?"),
+    "space_cite_punct": ("Cih di navbera çavkanî û nîşana niqtekirinê de", ""),
+    "space_after_period_cap": ("Cih kêm di navbera nîşana xilasê û herfa mezin de", ""),
+    "space_after_period_word": ("Cih kêm di navbera nîşana xilasê û peyva de", ""),
+    "textquotedbl": ("Bikaranîna çewt a \\textquotedbl", "`` an '' bikar bînin."),
+    "math_punct": ("Cih di navbera bloka matematîkî û nîşana niqtekirinê de", ""),
+    "cap_after_math": ("Hefa mezin piştî bloka matematîkî", "Çima hefa mezin piştî bloka matematîkî?"),
+    "equals_outside_math": ("Nîşana yeksaniyê ji derveyî bloka matematîkî", "'=' divê di hundirê bloka matematîkî de be."),
+    "no_space_before_math": ("Bê cih berî bloka matematîkî", ""),
+    "no_space_before_cite": ("Bê cih berî çavkanî", ""),
+    "footnote_no_stop": ("Noteyê binê bê nîşana xilasê", ""),
+    "no_space_after_math": ("Bê cih piştî bloka matematîkî", ""),
+    "no_space_before_macro": ("Bê cih berî makroyê", ""),
+    "no_space_after_macro": ("Bê cih piştî makroyê", ""),
+    "colon_in_math": (": di moda matematîkî de", "Ji bo diyarkirina fonksiyonan \\colon bikar bînin."),
+    "ugly_fraction": ("Dabeşe xirab", r"\\nicefrac{ARG1}{ARG2} bikar bînin."),
+    "too_many_zeros": ("Zêde sifir bê cihdêra parvekirinê", ""),
+    "duplicated_word": ("Peyva dubare", ""),
+    "para_no_stop": ("Paragraf bê nîşana xilasê xilas dibe", ""),
+    "para_no_cap": ("Paragraf bê hefa mezin dest pê dike", ""),
+    "para_starts_dot": ("Paragraf bi nîşana xilasê dest pê dike?", ""),
+    "punct_in_math": ("Nîşana niqtekirinê di hundirê moda matematîkî de", "ARG1 ji moda matematîkî derxînin."),
+    "double_dot": ("Du xal", "Yek xal bes e."),
+    "space_before_punct_math": ("Cih berî dawiya bloka matematîkî", ""),
+    "space_before_rparen": ("Cih berî )", ""),
+    "proof_no_begin": ("\\end{proof} bê \\begin", "Veguherîna paragrafê berî \\end{proof} jê bikin?"),
+    "section_has_dot": ("Beş bi nîşana xilasê", "Beş bi gelemperî bi nîşana xilasê xilas nabin."),
+    "no_stop_def": ("Bê nîşana xilasê berî \\end{definition}", ""),
+    "no_stop_end": ("Bê nîşana xilasê berî \\end{...}", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Kurmanji rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

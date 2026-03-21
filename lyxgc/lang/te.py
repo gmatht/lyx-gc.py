@@ -1,0 +1,57 @@
+"""Telugu grammar rules - LaTeX structural rules with Telugu messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("ఖాళీ గణిత బ్లాక్", ""),
+    "macro_no_brace": ("మాక్రో {} లేకుండా", "మాక్రో తర్వాత {} అవసరం కావచ్చు."),
+    "no_fullstop_after_cite": ("పేరా చివర సూచన తర్వాత పూర్తిచుక్క లేదు", "పూర్తిచుక్క తప్పిపోయి ఉండవచ్చు."),
+    "no_space_after_cite": ("సూచన తర్వాత ఖాళీ లేదు", ""),
+    "no_space_before_cite": ("సూచనకు ముందు ఖాళీ లేదు", ""),
+    "uline_starts_early": ("అండర్‌లైన్ చాలా శీఘ్రంగా మొదలవుతుంది", ""),
+    "uline_ends_late": ("అండర్‌లైన్ చాలా ఆలస్యంగా ముగుస్తుంది", ""),
+    "space_before_footnote": ("ఫుట్‌నోట్ ముందు ఖాళీ", ""),
+    "footnote_period_comma": ("ఫుట్‌నోట్ తర్వాత చుక్క/కామా", "ఫుట్‌నోట్ మొత్తం వాక్యాన్ని సూచిస్తే, చుక్క తర్వాత ఉంచండి."),
+    "double_punct": ("రెండు విరామ చిహ్నాలు", ""),
+    "implies_in_proof": ("ఆధారంలో \\implies వాడకం", "ఆధార దిశకు \\Longrightarrow వాడండి."),
+    "no_space_after_ref": ("సూచన తర్వాత ఖాళీ లేదు", ""),
+    "single_char": ("ఒక అక్షరం", "ఒక అక్షరానికి సాధారణంగా అర్థం ఉండదు."),
+    "empty_begin_end": ("ఖాళీ begin/end బ్లాక్", ""),
+    "proof_not_newline": ("ఆధారం కొత్త వరుసలో మొదలవటం లేదు", "సిద్ధాంతం మరియు ఆధారంల మధ్య పేరా విభజన చేర్చండి (LyXలో Enter)."),
+    "no_space_ref_left": ("సూచన ఎడమవైపున ఖాళీ లేదు", "సూచనకు ముందు విచ్ఛిన్నం కాని ఖాళీ (~) ఉండవచ్చు?"),
+    "no_space_ref_right": ("సూచన కుడివైపున ఖాళీ లేదు", "సూచన తర్వాత విచ్ఛిన్నం కాని ఖాళీ (~) ఉండవచ్చు?"),
+    "too_many_dots": ("అధిక చుక్కలు", "ఎందుకు ఒకటికంటే ఎక్కువ '.'?"),
+    "space_cite_punct": ("సూచన మరియు విరామ చిహ్నాల మధ్య ఖాళీ", ""),
+    "space_after_period_cap": ("చుక్క మరియు పెద్ద అక్షరం మధ్య ఖాళీ లేదు", ""),
+    "space_after_period_word": ("చుక్క మరియు పదం మధ్య ఖాళీ లేదు", ""),
+    "textquotedbl": ("\\textquotedbl తప్పుడు వాడకం", "`` లేదా '' వాడండి."),
+    "math_punct": ("గణిత బ్లాక్ మరియు విరామ చిహ్నాల మధ్య ఖాళీ", ""),
+    "cap_after_math": ("గణిత బ్లాక్ తర్వాత పెద్ద అక్షరం", "గణిత బ్లాక్ తర్వాత ఎందుకు పెద్ద అక్షరం?"),
+    "equals_outside_math": ("గణిత బ్లాక్ వెలుపల సమాన గుర్తు", "'=' గణిత బ్లాక్ లోపల ఉండాలి."),
+    "no_space_before_math": ("గణిత బ్లాక్ ముందు ఖాళీ లేదు", ""),
+    "no_space_before_cite": ("సూచనకు ముందు ఖాళీ లేదు", ""),
+    "footnote_no_stop": ("చుక్క లేని ఫుట్‌నోట్", ""),
+    "no_space_after_math": ("గణిత బ్లాక్ తర్వాత ఖాళీ లేదు", ""),
+    "no_space_before_macro": ("మాక్రో ముందు ఖాళీ లేదు", ""),
+    "no_space_after_macro": ("మాక్రో తర్వాత ఖాళీ లేదు", ""),
+    "colon_in_math": (": గణిత రీతిలో", "ఫంక్షన్లు నిర్వచించడానికి \\colon వాడండి."),
+    "ugly_fraction": ("అసుందరమైన భిన్నం", r"\\nicefrac{ARG1}{ARG2} వాడండి."),
+    "too_many_zeros": ("విభజకం లేకుండా అధిక సున్నాలు", ""),
+    "duplicated_word": ("నకిలీ పదం", ""),
+    "para_no_stop": ("పేరా చుక్క లేకుండా ముగుస్తుంది", ""),
+    "para_no_cap": ("పేరా పెద్ద అక్షరం లేకుండా మొదలవుతుంది", ""),
+    "para_starts_dot": ("పేరా చుక్కతో మొదలవుతుందా?", ""),
+    "punct_in_math": ("గణిత రీతిలో విరామ చిహ్నం", "ARG1 ను గణిత రీతి నుండి బయటకు తరలించండి."),
+    "double_dot": ("రెండు చుక్కలు", "ఒక చుక్క సరిపోతుంది."),
+    "space_before_punct_math": ("గణిత బ్లాక్ ముగింపుకు ముందు ఖాళీ", ""),
+    "space_before_rparen": (") కు ముందు ఖాళీ", ""),
+    "proof_no_begin": ("\\end{proof} \\begin లేకుండా", "\\end{proof} ముందు పేరా విభజన తొలగించాలా?"),
+    "section_has_dot": ("చుక్క ఉన్న విభాగం", "విభాగాలు సాధారణంగా చుక్కతో ముగించవు."),
+    "no_stop_def": ("\\end{definition} ముందు చుక్క లేదు", ""),
+    "no_stop_end": ("\\end{...} ముందు చుక్క లేదు", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Telugu rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

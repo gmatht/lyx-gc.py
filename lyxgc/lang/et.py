@@ -1,0 +1,56 @@
+"""Estonian grammar rules - LaTeX structural rules with Estonian messages."""
+from ._structural import structural_rules
+
+_MSGS = {
+    "empty_mathblock": ("Tühi matemaatikaplokk", ""),
+    "macro_no_brace": ("Makro ilma {}", "Makro järel on tõenäoliselt vaja {}."),
+    "no_fullstop_after_cite": ("Puudub punkt viite järel lõigu lõpus", "Punkt võib puududa."),
+    "no_space_after_cite": ("Puudub tühik viite järel", ""),
+    "no_space_before_cite": ("Puudub tühik enne viidet", ""),
+    "uline_starts_early": ("Alljoonutus algab liiga vara", ""),
+    "uline_ends_late": ("Alljoonutus lõpeb liiga hilja", ""),
+    "space_before_footnote": ("Tühik enne allmärkust", ""),
+    "footnote_period_comma": ("Punkt/koma allmärkuse järel", "Kui allmärkus viitab kogu lausele, asetage see punkti järele."),
+    "double_punct": ("Topeltkirjavahe", ""),
+    "implies_in_proof": ("\\implies kasutamine tõestuses", "Kasutage tõestussuuna jaoks \\Longrightarrow."),
+    "no_space_after_ref": ("Puudub tühik viite järel", ""),
+    "single_char": ("Üksik märk", "Üksik märk ei ole tavaliselt mõttekas."),
+    "empty_begin_end": ("Tühi begin/end plokk", ""),
+    "proof_not_newline": ("Tõestus ei alga uuel real", "Sisestage lõigu eraldaja teoreemi ja tõestuse vahele (Enter LyX-is)."),
+    "no_space_ref_left": ("Puudub tühik viite vasakul", "Võib-olla murdumatu tühik (~) enne viidet?"),
+    "no_space_ref_right": ("Puudub tühik viite paremal", "Võib-olla murdumatu tühik (~) viite järel?"),
+    "too_many_dots": ("Liiga palju punkte", "Miks rohkem kui üks '.'?"),
+    "space_cite_punct": ("Tühik viite ja kirjavahemärgi vahel", ""),
+    "space_after_period_cap": ("Puuduv tühik punkti ja suurtähe vahel", ""),
+    "space_after_period_word": ("Puuduv tühik punkti ja sõna vahel", ""),
+    "textquotedbl": ("Vale \\textquotedbl kasutamine", "Kasutage `` või ''."),
+    "math_punct": ("Tühik matemaatikaploki ja kirjavahemärgi vahel", ""),
+    "cap_after_math": ("Suurtäht matemaatikaploki järel", "Miks suurtäht matemaatikaploki järel?"),
+    "equals_outside_math": ("Võrdusmärk väljaspool matemaatikaplokki", "'=' peaks olema matemaatikaploki sees."),
+    "no_space_before_math": ("Puudub tühik enne matemaatikaplokki", ""),
+    "no_space_before_cite": ("Puudub tühik enne viidet", ""),
+    "footnote_no_stop": ("Allmärkus ilma punktita", ""),
+    "no_space_after_math": ("Puudub tühik matemaatikaploki järel", ""),
+    "no_space_before_macro": ("Puudub tühik enne makrot", ""),
+    "no_space_after_macro": ("Puudub tühik makro järel", ""),
+    "colon_in_math": (": matemaatilises režiimis", "Kasutage funktsioonide defineerimiseks \\colon."),
+    "ugly_fraction": ("Inetu murd", r"Kasutage \\nicefrac{ARG1}{ARG2}."),
+    "too_many_zeros": ("Liiga palju nulle ilma eraldajata", ""),
+    "duplicated_word": ("Kordus", ""),
+    "para_no_stop": ("Lõik lõpeb ilma punktita", ""),
+    "para_no_cap": ("Lõik algab ilma suurtäheta", ""),
+    "para_starts_dot": ("Lõik algab punktiga?", ""),
+    "punct_in_math": ("Kirjavahemärk matemaatilise režiimi sees", "Teisaldage ARG1 väljaspool matemaatilist režiimi."),
+    "double_dot": ("Kaks punkti", "Üks punkt piisab."),
+    "space_before_punct_math": ("Tühik enne matemaatikaploki lõppu", ""),
+    "space_before_rparen": ("Tühik enne )", ""),
+    "proof_no_begin": ("\\end{proof} ilma \\begin", "Eemaldage lõigu eraldaja enne \\end{proof}?"),
+    "section_has_dot": ("Sektsioon punktiga", "Sektsioonid tavaliselt ei lõpe punktiga."),
+    "no_stop_def": ("Puudub punkt enne \\end{definition}", ""),
+    "no_stop_end": ("Puudub punkt enne \\end{...}", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Estonian rules."""
+    return structural_rules(_MSGS)

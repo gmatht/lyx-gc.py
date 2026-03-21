@@ -1,0 +1,57 @@
+"""Basque grammar rules - LaTeX structural rules with Basque messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("Bloke matematikoa hutsik", ""),
+    "macro_no_brace": ("Makro {} gabe", "{} beharrezkoa izan daiteke makroaren ondoren."),
+    "no_fullstop_after_cite": ("Puntu gabe aipuaren ondoren paragrafoaren amaieran", "Puntu bat falta dela dirudi."),
+    "no_space_after_cite": ("Zuriune gabe aipuaren ondoren", ""),
+    "no_space_before_cite": ("Zuriune gabe aipuaren aurretik", ""),
+    "uline_starts_early": ("Azpimarra goizegi hasten da", ""),
+    "uline_ends_late": ("Azpimarra beranduegi amaitzen da", ""),
+    "space_before_footnote": ("Zuriune oin-oharraren aurretik", ""),
+    "footnote_period_comma": ("Puntu/koma oin-oharraren ondoren", "Oin-oharrak esaldi osoa aipatzen badu, jarri puntuaren ondoren."),
+    "double_punct": ("Bi puntuazio", ""),
+    "implies_in_proof": ("\\implies frogan erabilera", "Erabili \\Longrightarrow frogaren norabidean."),
+    "no_space_after_ref": ("Zuriune gabe erreferentziaren ondoren", ""),
+    "single_char": ("Hizki bakar bat", "Hizki bakar batek ez du esanahirik."),
+    "empty_begin_end": ("Begin/end bloke hutsik", ""),
+    "proof_not_newline": ("Froga ez da lerro berrian hasten", "Sartu paragrafo-banatzailea teorema eta froga artean (Enter LyX-en)."),
+    "no_space_ref_left": ("Zuriune gabe erreferentziaren ezkerrean", "Agian zuriune ez-hausgarria (~) erreferentziaren aurretik?"),
+    "no_space_ref_right": ("Zuriune gabe erreferentziaren eskuinean", "Agian zuriune ez-hausgarria (~) erreferentziaren ondoren?"),
+    "too_many_dots": ("Puntu gehiegi", "Zergatik bat baino gehiago '.'?"),
+    "space_cite_punct": ("Zuriunea aipu eta puntuazio artean", ""),
+    "space_after_period_cap": ("Falta den zuriunea puntu eta maiuskularen artean", ""),
+    "space_after_period_word": ("Falta den zuriunea puntu eta hitzaren artean", ""),
+    "textquotedbl": ("\\textquotedbl erabilera okerra", "Erabili `` edo ''."),
+    "math_punct": ("Zuriunea bloke matematiko eta puntuazio artean", ""),
+    "cap_after_math": ("Maiuskula bloke matematikoaren ondoren", "Zergatik maiuskula bloke matematikoaren ondoren?"),
+    "equals_outside_math": ("Berdin-zeinu matematika-bloketik kanpo", "'=' matematika-blokearen barruan egon behar da."),
+    "no_space_before_math": ("Zuriune gabe bloke matematikoaren aurretik", ""),
+    "no_space_before_cite": ("Zuriune gabe aipuaren aurretik", ""),
+    "footnote_no_stop": ("Oin-oharra puntu gabe", ""),
+    "no_space_after_math": ("Zuriune gabe bloke matematikoaren ondoren", ""),
+    "no_space_before_macro": ("Zuriune gabe makroaren aurretik", ""),
+    "no_space_after_macro": ("Zuriune gabe makroaren ondoren", ""),
+    "colon_in_math": (": modu matematikoan", "Erabili \\colon funtzioak definitzeko."),
+    "ugly_fraction": ("Fraccio itsusi", r"Erabili \\nicefrac{ARG1}{ARG2}."),
+    "too_many_zeros": ("Zero gehiegi banatzaile gabe", ""),
+    "duplicated_word": ("Hitz bikoiztua", ""),
+    "para_no_stop": ("Paragrafoa puntu gabe amaitzen da", ""),
+    "para_no_cap": ("Paragrafoa maiuskula gabe hasten da", ""),
+    "para_starts_dot": ("Paragrafoa puntu batekin hasten da?", ""),
+    "punct_in_math": ("Puntuazio modu matematikoan", "Mugitu ARG1 modu matematikotik kanpora."),
+    "double_dot": ("Puntu bikoitza", "Puntu bat nahikoa da."),
+    "space_before_punct_math": ("Zuriune bloke matematikoaren amaieraren aurretik", ""),
+    "space_before_rparen": ("Zuriune ) aurretik", ""),
+    "proof_no_begin": ("\\end{proof} \\begin gabe", "Kendu paragrafo-banatzailea \\end{proof} aurretik?"),
+    "section_has_dot": ("Atala puntu batekin", "Atalek ez dute puntuekin amaitzen."),
+    "no_stop_def": ("Puntu gabe \\end{definition} aurretik", ""),
+    "no_stop_end": ("Puntu gabe \\end{...} aurretik", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Basque rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

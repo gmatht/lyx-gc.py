@@ -13,15 +13,7 @@ from lyxgc.engine import find_errors
 from lyxgc.languagetool import parse_languagetool_output
 from lyxgc.chktex_parse import parse_chktex_output
 from lyxgc.lacheck_parse import parse_lacheck_output
-
-
-def get_lang_module(lang: str):
-    """Load language module by code (en, fr)."""
-    if lang == "fr":
-        from lyxgc.lang import fr
-        return fr.generate_error_types
-    from lyxgc.lang import en
-    return en.generate_error_types
+from lyxgc.lang.registry import resolve_language, get_generate_error_types
 
 
 def main():
@@ -29,6 +21,10 @@ def main():
     parser.add_argument("filename", nargs="?", help=".tex file to check")
     parser.add_argument("-o", "--output", help="Output file")
     parser.add_argument("-v", "--verbose", choices=["0", "1", "3"], default="1")
+    parser.add_argument(
+        "-l", "--lang",
+        help="Language: LyX name (e.g. 'English (USA)') or locale (e.g. en_US, fr). Overrides LYX_LANGUAGE/LANG.",
+    )
     args, rest = parser.parse_known_args()
 
     output_format = f"-v{args.verbose}"
@@ -48,8 +44,10 @@ def main():
     else:
         out_files = [sys.stdout]
 
-    lang = os.environ.get("LANG", "en")[:2]
-    generate_error_types = get_lang_module(lang)
+    # -l/--lang > LYX_LANGUAGE > LANG (locale e.g. en_AU.UTF-8)
+    lang_spec = args.lang or os.environ.get("LYX_LANGUAGE") or os.environ.get("LANG", "en")
+    rule_module = resolve_language(lang_spec)
+    generate_error_types = get_generate_error_types(rule_module)
     error_types = generate_error_types()
 
     n_errors = find_errors(

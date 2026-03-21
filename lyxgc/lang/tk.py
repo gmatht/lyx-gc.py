@@ -1,0 +1,57 @@
+"""Turkmen grammar rules - LaTeX structural rules with Turkmen messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("Boş matematiki blok", ""),
+    "macro_no_brace": ("Makro {} bolmadan", "Makrodan soň {} gerek bolup biler."),
+    "no_fullstop_after_cite": ("Abzas soňunda sitata nokadan soň nokata ýok", "Nokadyň ýitip gidip bilmegi mümkin."),
+    "no_space_after_cite": ("Sitata soň boşluk ýok", ""),
+    "no_space_before_cite": ("Sitata öň boşluk ýok", ""),
+    "uline_starts_early": ("Aşaky çyzyk gaty erkenden başlaýar", ""),
+    "uline_ends_late": ("Aşaky çyzyk gaty giç gutlaýar", ""),
+    "space_before_footnote": ("Aşakdaky bellikden öň boşluk", ""),
+    "footnote_period_comma": ("Aşakdaky bellikden soň nokady/vergul", "Eger aşakdaky bellik bütin söze degişli bolsa, ony nokadyndan soň goýuň."),
+    "double_punct": ("Goşala durmuşlyk belgisi", ""),
+    "implies_in_proof": ("Subutlamakda \\implies ulanylyşy", "Subutlamak ugry üçin \\Longrightarrow ulanyň."),
+    "no_space_after_ref": ("Salgyndan soň boşluk ýok", ""),
+    "single_char": ("Biri simwol", "Biri simwol köplenç many taşlamaz."),
+    "empty_begin_end": ("Boş begin/end blok", ""),
+    "proof_not_newline": ("Subutlama täze setirde başlamok", "Teorema bilen subutlamanyň aralygyna abzas ajratgyjy goşuň (LyX-da Enter)."),
+    "no_space_ref_left": ("Salgyň çep tarapynda boşluk ýok", "Salgydan öň bölünmän boşluk (~) bolmalymy?"),
+    "no_space_ref_right": ("Salgyň sag tarapynda boşluk ýok", "Salgydan soň bölünmän boşluk (~) bolmalymy?"),
+    "too_many_dots": ("Gaty köp nokady", "Näme üçin biri-den köp '.'?"),
+    "space_cite_punct": ("Sitat bilen durmuşlyk belgisi aralygynda boşluk", ""),
+    "space_after_period_cap": ("Nokady bilen uly harp aralygynda boşluk ýetmezçilik", ""),
+    "space_after_period_word": ("Nokady bilen sözi aralygynda boşluk ýetmezçilik", ""),
+    "textquotedbl": ("\\textquotedbl nädogry ulanylyşy", "`` ýa '' ulanyň."),
+    "math_punct": ("Matematiki blok bilen durmuşlyk belgisi aralygynda boşluk", ""),
+    "cap_after_math": ("Matematiki blokdan soň uly harp", "Näme üçin matematiki blokdan soň uly harp?"),
+    "equals_outside_math": ("Matematiki blokdan daşarda deňlik belgisi", "'=' matematiki blokiň içinde bolmaly."),
+    "no_space_before_math": ("Matematiki blokdan öň boşluk ýok", ""),
+    "no_space_before_cite": ("Sitata öň boşluk ýok", ""),
+    "footnote_no_stop": ("Nokadysyz aşakdaky bellik", ""),
+    "no_space_after_math": ("Matematiki blokdan soň boşluk ýok", ""),
+    "no_space_before_macro": ("Makrodan öň boşluk ýok", ""),
+    "no_space_after_macro": ("Makrodan soň boşluk ýok", ""),
+    "colon_in_math": (": matematiki režimde", "Funksiýalary kesgitlemek üçin \\colon ulanyň."),
+    "ugly_fraction": ("Çyl kesir", r"\\nicefrac{ARG1}{ARG2} ulanyň."),
+    "too_many_zeros": ("Aýryjyjy bolmadyk gaty köp nol", ""),
+    "duplicated_word": ("Gaýtalanan söz", ""),
+    "para_no_stop": ("Abzas nokady bolmadan gutlaýar", ""),
+    "para_no_cap": ("Abzas uly harp bolmadyk başlaýar", ""),
+    "para_starts_dot": ("Abzas nokady bilenmi başlaýar?", ""),
+    "punct_in_math": ("Matematiki režimde durmuşlyk belgisi", "ARG1-i matematiki režimden daşary göçüriň."),
+    "double_dot": ("Iki nokady", "Biri nokady ýeterlik."),
+    "space_before_punct_math": ("Matematiki blokiň soňyndan öň boşluk", ""),
+    "space_before_rparen": (") dan öň boşluk", ""),
+    "proof_no_begin": ("\\end{proof} \\begin bolmadyk", "\\end{proof} dan öňki abzas ajratgyjyny aýryňmy?"),
+    "section_has_dot": ("Nokadly bölüm", "Bölümler köplenç nokady bilen gutlamok."),
+    "no_stop_def": ("\\end{definition} dan öň nokady ýok", ""),
+    "no_stop_end": ("\\end{...} dan öň nokady ýok", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Turkmen rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

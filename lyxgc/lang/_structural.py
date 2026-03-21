@@ -1,0 +1,81 @@
+"""Shared LaTeX-structural rules for all languages. Rule names/descriptions come from messages dict."""
+import re
+from ..tokenizer import (
+    START_MATH_CHAR,
+    END_MATH_CHAR,
+    RECURSIVE_BRACE,
+    MATHBLOCK,
+    NOTINMATH,
+    PAR,
+    MACROBLOCK,
+    LATEX_BS,
+)
+
+LBS = LATEX_BS
+
+
+def structural_rules(msgs: dict) -> list:
+    """Return LaTeX-structural rules. msgs maps rule_id -> (name, description).
+
+    Rule IDs: empty_mathblock, macro_no_brace, no_space_after_cite, no_space_before_cite,
+    uline_starts_early, uline_ends_late, space_before_footnote, footnote_period_comma,
+    double_punct, implies_in_proof, no_space_after_ref, single_char, empty_begin_end,
+    proof_not_newline, no_space_ref_left, no_space_ref_right, too_many_dots (x4),
+    space_cite_punct, space_after_period_cap, space_after_period_word, textquotedbl,
+    math_punct, cap_after_math, equals_outside_math, no_space_before_math, no_space_before_cite,
+    footnote_no_stop (x2), no_space_after_math, no_space_before_macro, no_space_after_macro,
+    colon_in_math, ugly_fraction, too_many_zeros, duplicated_word, para_no_stop, para_no_cap,
+    para_starts_dot, punct_in_math, double_dot, space_before_punct_math, space_before_rparen,
+    proof_no_begin, section_has_dot, no_stop_def, no_stop_end.
+    """
+    return [
+        [msgs["empty_mathblock"][0], START_MATH_CHAR + "  *" + END_MATH_CHAR, "", msgs["empty_mathblock"][1]],
+        [msgs["macro_no_brace"][0], r"[^\\]" + LBS + r"[a-zA-Z0-9]+?CTL[a-zA-Z0-9]+\s", "", msgs["macro_no_brace"][1]],
+        [msgs["no_fullstop_after_cite"][0], r"[a-zA-Z0-9]\s+" + LBS + r"cite\{[^}]*\}\s*" + PAR, "", msgs["no_fullstop_after_cite"][1]],
+        [msgs["no_space_after_cite"][0], LBS + r"cite\{[^}]*\}[a-zA-Z0-9]", "", ""],
+        [msgs["no_space_before_cite"][0], r"[a-zA-Z0-9]" + LBS + r"cite\{[^}]*\}", "", ""],
+        [msgs["uline_starts_early"][0], LBS + r"uline\{\s", "", ""],
+        [msgs["uline_ends_late"][0], LBS + r"uline\{[^}]\s\}", "", ""],
+        [msgs["space_before_footnote"][0], r"(?: %\s+| )" + LBS + r"footnote\{", "", ""],
+        [msgs["footnote_period_comma"][0], LBS + r"footnote" + RECURSIVE_BRACE + r'[.,]', "", msgs["footnote_period_comma"][1]],
+        [msgs["double_punct"][0], r'(?<!\\)[,.:;]\s+[,.:;]', "", ""],
+        [msgs["implies_in_proof"][0], r'(?:(?:' + LBS + r'left)?\(' + LBS + r'implies(?:' + LBS + r'right)?\)|\(.' + LBS + r'implies.\))', "", msgs["implies_in_proof"][1]],
+        [msgs["no_space_after_ref"][0], r'ref\{[^}]*\}[a-zA-Z0-9]', "", ""],
+        [msgs["single_char"][0], r'\s[b-z]\s(?![&' + LBS + r'])' + r"(?![^" + re.escape(START_MATH_CHAR) + r"]*[_" + re.escape(END_MATH_CHAR) + r"])", "", msgs["single_char"][1]],
+        [msgs["empty_begin_end"][0], LBS + r"begin\{[^}]+\}\s*(?:" + LBS + r"par)?" + LBS + r"end\{[^}]*\}", "", ""],
+        [msgs["proof_not_newline"][0], r'.+' + LBS + r'begin\{proof\}', msgs["proof_not_newline"][1], ""],
+        [msgs["no_space_ref_left"][0], r'[a-zA-Z0-9]' + LBS + r'(pretty)?ref\{', msgs["no_space_ref_left"][1], ""],
+        [msgs["no_space_ref_right"][0], r'^.' + LBS + r'(?:pretty)?ref\{', msgs["no_space_ref_right"][1], ""],
+        [msgs["too_many_dots"][0], r'[.]\s+[.]', "", msgs["too_many_dots"][1]],
+        [msgs["too_many_dots"][0], r'[.][ ][.]', "", ""],
+        [msgs["too_many_dots"][0], r"^.\s+[A-Z]", "", ""],
+        [msgs["space_cite_punct"][0], LBS + r"cite\{[^{}]*\}\s+[,.]", "", ""],
+        [msgs["space_after_period_cap"][0], r'[.][A-Z][^.]', "", msgs["space_after_period_cap"][1]],
+        [msgs["space_after_period_word"][0], r'[.][a-z]+[ \t]', "", msgs["space_after_period_word"][1]],
+        [msgs["textquotedbl"][0], LBS + r'textquotedbl\{[}]', "", msgs["textquotedbl"][1]],
+        [msgs["math_punct"][0], MATHBLOCK + r'\s+[,.]', "", ""],
+        [msgs["cap_after_math"][0], r'[a-zA-Z0-9] ' + MATHBLOCK + r' [A-Z]', "", msgs["cap_after_math"][1]],
+        [msgs["equals_outside_math"][0], MATHBLOCK + r'\s*=\s*' + MATHBLOCK, "", msgs["equals_outside_math"][1]],
+        [msgs["no_space_before_math"][0], r"[a-zA-Z0-9]" + START_MATH_CHAR + r"(?!_|\^|" + LBS + r"dots)", "", ""],
+        [msgs["no_space_before_cite"][0], r"[^\s(~]" + LBS + r"cite", "", ""],
+        [msgs["footnote_no_stop"][0], r"[a-zA-Z0-9,]\s*" + LBS + r"footnote" + RECURSIVE_BRACE + r"\s*[A-Z]", "", ""],
+        [msgs["footnote_no_stop"][0], r"[a-zA-Z0-9,](\s|%)*" + LBS + r"footnote" + RECURSIVE_BRACE + r"\s*[A-Z]", "", ""],
+        [msgs["no_space_after_math"][0], r'(?!..sim)' + MATHBLOCK + r'(?<!dots.)(?!s\s)[a-zA-Z0-9]', "..sim", ""],
+        [msgs["no_space_before_macro"][0], r"[a-zA-Z0-9]" + MACROBLOCK, "", ""],
+        [msgs["no_space_after_macro"][0], MACROBLOCK + r'[a-zA-Z0-9]', "", ""],
+        [msgs["colon_in_math"][0], START_MATH_CHAR + r'[^' + END_MATH_CHAR + r']*(?<!' + LBS + r')[a-zA-Z]:', "", msgs["colon_in_math"][1]],
+        [msgs["ugly_fraction"][0], r"([0-9])/([0-9])(?!n[}])(?!_home)", "erase:" + LBS + r"url" + RECURSIVE_BRACE, msgs["ugly_fraction"][1]],
+        [msgs["too_many_zeros"][0], r"(?<![0-9.])0000(?![^\s]*[.]tex[}])", "", msgs["too_many_zeros"][1]],
+        [msgs["duplicated_word"][0], r'(?i)\b([a-zA-Z]+)\b[,.;]?\s+\b\2\b' + NOTINMATH, 'ARG1 occurs twice.', ""],
+        [msgs["para_no_stop"][0], r"[a-zA-Z0-9](?<!iffalse)(?<!maketitle)(?<!medskip)(?<!hline)(?<![A-Z]{3})(?<!\\else)(?<!" + LBS + r"fi)[ \t]*\n\n", "", ""],
+        [msgs["para_no_cap"][0], PAR + r"[a-z]", "", ""],
+        [msgs["para_starts_dot"][0], PAR + r"\.", "", ""],
+        [msgs["punct_in_math"][0], r".([,.:?])" + END_MATH_CHAR, "", msgs["punct_in_math"][1]],
+        [msgs["double_dot"][0], r'\. \.', "", msgs["double_dot"][1]],
+        [msgs["space_before_punct_math"][0], END_MATH_CHAR + r'+\s+(?:' + LBS + r'[@])?([;.,])', "", msgs["space_before_punct_math"][1]],
+        [msgs["space_before_rparen"][0], END_MATH_CHAR + r"[^" + START_MATH_CHAR + r"]*\s\)", "", ""],
+        [msgs["proof_no_begin"][0], PAR + LBS + r'end\{proof\}', "", msgs["proof_no_begin"][1]],
+        [msgs["section_has_dot"][0], LBS + r"(?:sub)*section\{[^}]*[.]\}\s*(?:\n|$|\\)", "", msgs["section_has_dot"][1]],
+        [msgs["no_stop_def"][0], r"[a-zA-Z0-9]\s*" + LBS + r"end\{definition\}", "", ""],
+        [msgs["no_stop_end"][0], r"[a-zA-Z0-9](?:\s|%[^\n]*)*" + LBS + r"end\{(?!algorithmic|enum|item|array|eqnarray|align|document|proof)", "", ""],
+    ]

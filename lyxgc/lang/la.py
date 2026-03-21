@@ -1,0 +1,57 @@
+"""Latin grammar rules - LaTeX structural rules with Latin messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("Vacuum mathematicum spatium", ""),
+    "macro_no_brace": ("Macro sine {}", "Forsan {} post macro opus est."),
+    "no_fullstop_after_cite": ("Nullum punctum post citationem in fine paragraphi", "Punctum deesse potest."),
+    "no_space_after_cite": ("Nullum spatium post citationem", ""),
+    "no_space_before_cite": ("Nullum spatium ante citationem", ""),
+    "uline_starts_early": ("Sublineatio nimis mane incipit", ""),
+    "uline_ends_late": ("Sublineatio nimis sero desinit", ""),
+    "space_before_footnote": ("Spatium ante annotationem", ""),
+    "footnote_period_comma": ("Punctum/virgula post annotationem", "Si annotatio ad totam sententiam refert, post punctum pone."),
+    "double_punct": ("Duplex interpunctio", ""),
+    "implies_in_proof": ("Usus \\implies in demonstratione", "Utere \\Longrightarrow pro directione demonstrationis."),
+    "no_space_after_ref": ("Nullum spatium post relationem", ""),
+    "single_char": ("Unum characterem", "Unus character plerumque nihil valet."),
+    "empty_begin_end": ("Vacuum begin/end spatium", ""),
+    "proof_not_newline": ("Demonstratio non nova linea incipit", "Paragraphi separationem inter theorema et demonstrationem insere (Enter in LyX)."),
+    "no_space_ref_left": ("Nullum spatium sinistra relationis", "Forsan spatium non separabile (~) ante relationem?"),
+    "no_space_ref_right": ("Nullum spatium dextra relationis", "Forsan spatium non separabile (~) post relationem?"),
+    "too_many_dots": ("Nimis multa puncta", "Cur plus quam unum '.'?"),
+    "space_cite_punct": ("Spatium inter citationem et interpunctionem", ""),
+    "space_after_period_cap": ("Spatium desidens inter punctum et maiusculam", ""),
+    "space_after_period_word": ("Spatium desidens inter punctum et verbum", ""),
+    "textquotedbl": ("Falsa usus \\textquotedbl", "Utere `` vel ''."),
+    "math_punct": ("Spatium inter mathematicum spatium et interpunctionem", ""),
+    "cap_after_math": ("Maiuscula post mathematicum spatium", "Cur maiuscula post mathematicum spatium?"),
+    "equals_outside_math": ("Signum aequalitatis extra mathematicum spatium", "'=' intra mathematicum spatium esse debet."),
+    "no_space_before_math": ("Nullum spatium ante mathematicum spatium", ""),
+    "no_space_before_cite": ("Nullum spatium ante citationem", ""),
+    "footnote_no_stop": ("Annotatio sine puncto", ""),
+    "no_space_after_math": ("Nullum spatium post mathematicum spatium", ""),
+    "no_space_before_macro": ("Nullum spatium ante macro", ""),
+    "no_space_after_macro": ("Nullum spatium post macro", ""),
+    "colon_in_math": (": in modo mathematico", "Utere \\colon ad functiones definiendas."),
+    "ugly_fraction": ("Fractio deformis", r"Utere \\nicefrac{ARG1}{ARG2}."),
+    "too_many_zeros": ("Nimis multa nulla sine separatore", ""),
+    "duplicated_word": ("Verbum duplicatum", ""),
+    "para_no_stop": ("Paragraphus sine puncto desinit", ""),
+    "para_no_cap": ("Paragraphus sine maiuscula incipit", ""),
+    "para_starts_dot": ("Paragraphus puncto incipit?", ""),
+    "punct_in_math": ("Interpunctio intra modum mathematicum", "Movere ARG1 extra modum mathematicum."),
+    "double_dot": ("Duo puncta", "Unum punctum satis est."),
+    "space_before_punct_math": ("Spatium ante finem mathematici spatii", ""),
+    "space_before_rparen": ("Spatium ante )", ""),
+    "proof_no_begin": ("\\end{proof} sine \\begin", "Paragraphi separationem ante \\end{proof} removere?"),
+    "section_has_dot": ("Sectio cum puncto", "Sectiones plerumque puncto non desinunt."),
+    "no_stop_def": ("Nullum punctum ante \\end{definition}", ""),
+    "no_stop_end": ("Nullum punctum ante \\end{...}", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Latin rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

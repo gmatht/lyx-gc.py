@@ -1,0 +1,57 @@
+"""Esperanto grammar rules - LaTeX structural rules with Esperanto messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("Malplena matematika bloko", ""),
+    "macro_no_brace": ("Makro sen {}", "Probable necesas {} post la makro."),
+    "no_fullstop_after_cite": ("Sen punkto post citaĵo je paragrafofino", "Eble mankas punkto."),
+    "no_space_after_cite": ("Sen spaco post citaĵo", ""),
+    "no_space_before_cite": ("Sen spaco antaŭ citaĵo", ""),
+    "uline_starts_early": ("Substreko komenciĝas tro frue", ""),
+    "uline_ends_late": ("Substreko finiĝas tro malfrue", ""),
+    "space_before_footnote": ("Spaco antaŭ piednoto", ""),
+    "footnote_period_comma": ("Punkto/komo post piednoto", "Se la piednoto rilatas al la tuta frazo, metu ĝin post la punkto."),
+    "double_punct": ("Duobla interpunkcio", ""),
+    "implies_in_proof": ("Uzo de \\implies en pruvo", "Uzu \\Longrightarrow por la pruvodirekto."),
+    "no_space_after_ref": ("Sen spaco post referenco", ""),
+    "single_char": ("Sola karaktero", "Sola karaktero kutime sensencas."),
+    "empty_begin_end": ("Malplena begin/end bloko", ""),
+    "proof_not_newline": ("Pruvo ne komenciĝas je nova linio", "Enmetu paragrafan rompon inter teoremo kaj pruvo (Enter en LyX)."),
+    "no_space_ref_left": ("Sen spaco maldekstre de referenco", "Eble neseparebla spaco (~) antaŭ la referenco?"),
+    "no_space_ref_right": ("Sen spaco dekstre de referenco", "Eble neseparebla spaco (~) post la referenco?"),
+    "too_many_dots": ("Tro multaj punktoj", "Kial pli ol unu '.'?"),
+    "space_cite_punct": ("Spaco inter citaĵo kaj interpunkcio", ""),
+    "space_after_period_cap": ("Mankanta spaco inter punkto kaj majuskulo", ""),
+    "space_after_period_word": ("Mankanta spaco inter punkto kaj vorto", ""),
+    "textquotedbl": ("Malĝusta uzo de \\textquotedbl", "Uzu `` aŭ ''."),
+    "math_punct": ("Spaco inter matematika bloko kaj interpunkcio", ""),
+    "cap_after_math": ("Majuskulo post matematika bloko", "Kial majuskulo post la matematika bloko?"),
+    "equals_outside_math": ("Egalsigno ekster matematika bloko", "La '=' devus esti ene de la matematika bloko."),
+    "no_space_before_math": ("Sen spaco antaŭ matematika bloko", ""),
+    "no_space_before_cite": ("Sen spaco antaŭ citaĵo", ""),
+    "footnote_no_stop": ("Piednoto sen punkto", ""),
+    "no_space_after_math": ("Sen spaco post matematika bloko", ""),
+    "no_space_before_macro": ("Sen spaco antaŭ makro", ""),
+    "no_space_after_macro": ("Sen spaco post makro", ""),
+    "colon_in_math": (": en math reĝimo", "Uzu \\colon por difini funkciojn."),
+    "ugly_fraction": ("Malbela frakcio", r"Uzu \\nicefrac{ARG1}{ARG2}."),
+    "too_many_zeros": ("Tro multaj nuloj sen disigilo", ""),
+    "duplicated_word": ("Duobligita vorto", ""),
+    "para_no_stop": ("Paragrafo finiĝas sen punkto", ""),
+    "para_no_cap": ("Paragrafo komenciĝas sen majuskulo", ""),
+    "para_starts_dot": ("Paragrafo komenciĝas per punkto?", ""),
+    "punct_in_math": ("Interpunkcio ene de math reĝimo", "Movu ARG1 eksteren de math reĝimo."),
+    "double_dot": ("Du punktoj", "Unu punkto sufiĉas."),
+    "space_before_punct_math": ("Spaco antaŭ fino de matematika bloko", ""),
+    "space_before_rparen": ("Spaco antaŭ )", ""),
+    "proof_no_begin": ("\\end{proof} sen \\begin", "Forigu paragrafan rompon antaŭ \\end{proof}?"),
+    "section_has_dot": ("Sekcio kun punkto", "Sekcioj kutime ne finiĝas per punkto."),
+    "no_stop_def": ("Sen punkto antaŭ \\end{definition}", ""),
+    "no_stop_end": ("Sen punkto antaŭ \\end{...}", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Esperanto rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

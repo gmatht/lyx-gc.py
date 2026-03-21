@@ -1,0 +1,57 @@
+"""Icelandic grammar rules - LaTeX structural rules with Icelandic messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("Tómur stærðfræðiblokk", ""),
+    "macro_no_brace": ("Makró án {}", "{} þarf líklega eftir makróið."),
+    "no_fullstop_after_cite": ("Enginn punktur eftir tilvitnun í lok málsgreinar", "Punktur kann að vanta."),
+    "no_space_after_cite": ("Enginn bilrúm eftir tilvitnun", ""),
+    "no_space_before_cite": ("Enginn bilrúm fyrir tilvitnun", ""),
+    "uline_starts_early": ("Undirstrikuð lína byrjar of snemma", ""),
+    "uline_ends_late": ("Undirstrikuð lína endar of seint", ""),
+    "space_before_footnote": ("Bilrúm fyrir neðanmálsgrein", ""),
+    "footnote_period_comma": ("Punktur/hástafur eftir neðanmálsgrein", "Ef neðanmálsgreinin vísar til allrar setningar, setjið hana eftir punkti."),
+    "double_punct": ("Tvípunkta", ""),
+    "implies_in_proof": ("Notkun \\implies í sönnun", "Notið \\Longrightarrow fyrir stefnu sönnunar."),
+    "no_space_after_ref": ("Enginn bilrúm eftir tilvísun", ""),
+    "single_char": ("Ein staf", "Ein staf hefur yfirleitt engan skilning."),
+    "empty_begin_end": ("Tómur begin/end blokk", ""),
+    "proof_not_newline": ("Sönnun byrjar ekki á nýrri línu", "Settu inn málsgreinarstrik milli setningar og sönnunar (Enter í LyX)."),
+    "no_space_ref_left": ("Enginn bilrúm vinstra megin við tilvísun", "Kannski óbrotinn bilrúm (~) fyrir tilvísun?"),
+    "no_space_ref_right": ("Enginn bilrúm hægra megin við tilvísun", "Kannski óbrotinn bilrúm (~) eftir tilvísun?"),
+    "too_many_dots": ("Of margir punktar", "Af hverju fleiri en einn '.'?"),
+    "space_cite_punct": ("Bilrúm milli tilvitnunar og greinarmerkis", ""),
+    "space_after_period_cap": ("Vantar bilrúm milli punkts og hástafs", ""),
+    "space_after_period_word": ("Vantar bilrúm milli punkts og orðs", ""),
+    "textquotedbl": ("Röng notkun \\textquotedbl", "Notið `` eða ''."),
+    "math_punct": ("Bilrúm milli stærðfræðiblokks og greinarmerkis", ""),
+    "cap_after_math": ("Hástafur eftir stærðfræðiblokk", "Af hverju hástafur eftir stærðfræðiblokk?"),
+    "equals_outside_math": ("Jöfnunarmerki utan stærðfræðiblokks", "'=' ætti að vera inni í stærðfræðiblokk."),
+    "no_space_before_math": ("Enginn bilrúm fyrir stærðfræðiblokk", ""),
+    "no_space_before_cite": ("Enginn bilrúm fyrir tilvitnun", ""),
+    "footnote_no_stop": ("Neðanmálsgrein án punkts", ""),
+    "no_space_after_math": ("Enginn bilrúm eftir stærðfræðiblokk", ""),
+    "no_space_before_macro": ("Enginn bilrúm fyrir makró", ""),
+    "no_space_after_macro": ("Enginn bilrúm eftir makró", ""),
+    "colon_in_math": (": í stærðfræðiham", "Notið \\colon til að skilgreina fall."),
+    "ugly_fraction": ("Ljót brot", r"Notið \\nicefrac{ARG1}{ARG2}."),
+    "too_many_zeros": ("Of mörg núll án aðskiljanda", ""),
+    "duplicated_word": ("Endurtekið orð", ""),
+    "para_no_stop": ("Málsgrein endar án punkts", ""),
+    "para_no_cap": ("Málsgrein byrjar án hástafs", ""),
+    "para_starts_dot": ("Málsgrein byrjar með punkti?", ""),
+    "punct_in_math": ("Greinarmerki inni í stærðfræðiham", "Færið ARG1 utan stærðfræðihams."),
+    "double_dot": ("Tveir punktar", "Einn punktur nægir."),
+    "space_before_punct_math": ("Bilrúm fyrir lok stærðfræðiblokks", ""),
+    "space_before_rparen": ("Bilrúm fyrir )", ""),
+    "proof_no_begin": ("\\end{proof} án \\begin", "Fjarlægið málsgreinarstrik fyrir \\end{proof}?"),
+    "section_has_dot": ("Kafli með punkti", "Kafar yfirleitt ekki með punkti."),
+    "no_stop_def": ("Enginn punktur fyrir \\end{definition}", ""),
+    "no_stop_end": ("Enginn punktur fyrir \\end{...}", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Icelandic rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

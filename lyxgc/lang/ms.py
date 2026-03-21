@@ -1,0 +1,57 @@
+"""Malay grammar rules - LaTeX structural rules with Malay messages."""
+from ._structural import structural_rules
+from ._common import common_academic_rules
+
+_MSGS = {
+    "empty_mathblock": ("Blok matematik kosong", ""),
+    "macro_no_brace": ("Makro tanpa {}", "{} mungkin diperlukan selepas makro."),
+    "no_fullstop_after_cite": ("Tiada tanda noktah selepas petikan di akhir perenggan", "Tanda noktah mungkin hilang."),
+    "no_space_after_cite": ("Tiada ruang selepas petikan", ""),
+    "no_space_before_cite": ("Tiada ruang sebelum petikan", ""),
+    "uline_starts_early": ("Garis bawah bermula terlalu awal", ""),
+    "uline_ends_late": ("Garis bawah berakhir terlalu lewat", ""),
+    "space_before_footnote": ("Ruang sebelum nota kaki", ""),
+    "footnote_period_comma": ("Noktah/koma selepas nota kaki", "Jika nota kaki merujuk kepada keseluruhan ayat, letakkan selepas noktah."),
+    "double_punct": ("Tanda baca berganda", ""),
+    "implies_in_proof": ("Penggunaan \\implies dalam bukti", "Gunakan \\Longrightarrow untuk arah bukti."),
+    "no_space_after_ref": ("Tiada ruang selepas rujukan", ""),
+    "single_char": ("Satu aksara", "Satu aksara biasanya tidak masuk akal."),
+    "empty_begin_end": ("Blok begin/end kosong", ""),
+    "proof_not_newline": ("Bukti tidak bermula pada baris baru", "Sisipkan pemisah perenggan antara teorem dan bukti (Enter dalam LyX)."),
+    "no_space_ref_left": ("Tiada ruang di sebelah kiri rujukan", "Mungkin ruang tidak putus (~) sebelum rujukan?"),
+    "no_space_ref_right": ("Tiada ruang di sebelah kanan rujukan", "Mungkin ruang tidak putus (~) selepas rujukan?"),
+    "too_many_dots": ("Terlalu banyak titik", "Mengapa lebih dari satu '.'?"),
+    "space_cite_punct": ("Ruang antara petikan dan tanda baca", ""),
+    "space_after_period_cap": ("Ruang hilang antara noktah dan huruf besar", ""),
+    "space_after_period_word": ("Ruang hilang antara noktah dan perkataan", ""),
+    "textquotedbl": ("Penggunaan \\textquotedbl yang salah", "Gunakan `` atau ''."),
+    "math_punct": ("Ruang antara blok matematik dan tanda baca", ""),
+    "cap_after_math": ("Huruf besar selepas blok matematik", "Mengapa huruf besar selepas blok matematik?"),
+    "equals_outside_math": ("Tanda sama di luar blok matematik", "'=' sepatutnya berada di dalam blok matematik."),
+    "no_space_before_math": ("Tiada ruang sebelum blok matematik", ""),
+    "no_space_before_cite": ("Tiada ruang sebelum petikan", ""),
+    "footnote_no_stop": ("Nota kaki tanpa noktah", ""),
+    "no_space_after_math": ("Tiada ruang selepas blok matematik", ""),
+    "no_space_before_macro": ("Tiada ruang sebelum makro", ""),
+    "no_space_after_macro": ("Tiada ruang selepas makro", ""),
+    "colon_in_math": (": dalam mod matematik", "Gunakan \\colon untuk menentukan fungsi."),
+    "ugly_fraction": ("Pecahan tidak kemas", r"Gunakan \\nicefrac{ARG1}{ARG2}."),
+    "too_many_zeros": ("Terlalu banyak sifir tanpa pemisah", ""),
+    "duplicated_word": ("Perkataan pendua", ""),
+    "para_no_stop": ("Perenggan berakhir tanpa noktah", ""),
+    "para_no_cap": ("Perenggan bermula tanpa huruf besar", ""),
+    "para_starts_dot": ("Perenggan bermula dengan noktah?", ""),
+    "punct_in_math": ("Tanda baca dalam mod matematik", "Alihkan ARG1 keluar dari mod matematik."),
+    "double_dot": ("Dua noktah", "Satu noktah mencukupi."),
+    "space_before_punct_math": ("Ruang sebelum penghujung blok matematik", ""),
+    "space_before_rparen": ("Ruang sebelum )", ""),
+    "proof_no_begin": ("\\end{proof} tanpa \\begin", "Buang pemisah perenggan sebelum \\end{proof}?"),
+    "section_has_dot": ("Bahagian dengan noktah", "Bahagian biasanya tidak berakhir dengan noktah."),
+    "no_stop_def": ("Tiada noktah sebelum \\end{definition}", ""),
+    "no_stop_end": ("Tiada noktah sebelum \\end{...}", ""),
+}
+
+
+def generate_error_types() -> list:
+    """Return Malay rules."""
+    return structural_rules(_MSGS) + common_academic_rules()

@@ -2,6 +2,9 @@
 
 Every rule from chktex_en.pl and chktex_fr.pl has at least one test that verifies
 the rule matches when appropriate trigger text is present in the document.
+
+Structural-only languages (de, generic, af, pl, ...) share the same LaTeX rules
+from _structural.py; each has a parametrized test per rule.
 """
 import io
 import re
@@ -9,9 +12,11 @@ import re
 import pytest
 
 from lyxgc.engine import find_errors
+from lyxgc.lang import get_generate_error_types
 from lyxgc.lang.en import generate_error_types as generate_en
 from lyxgc.lang.fr import generate_error_types as generate_fr
 from tests.rule_triggers import TRIGGERS_EN, TRIGGERS_FR
+from tests.rule_triggers_structural import TRIGGERS_STRUCTURAL
 
 # Rules with no reliable single trigger (regex overlap with other rules, or very picky patterns).
 SKIP_TRIGGER_EN = frozenset()
@@ -116,5 +121,56 @@ def test_each_french_rule_fires(rule_id: str, rule_name: str, trigger: str | Non
     fired = _rule_names_from_output(output)
     assert rule_name in fired, (
         f"Rule {rule_name!r} did not fire on trigger {trigger!r}. "
+        f"Fired: {fired}. Output: {output[:500]}"
+    )
+
+
+# Structural-only languages: same _structural.py rules, different messages per language.
+# Excludes en and fr which have custom rule implementations.
+_STRUCTURAL_MODULES = [
+    "de", "es", "it", "pt", "nl",
+    "generic",
+    "af", "sq", "ar", "hy", "eu", "be", "br", "bg", "ca", "zh", "hr", "cs", "da",
+    "dv", "eo", "et", "fa", "fi", "gl", "el", "he", "hi", "hu", "is", "id", "ia", "ga",
+    "ja", "kk", "ko", "ku", "lo", "la", "lv", "lt", "dsb", "ms", "mr", "mn",
+    "nb", "nn", "oc", "pl", "ro", "ru", "se", "sa", "gd", "sr", "sk", "sl",
+    "sv", "ta", "te", "th", "tr", "tk", "uk", "hsb", "ur", "vi", "cop", "syc",
+]
+
+
+def _collect_structural_test_cases():
+    """Yield (module, rule_index, rule_name, trigger) for each structural rule."""
+    for module in _STRUCTURAL_MODULES:
+        gen = get_generate_error_types(module)
+        if gen is None or gen == []:
+            continue
+        rules = gen()
+        for i, rule in enumerate(rules):
+            if i >= len(TRIGGERS_STRUCTURAL):
+                break
+            name = rule[0]
+            trigger = TRIGGERS_STRUCTURAL[i]
+            yield (f"{module}_{i}_{_slug(name)}", module, i, name, trigger)
+
+
+_STRUCTURAL_CASES = list(_collect_structural_test_cases())
+
+
+@pytest.mark.parametrize(
+    "rule_id,module,rule_index,rule_name,trigger",
+    _STRUCTURAL_CASES,
+    ids=[c[0] for c in _STRUCTURAL_CASES],
+)
+def test_each_structural_rule_fires(
+    rule_id: str, module: str, rule_index: int, rule_name: str, trigger: str
+) -> None:
+    """Each structural rule fires when given its trigger text (all new languages)."""
+    gen = get_generate_error_types(module)
+    assert gen is not None, f"No generator for {module}"
+    error_types = gen()
+    n, output = _run_find_errors(error_types, trigger)
+    fired = _rule_names_from_output(output)
+    assert rule_name in fired, (
+        f"Rule {rule_name!r} (module={module}, index={rule_index}) did not fire on trigger {trigger!r}. "
         f"Fired: {fired}. Output: {output[:500]}"
     )
