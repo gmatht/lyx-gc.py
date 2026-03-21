@@ -1,0 +1,3 @@
+Warning 666; we that in D:\GitHub\lyx-gc\py\tests\fixtures\one_error.tex line 3: Perhaps you mean 'we see that'?.  
+... This is we that wrong. \end{document} ..
+            ^^^^^^^

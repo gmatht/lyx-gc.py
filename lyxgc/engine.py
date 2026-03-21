@@ -157,7 +157,7 @@ def find_errors(
                 error_context = context_before + trigger_user + context_after + ".."
 
                 spaces = " " * len(context_before)
-                rule_ptrs = (trigger_user.replace(".", "^") if trigger_user else "^")
+                rule_ptrs = ("^" * len(trigger_user) if trigger_user else "^")
                 rule_ptrs = spaces + rule_ptrs
 
                 this_desc = desc

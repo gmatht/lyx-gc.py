@@ -1,4 +1,6 @@
 """Error reporting for LyX-compatible output formats."""
+import re
+
 from .tokenizer import tokens_to_user, C_BACKSLASH, START_MATH_CHAR, END_MATH_CHAR
 
 
@@ -46,7 +48,8 @@ def report_error(
         if rule_description:
             error_text += rule_description.strip() + ".\n\n"
         if rule_context:
-            rule_context_flat = rule_context.replace("\n", " ").replace("\r", " ").lstrip()
+            rule_context_flat = rule_context.replace("\n", " ").replace("\r", " ")
+            rule_context_flat = re.sub(r"^\s*", " ", rule_context_flat)  # Perl: s/^\s*/ /g
             error_text += "> " + embed_error_tags(
                 rule_context_flat, " " + rule_ptrs, ">>", "<<"
             ) + ".\n\n  "
@@ -71,7 +74,14 @@ def report_error(
         error_text = (rule_description or "").replace("\n", " ")
         if error_text:
             error_text += ".  "
-        line = f'Warning {rule_id} in {error_filename} line {line_num}: {error_text}\n'
+        rule_context_flat = rule_context.replace("\n", " ").replace("\r", " ")
+        rule_ptrs_flat = rule_ptrs.replace("\n", " ").replace("\r", " ")
+        error_text = tokens_to_user(error_text)
+        line = (
+            f"Warning {rule_id_str} in {error_filename} line {line_num}: {error_text}\n"
+            f"{rule_context_flat}\n"
+            f"{rule_ptrs_flat}\n"
+        )
 
     for out in out_files:
         if hasattr(out, "write"):
