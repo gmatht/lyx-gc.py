@@ -23,9 +23,12 @@ _BACKSLASH_PAT = re.compile(r"\\\\")
 _DOLLAR_ESC_PAT = re.compile(r"\\\$")
 
 # Paragraph boundary
-PAR = r"(?:(?m)\A|\n\s*\n|\Z)"
+PAR = r"(?:\A|\n\s*\n|\Z)"
 FULLSTOP = r"(?:(?<![.].)[.])"
-MACROBLOCK = r"\\\\term\{[^}]*\}"
+# Regex: one literal backslash in LaTeX source (single \ before a command)
+LATEX_BS = r"\\"
+# \term{...} — match literal backslash, not the token from `\\`
+MACROBLOCK = LATEX_BS + r"term\{[^}]*\}"
 
 # Recursive brace (nested 5 levels like Perl)
 _RECURSIVE_BRACE = r"\{[^{}]*\}"

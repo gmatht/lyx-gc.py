@@ -82,13 +82,21 @@ def find_errors(
             raise ValueError('More than one "\\begin{document}" in file')
 
     # Compile regexes and count brackets for each rule
+    # Normalize: [name, regex, special, desc] or [name, regex, desc] -> 4-tuple
     bracket_re = re.compile(r"(?<!\[)\((?!\?)")
     for i, rule in enumerate(error_types):
-        name, regex_str, special, desc = rule[:4]
+        r = list(rule)
+        if len(r) == 3:
+            r.insert(2, "")  # [name, regex, desc] -> [name, regex, "", desc]
+        name, regex_str, special, desc = r[:4]
+        flags = 0
+        if "(?i)" in regex_str:
+            regex_str = regex_str.replace("(?i)", "")
+            flags = re.IGNORECASE
         wrap_regex = "(" + regex_str + ")"
-        rule_pattern = re.compile(wrap_regex)
+        rule_pattern = re.compile(wrap_regex, flags)
         n_brackets = len(bracket_re.findall(wrap_regex))
-        error_types[i] = list(rule) + [rule_pattern, n_brackets]
+        error_types[i] = r + [rule_pattern, n_brackets]
 
     # Split by paragraph blocks - simplified: use whole text for small files
     blocks = [filetext]
@@ -123,7 +131,9 @@ def find_errors(
             linenum += num_newlines(partext) + 2
 
         for rule in error_types:
-            error_name, regex_str, special, desc, rule_pattern, n_brackets = rule[:6]
+            # Last two elements are always rule_pattern, n_brackets (appended during compile)
+            rule_pattern, n_brackets = rule[-2], rule[-1]
+            error_name, regex_str, special, desc = rule[:4]
             blocktext_ = blocktext
 
             if special.startswith("erase:"):
