@@ -20,6 +20,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", nargs="?", help=".tex file to check")
     parser.add_argument("-o", "--output", help="Output file")
+    parser.add_argument("-x", dest="input_file", help="Input file (LyX uses -x file.tex)")
     parser.add_argument("-v", "--verbose", choices=["0", "1", "3"], default="1")
     parser.add_argument(
         "-l", "--lang",
@@ -29,7 +30,7 @@ def main():
 
     output_format = f"-v{args.verbose}"
     fileout = args.output or ""
-    filename = args.filename or "stdin"
+    filename = args.input_file or args.filename or "stdin"
 
     if filename == "stdin":
         filetext = sys.stdin.read()
@@ -47,6 +48,10 @@ def main():
     # -l/--lang > LYX_LANGUAGE > LANG (locale e.g. en_AU.UTF-8)
     lang_spec = args.lang or os.environ.get("LYX_LANGUAGE") or os.environ.get("LANG", "en")
     rule_module = resolve_language(lang_spec)
+    if rule_module is None:
+        low = lang_spec.lower()
+        if low in ("c", "posix") or low.startswith("c."):
+            rule_module = "en"  # LANG=C or C.UTF-8: fall back to English
     generate_error_types = get_generate_error_types(rule_module)
     error_types = generate_error_types()
 
@@ -55,9 +60,11 @@ def main():
         out_files,
         filetext,
         filename,
-        min_block_size=200,
+        min_block_size=0,  # Check all text including short paragraphs
         output_format=output_format,
     )
+    if out_files and hasattr(out_files[0], "flush"):
+        out_files[0].flush()
 
     if filename != "stdin":
         n_errors += parse_languagetool_output(filename, out_files, output_format)

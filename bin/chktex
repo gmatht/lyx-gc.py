@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Stub so LyX finds our Python chktex instead of system chktex.
+# Must be in PATH before /usr/bin when running LyX.
+CHKTEX="$(cd "$(dirname "$0")/.." && pwd)/chktex.py"
+exec python3 "$CHKTEX" "$@"

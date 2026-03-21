@@ -2,11 +2,28 @@
 import os
 import re
 import subprocess
+from pathlib import Path
+
+# Our bin dir - exclude from PATH when finding system chktex (avoid recursion)
+_LYXGC_BIN = Path(__file__).resolve().parent.parent / "bin"
+
+
+def _get_system_chktex() -> str | None:
+    """Return path to system ChkTeX binary, never our wrapper."""
+    orig = os.environ.get("ORIG_CHKTEX", "").strip()
+    if orig:
+        p = Path(orig)
+        if p.is_absolute() and p.is_file():
+            return str(p)
+        # Relative path - could resolve to us if our bin is first in PATH
+    from .detect import find_system_chktex
+    found, path = find_system_chktex(_LYXGC_BIN)
+    return path if found else None
 
 
 def parse_chktex_output(filename: str, out_files: list, output_format: str = "-v1") -> int:
     """Run ChkTeX binary and parse output, report in LyX format."""
-    orig_chktex = os.environ.get("ORIG_CHKTEX", "chktex")
+    orig_chktex = _get_system_chktex()
     if not orig_chktex:
         return 0
 
