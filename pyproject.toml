@@ -7,7 +7,7 @@ lyxgc = ["lang/data/*.json"]
 
 [project]
 name = "lyxgc"
-version = "0.1.0dev1"
+version = "0.1.0dev2"
 description = "Grammar checker for LyX and LaTeX"
 readme = "README.md"
 license = {file = "LICENSE"}

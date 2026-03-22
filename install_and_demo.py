@@ -24,7 +24,7 @@ import tempfile
 from pathlib import Path
 
 REPO = "https://github.com/gmatht/lyx-gc.py"
-RELEASE_TAG = "v0.1.0dev1"
+RELEASE_TAG = "v0.1.0dev2"
 
 
 def run(cmd: list[str], cwd: Path | None = None, check: bool = True) -> subprocess.CompletedProcess:
@@ -107,19 +107,20 @@ def main() -> int:
             run([sys.executable, str(py_dir / "check_deps.py"), "--all"], cwd=py_dir)
 
         sample = py_dir / "sample_errors.lyx"
-        if not sample.is_file():
-            print(f"sample_errors.lyx not found in {py_dir}")
-            return 1
+        lyx_args = [str(sample)] if sample.is_file() else []
 
         if not args.no_lyx:
             run_lyx = py_dir / "run_lyx.py"
             if not run_lyx.is_file():
                 print("run_lyx.py not found")
                 return 1
-            print("\nLaunching LyX with sample document ...")
-            print("Use Tools > Check Text to run lyx-gc on the document.\n")
+            if lyx_args:
+                print("\nLaunching LyX with sample document ...")
+            else:
+                print("\nLaunching LyX (sample_errors.lyx not in this release).")
+            print("Use Tools > Check Text to run lyx-gc on any document.\n")
             run(
-                [sys.executable, str(run_lyx), str(sample)],
+                [sys.executable, str(run_lyx)] + lyx_args,
                 cwd=py_dir,
             )
 

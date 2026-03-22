@@ -38,6 +38,7 @@ htmlcov/
 .vscode/
 *.swp
 *.swo
+*.lyx~
 
 # Debug / local output
 test_out*.txt

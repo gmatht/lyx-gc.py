@@ -2,7 +2,48 @@
 
 Python port of the lyx-gc Perl grammar checker.
 
-## Setup
+## Quick Start
+
+**Linux / macOS:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/gmatht/lyx-gc.py/master/install_and_demo.py | python3
+-o install_and_demo.py
+python3 install_and_demo.py
+```
+
+**Windows (PowerShell):**
+```powershell
+curl -fsSL -o install_and_demo.ps1 https://raw.githubusercontent.com/gmatht/lyx-gc.py/master/install_and_demo.ps1
+.\install_and_demo.ps1
+```
+
+Then use **Tools > Check Text** in LyX on the sample document.
+
+## Install from release (Linux/macOS/Windows)
+
+Quick install from GitHub release tarball/zip: downloads lyx-gc, runs dependency check, and launches LyX with a sample document.
+
+**Linux / macOS:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/gmatht/lyx-gc.py/master/install_and_demo.py -o install_and_demo.py
+python install_and_demo.py
+```
+
+**Windows (PowerShell):**
+```powershell
+curl -fsSL -o install_and_demo.ps1 https://raw.githubusercontent.com/gmatht/lyx-gc.py/master/install_and_demo.ps1
+.\install_and_demo.ps1
+```
+
+The sample document (`sample_errors.lyx`) prompts you to try **Tools > Check Text** and contains deliberate errors (internal rules, ChkTeX, lacheck, LanguageTool).
+
+### Security notes
+
+**curl (all platforms):** Use `-f` (fail on HTTP errors), `-s` (silent), `-L` (follow redirects), and HTTPS. Download to a file first (`-o`) so you can inspect the script before running.
+
+**PowerShell (Windows):** Downloaded scripts are often blocked (Zone.Identifier). To run: right‑click the file → Properties → Unblock; or in PowerShell: `Unblock-File .\install_and_demo.ps1`. You may need `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` (one-time) if scripts are disabled. Or run one-off without changing policy: `powershell -ExecutionPolicy Bypass -File .\install_and_demo.ps1`.
+
+## Setup (from source)
 
 ```bash
 cd py

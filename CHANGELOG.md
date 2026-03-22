@@ -2,7 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0dev1] - Unreleased
+## [0.1.0dev2] - 2025-03-21
+
+### Added
+
+- `install_and_demo.py` - one-command install from release (Linux/macOS)
+- `install_and_demo.ps1` - one-command install from release (Windows)
+- `sample_errors.lyx` - demo document with deliberate errors for Tools > Check Text
+
+## [0.1.0dev1] - 2025-03-21
 
 ### Added
 

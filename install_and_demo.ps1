@@ -9,7 +9,7 @@
 
 $ErrorActionPreference = "Stop"
 $REPO = "https://github.com/gmatht/lyx-gc.py"
-$RELEASE_TAG = "v0.1.0dev1"
+$RELEASE_TAG = "v0.1.0dev2"
 
 function Find-LyX {
     $bases = @(
