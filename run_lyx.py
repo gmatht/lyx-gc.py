@@ -8,6 +8,7 @@ from __future__ import annotations
 import os
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 # Add py dir for imports
@@ -25,6 +26,23 @@ from lyxgc.detect import (
 def get_bin_dir() -> Path:
     """Path to py/bin (contains chktex stub for LyX to find)."""
     return _SCRIPT_DIR / "bin"
+
+
+def setup_lyx_userdir(bin_dir: Path) -> tuple[Path | None, list[str]]:
+    """Create a LyX userdir with chktex_command pointing to our chktex.
+    Returns (userdir_path or None, extra LyX args e.g. ['-userdir', path]).
+    """
+    chktex_path = bin_dir / ("chktex.bat" if sys.platform == "win32" else "chktex")
+    if not chktex_path.is_file():
+        return None, []
+    chktex_abs = str(chktex_path.resolve())
+    override = f'\\chktex_command "{chktex_abs} -n1 -n3 -n6 -n9 -n22 -n25 -n30 -n38"\n'
+    try:
+        tmp = Path(tempfile.mkdtemp(prefix="lyxgc_userdir_"))
+        (tmp / "lyxrc").write_text(override, encoding="utf-8")
+        return tmp, ["-userdir", str(tmp)]
+    except OSError:
+        return None, []
 
 
 def setup_env() -> dict[str, str]:
@@ -74,7 +92,8 @@ def main() -> int:
         return 1
 
     env = setup_env()
-    args = [lyx_path] + sys.argv[1:]
+    _, userdir_args = setup_lyx_userdir(bin_dir)
+    args = [lyx_path] + userdir_args + list(sys.argv[1:])
     return subprocess.run(args, env=env).returncode
 
 

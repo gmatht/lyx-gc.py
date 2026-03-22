@@ -84,6 +84,9 @@ def main():
                 stderr=subprocess.DEVNULL,
             )
 
+    return n_errors
+
 
 if __name__ == "__main__":
-    main()
+    n = main()
+    sys.exit(1 if n else 0)

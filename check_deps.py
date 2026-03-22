@@ -14,7 +14,6 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from lyxgc.detect import (
@@ -133,19 +132,20 @@ LT_DOWNLOAD_URL = "https://languagetool.org/download/LanguageTool-stable.zip"
 
 def install_languagetool(target_dir: Path) -> bool:
     """Download and extract LanguageTool to target_dir. Returns True on success."""
-    if not shutil.which("curl"):
-        print("  Error: curl is required for downloading LanguageTool")
-        return False
     print("  Downloading LanguageTool...")
     zip_path = None
     try:
         fd, zip_path = tempfile.mkstemp(suffix=".zip")
         os.close(fd)
-        subprocess.run(
-            ["curl", "-fsSL", "-o", zip_path, LT_DOWNLOAD_URL],
-            check=True,
-            timeout=300,
-        )
+        if shutil.which("curl"):
+            subprocess.run(
+                ["curl", "-fsSL", "-o", zip_path, LT_DOWNLOAD_URL],
+                check=True,
+                timeout=300,
+            )
+        else:
+            import urllib.request
+            urllib.request.urlretrieve(LT_DOWNLOAD_URL, zip_path)
 
         import zipfile
 
@@ -189,16 +189,59 @@ def install_languagetool(target_dir: Path) -> bool:
                 pass
 
 
-def install_on_windows(tool: str) -> bool:
-    """Print Windows install instructions. Returns False (no auto-install)."""
-    instructions = {
-        "lyx": "Install from https://www.lyx.org/",
-        "lacheck": "Install MiKTeX or TeX Live, or use: choco install lacheck",
-        "chktex": "choco install chktex, or install MiKTeX/TeX Live",
-        "languagetool": "Run this script in WSL, or set LANGUAGETOOL_PATH to a directory with languagetool-commandline.jar",
-        "java": "Install from https://adoptium.net/ or: choco install openjdk",
+def _win_installer_for(tool: str) -> tuple[str | None, str | None, str]:
+    """Return (winget_id, choco_id, fallback_url) for Windows install."""
+    map_ = {
+        "lyx": ("LyX.LyX", "lyx", "https://www.lyx.org/"),
+        "lacheck": (None, "lacheck", "https://miktex.org/download"),
+        "chktex": (None, "chktex", "https://miktex.org/download"),
+        "java": ("Microsoft.OpenJDK.17", "temurin17", "https://adoptium.net/"),
+        "languagetool": (None, None, "https://languagetool.org/"),
     }
-    print(f"  Windows: {instructions.get(tool, 'See documentation')}")
+    return map_.get(tool, (None, None, ""))
+
+
+def install_on_windows_guided(tool: str) -> bool:
+    """Guide the user through installing a tool on Windows. Returns True if installed."""
+    winget_id, choco_id, url = _win_installer_for(tool)
+    has_winget = bool(shutil.which("winget"))
+    has_choco = bool(shutil.which("choco"))
+
+    # Try winget first
+    if has_winget and winget_id:
+        cmd = ["winget", "install", "-e", "--id", winget_id, "--accept-package-agreements"]
+        print(f"  Running: {' '.join(cmd)}")
+        try:
+            r = subprocess.run(cmd, capture_output=False)
+            if r.returncode == 0:
+                return True
+        except Exception as e:
+            print(f"  winget failed: {e}")
+
+    # Try choco
+    if has_choco and choco_id:
+        cmd = ["choco", "install", choco_id, "-y"]
+        print(f"  Running: {' '.join(cmd)}")
+        try:
+            r = subprocess.run(cmd, capture_output=False)
+            if r.returncode == 0:
+                return True
+        except Exception as e:
+            print(f"  choco failed: {e}")
+
+    # Fallback: open URL and prompt
+    print(f"  Manual install required.")
+    if url:
+        open_url = input(f"  Open {url} in browser? [Y/n]: ").strip().lower()
+        if open_url in ("", "y", "yes"):
+            try:
+                if sys.platform == "win32":
+                    os.startfile(url)  # type: ignore[attr-defined]
+                else:
+                    subprocess.run(["xdg-open", url], check=False)
+            except Exception as e:
+                print(f"  Could not open: {e}")
+        print(f"  When done, run this script again to verify.")
     return False
 
 
@@ -329,10 +372,18 @@ def main() -> int:
         if not sys_tools:
             return True, fl
         if is_win:
+            finders = {
+                "lyx": find_lyx,
+                "lacheck": find_lacheck,
+                "chktex": find_chktex,
+                "java": find_java,
+            }
             for name in sys_tools:
-                print(f"\n{name}:")
-                install_on_windows(name)
-                fl.append(name)
+                print(f"\n--- {name} ---")
+                if install_on_windows_guided(name):
+                    print(f"  ✓ Installed (rerun this script to verify)")
+                else:
+                    fl.append(name)
             return len(fl) == 0, fl
         pkg_map = {
             "apt": pkg_map_apt,
@@ -368,9 +419,6 @@ def main() -> int:
 
     def run_languagetool() -> tuple[bool, str | None]:
         """Install LanguageTool. Returns (success, path_or_error)."""
-        if is_win:
-            install_on_windows("languagetool")
-            return False, "languagetool"
         if not find_java()[0] and "java" not in to_install:
             return False, "Java required (install Java first)"
         target = Path.home() / ".data" / "LanguageTool-stable"
@@ -378,30 +426,18 @@ def main() -> int:
             return True, str(target)
         return False, "languagetool"
 
-    # Run system packages and LanguageTool in parallel
-    with ThreadPoolExecutor(max_workers=2) as ex:
-        futures = {}
-        if sys_tools:
-            futures["sys"] = ex.submit(run_sys_packages)
-        if lt_requested:
-            futures["lt"] = ex.submit(run_languagetool)
-        for key in as_completed(futures):
-            f = futures[key]
-            try:
-                result = f.result()
-                if key == "sys":
-                    _, fl = result
-                    failed.extend(fl)
-                elif key == "lt":
-                    ok, path_or_err = result
-                    if ok and path_or_err:
-                        print(f"\nLanguageTool installed to {path_or_err}")
-                        if "LANGUAGETOOL_PATH" not in os.environ:
-                            print(f"  export LANGUAGETOOL_PATH={path_or_err}")
-                    elif not ok:
-                        failed.append(path_or_err or "languagetool")
-            except Exception as e:
-                failed.append(str(e))
+    # Run: on Windows do sys then LT (Java needed first); else parallel
+    if sys_tools:
+        _, fl = run_sys_packages()
+        failed.extend(fl)
+    if lt_requested:
+        ok, path_or_err = run_languagetool()
+        if ok and path_or_err:
+            print(f"\nLanguageTool installed to {path_or_err}")
+            if "LANGUAGETOOL_PATH" not in os.environ:
+                print(f"  set LANGUAGETOOL_PATH={path_or_err}" if is_win else f"  export LANGUAGETOOL_PATH={path_or_err}")
+        elif not ok:
+            failed.append(path_or_err or "languagetool")
 
     if failed:
         print(f"\nFailed to install: {', '.join(failed)}")

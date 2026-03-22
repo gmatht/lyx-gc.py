@@ -1,8 +1,13 @@
 # Install LyX-GC on Windows from the GitHub release.
 #
-# 1. Searches for LyX; installs via winget/choco if not found
-# 2. Uses Python from LyX bundle (Windows often lacks system Python)
-# 3. Downloads release, runs check_deps.py --all, launches LyX with sample file
+# 1. Optionally offers D: if it has more free space than C:
+# 2. Searches for LyX; installs via winget/choco if not found
+# 3. Uses Python from LyX bundle (Windows often lacks system Python)
+# 4. Downloads release, runs check_deps.py --all, launches LyX with sample file
+#
+# What we can install to D: This script can extract lyx-gc to D: (if offered).
+# Dependencies you may need to install manually (check_deps prints instructions):
+#   LyX, lacheck, chktex, LanguageTool, Java - install via winget/choco or download.
 #
 # Usage: .\install_and_demo.ps1
 # Requires: PowerShell 5.1+, internet access
@@ -10,6 +15,34 @@
 $ErrorActionPreference = "Stop"
 $REPO = "https://github.com/gmatht/lyx-gc.py"
 $RELEASE_TAG = "v0.1.0dev2"
+
+function Get-DriveFreeSpaceGB {
+    param([string]$Drive)
+    try {
+        $vol = Get-Volume -DriveLetter $Drive -ErrorAction SilentlyContinue
+        if ($vol) { return [math]::Round($vol.SizeRemaining / 1GB, 2) }
+    } catch {}
+    return $null
+}
+
+function Get-InstallRoot {
+    # If D: exists and has more free space than C:, offer to use D:
+    $cFree = Get-DriveFreeSpaceGB "C"
+    $dFree = Get-DriveFreeSpaceGB "D"
+    if ($null -eq $cFree) { $cFree = 0 }
+    if ($null -eq $dFree) { $dFree = 0 }
+
+    if ($dFree -gt $cFree -and $dFree -gt 0) {
+        Write-Host "Drive C: has $cFree GB free; D: has $dFree GB free."
+        $r = Read-Host "Install lyx-gc to D: instead? [Y/n]"
+        if ($r -eq "" -or $r -match "^[yY]") {
+            $root = "D:\lyx-gc-install"
+            Write-Host "Using $root"
+            return $root
+        }
+    }
+    return Join-Path $env:TEMP "lyx-gc-install"
+}
 
 function Find-LyX {
     $bases = @(
@@ -101,10 +134,10 @@ function Main {
     }
     Write-Host "Python: $($pyInfo.Exe) $($pyInfo.Args -join ' ')"
 
-    # 3. Download release
-    $url = "$REPO/archive/refs/tags/$RELEASE_TAG.zip"
-    $extractDir = Join-Path $env:TEMP "lyx-gc-install"
+    # 3. Download release (offer D: if it has more space)
+    $extractDir = Get-InstallRoot
     if (Test-Path $extractDir) { Remove-Item -Recurse -Force $extractDir }
+    $url = "$REPO/archive/refs/tags/$RELEASE_TAG.zip"
     New-Item -ItemType Directory -Path $extractDir | Out-Null
     $zipPath = Join-Path $extractDir "release.zip"
 
@@ -129,9 +162,10 @@ function Main {
         exit 1
     }
 
-    # 4. Run check_deps --all
+    # 4. Run check_deps --all (on Windows it prints install instructions; no auto-install)
     Write-Host ""
     Write-Host "Running check_deps.py --all ..."
+    Write-Host "(On Windows, missing deps require manual install: LyX, lacheck, chktex, LanguageTool, Java)"
     & $pyInfo.Exe @pyInfo.Args (Join-Path $pyDir "check_deps.py") --all
     if ($LASTEXITCODE -ne 0) {
         Write-Host "check_deps.py had issues (some deps may be missing)"
